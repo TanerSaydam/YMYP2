@@ -1,0 +1,14 @@
+C:\YMYP2\01.ConsoleApps\FirstConsoleSolution\ChatUIConsoleApp\bin\Debug\net7.0\ChatUIConsoleApp.exe
+C:\YMYP2\01.ConsoleApps\FirstConsoleSolution\ChatUIConsoleApp\bin\Debug\net7.0\ChatUIConsoleApp.deps.json
+C:\YMYP2\01.ConsoleApps\FirstConsoleSolution\ChatUIConsoleApp\bin\Debug\net7.0\ChatUIConsoleApp.runtimeconfig.json
+C:\YMYP2\01.ConsoleApps\FirstConsoleSolution\ChatUIConsoleApp\bin\Debug\net7.0\ChatUIConsoleApp.dll
+C:\YMYP2\01.ConsoleApps\FirstConsoleSolution\ChatUIConsoleApp\bin\Debug\net7.0\ChatUIConsoleApp.pdb
+C:\YMYP2\01.ConsoleApps\FirstConsoleSolution\ChatUIConsoleApp\obj\Debug\net7.0\ChatUIConsoleApp.GeneratedMSBuildEditorConfig.editorconfig
+C:\YMYP2\01.ConsoleApps\FirstConsoleSolution\ChatUIConsoleApp\obj\Debug\net7.0\ChatUIConsoleApp.AssemblyInfoInputs.cache
+C:\YMYP2\01.ConsoleApps\FirstConsoleSolution\ChatUIConsoleApp\obj\Debug\net7.0\ChatUIConsoleApp.AssemblyInfo.cs
+C:\YMYP2\01.ConsoleApps\FirstConsoleSolution\ChatUIConsoleApp\obj\Debug\net7.0\ChatUIConsoleApp.csproj.CoreCompileInputs.cache
+C:\YMYP2\01.ConsoleApps\FirstConsoleSolution\ChatUIConsoleApp\obj\Debug\net7.0\ChatUIConsoleApp.dll
+C:\YMYP2\01.ConsoleApps\FirstConsoleSolution\ChatUIConsoleApp\obj\Debug\net7.0\refint\ChatUIConsoleApp.dll
+C:\YMYP2\01.ConsoleApps\FirstConsoleSolution\ChatUIConsoleApp\obj\Debug\net7.0\ChatUIConsoleApp.pdb
+C:\YMYP2\01.ConsoleApps\FirstConsoleSolution\ChatUIConsoleApp\obj\Debug\net7.0\ChatUIConsoleApp.genruntimeconfig.cache
+C:\YMYP2\01.ConsoleApps\FirstConsoleSolution\ChatUIConsoleApp\obj\Debug\net7.0\ref\ChatUIConsoleApp.dll

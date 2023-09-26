@@ -1,0 +1,14 @@
+C:\YMYP2\01.ConsoleApps\FirstConsoleSolution\NumberGuessingGameConsoleApp\bin\Debug\net7.0\NumberGuessingGameConsoleApp.exe
+C:\YMYP2\01.ConsoleApps\FirstConsoleSolution\NumberGuessingGameConsoleApp\bin\Debug\net7.0\NumberGuessingGameConsoleApp.deps.json
+C:\YMYP2\01.ConsoleApps\FirstConsoleSolution\NumberGuessingGameConsoleApp\bin\Debug\net7.0\NumberGuessingGameConsoleApp.runtimeconfig.json
+C:\YMYP2\01.ConsoleApps\FirstConsoleSolution\NumberGuessingGameConsoleApp\bin\Debug\net7.0\NumberGuessingGameConsoleApp.dll
+C:\YMYP2\01.ConsoleApps\FirstConsoleSolution\NumberGuessingGameConsoleApp\bin\Debug\net7.0\NumberGuessingGameConsoleApp.pdb
+C:\YMYP2\01.ConsoleApps\FirstConsoleSolution\NumberGuessingGameConsoleApp\obj\Debug\net7.0\NumberGuessingGameConsoleApp.GeneratedMSBuildEditorConfig.editorconfig
+C:\YMYP2\01.ConsoleApps\FirstConsoleSolution\NumberGuessingGameConsoleApp\obj\Debug\net7.0\NumberGuessingGameConsoleApp.AssemblyInfoInputs.cache
+C:\YMYP2\01.ConsoleApps\FirstConsoleSolution\NumberGuessingGameConsoleApp\obj\Debug\net7.0\NumberGuessingGameConsoleApp.AssemblyInfo.cs
+C:\YMYP2\01.ConsoleApps\FirstConsoleSolution\NumberGuessingGameConsoleApp\obj\Debug\net7.0\NumberGuessingGameConsoleApp.csproj.CoreCompileInputs.cache
+C:\YMYP2\01.ConsoleApps\FirstConsoleSolution\NumberGuessingGameConsoleApp\obj\Debug\net7.0\NumberGuessingGameConsoleApp.dll
+C:\YMYP2\01.ConsoleApps\FirstConsoleSolution\NumberGuessingGameConsoleApp\obj\Debug\net7.0\refint\NumberGuessingGameConsoleApp.dll
+C:\YMYP2\01.ConsoleApps\FirstConsoleSolution\NumberGuessingGameConsoleApp\obj\Debug\net7.0\NumberGuessingGameConsoleApp.pdb
+C:\YMYP2\01.ConsoleApps\FirstConsoleSolution\NumberGuessingGameConsoleApp\obj\Debug\net7.0\NumberGuessingGameConsoleApp.genruntimeconfig.cache
+C:\YMYP2\01.ConsoleApps\FirstConsoleSolution\NumberGuessingGameConsoleApp\obj\Debug\net7.0\ref\NumberGuessingGameConsoleApp.dll

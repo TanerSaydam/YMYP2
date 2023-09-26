@@ -1,0 +1,14 @@
+C:\YMYP2\01.ConsoleApps\FirstConsoleSolution\MyFirstConsoleApp\bin\Debug\net7.0\MyFirstConsoleApp.exe
+C:\YMYP2\01.ConsoleApps\FirstConsoleSolution\MyFirstConsoleApp\bin\Debug\net7.0\MyFirstConsoleApp.deps.json
+C:\YMYP2\01.ConsoleApps\FirstConsoleSolution\MyFirstConsoleApp\bin\Debug\net7.0\MyFirstConsoleApp.runtimeconfig.json
+C:\YMYP2\01.ConsoleApps\FirstConsoleSolution\MyFirstConsoleApp\bin\Debug\net7.0\MyFirstConsoleApp.dll
+C:\YMYP2\01.ConsoleApps\FirstConsoleSolution\MyFirstConsoleApp\bin\Debug\net7.0\MyFirstConsoleApp.pdb
+C:\YMYP2\01.ConsoleApps\FirstConsoleSolution\MyFirstConsoleApp\obj\Debug\net7.0\MyFirstConsoleApp.GeneratedMSBuildEditorConfig.editorconfig
+C:\YMYP2\01.ConsoleApps\FirstConsoleSolution\MyFirstConsoleApp\obj\Debug\net7.0\MyFirstConsoleApp.AssemblyInfoInputs.cache
+C:\YMYP2\01.ConsoleApps\FirstConsoleSolution\MyFirstConsoleApp\obj\Debug\net7.0\MyFirstConsoleApp.AssemblyInfo.cs
+C:\YMYP2\01.ConsoleApps\FirstConsoleSolution\MyFirstConsoleApp\obj\Debug\net7.0\MyFirstConsoleApp.csproj.CoreCompileInputs.cache
+C:\YMYP2\01.ConsoleApps\FirstConsoleSolution\MyFirstConsoleApp\obj\Debug\net7.0\MyFirstConsoleApp.dll
+C:\YMYP2\01.ConsoleApps\FirstConsoleSolution\MyFirstConsoleApp\obj\Debug\net7.0\refint\MyFirstConsoleApp.dll
+C:\YMYP2\01.ConsoleApps\FirstConsoleSolution\MyFirstConsoleApp\obj\Debug\net7.0\MyFirstConsoleApp.pdb
+C:\YMYP2\01.ConsoleApps\FirstConsoleSolution\MyFirstConsoleApp\obj\Debug\net7.0\MyFirstConsoleApp.genruntimeconfig.cache
+C:\YMYP2\01.ConsoleApps\FirstConsoleSolution\MyFirstConsoleApp\obj\Debug\net7.0\ref\MyFirstConsoleApp.dll
