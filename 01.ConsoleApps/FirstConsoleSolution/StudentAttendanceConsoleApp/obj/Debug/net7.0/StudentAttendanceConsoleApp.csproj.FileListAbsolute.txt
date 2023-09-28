@@ -1,0 +1,14 @@
+C:\YMYP2\01.ConsoleApps\FirstConsoleSolution\StudentAttendanceConsoleApp\bin\Debug\net7.0\StudentAttendanceConsoleApp.exe
+C:\YMYP2\01.ConsoleApps\FirstConsoleSolution\StudentAttendanceConsoleApp\bin\Debug\net7.0\StudentAttendanceConsoleApp.deps.json
+C:\YMYP2\01.ConsoleApps\FirstConsoleSolution\StudentAttendanceConsoleApp\bin\Debug\net7.0\StudentAttendanceConsoleApp.runtimeconfig.json
+C:\YMYP2\01.ConsoleApps\FirstConsoleSolution\StudentAttendanceConsoleApp\bin\Debug\net7.0\StudentAttendanceConsoleApp.dll
+C:\YMYP2\01.ConsoleApps\FirstConsoleSolution\StudentAttendanceConsoleApp\bin\Debug\net7.0\StudentAttendanceConsoleApp.pdb
+C:\YMYP2\01.ConsoleApps\FirstConsoleSolution\StudentAttendanceConsoleApp\obj\Debug\net7.0\StudentAttendanceConsoleApp.GeneratedMSBuildEditorConfig.editorconfig
+C:\YMYP2\01.ConsoleApps\FirstConsoleSolution\StudentAttendanceConsoleApp\obj\Debug\net7.0\StudentAttendanceConsoleApp.AssemblyInfoInputs.cache
+C:\YMYP2\01.ConsoleApps\FirstConsoleSolution\StudentAttendanceConsoleApp\obj\Debug\net7.0\StudentAttendanceConsoleApp.AssemblyInfo.cs
+C:\YMYP2\01.ConsoleApps\FirstConsoleSolution\StudentAttendanceConsoleApp\obj\Debug\net7.0\StudentAttendanceConsoleApp.csproj.CoreCompileInputs.cache
+C:\YMYP2\01.ConsoleApps\FirstConsoleSolution\StudentAttendanceConsoleApp\obj\Debug\net7.0\StudentAttendanceConsoleApp.dll
+C:\YMYP2\01.ConsoleApps\FirstConsoleSolution\StudentAttendanceConsoleApp\obj\Debug\net7.0\refint\StudentAttendanceConsoleApp.dll
+C:\YMYP2\01.ConsoleApps\FirstConsoleSolution\StudentAttendanceConsoleApp\obj\Debug\net7.0\StudentAttendanceConsoleApp.pdb
+C:\YMYP2\01.ConsoleApps\FirstConsoleSolution\StudentAttendanceConsoleApp\obj\Debug\net7.0\StudentAttendanceConsoleApp.genruntimeconfig.cache
+C:\YMYP2\01.ConsoleApps\FirstConsoleSolution\StudentAttendanceConsoleApp\obj\Debug\net7.0\ref\StudentAttendanceConsoleApp.dll
