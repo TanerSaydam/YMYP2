@@ -46,7 +46,7 @@ internal class Program
             //------------------");
             Console.WriteLine($"{s.No}. {s.Name}");
         }
-
+        //21:21 görüşelim
         while(true)
         {
             //Tüm öğrenciler sınıfta mı kontrolü yapıyoruz.

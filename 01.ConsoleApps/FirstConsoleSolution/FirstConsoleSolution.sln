@@ -3,13 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.7.34003.232
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyFirstConsoleApp", "MyFirstConsoleApp\MyFirstConsoleApp.csproj", "{7E46AA09-D081-4F97-AC29-EE972F113A2B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyFirstConsoleApp", "MyFirstConsoleApp\MyFirstConsoleApp.csproj", "{7E46AA09-D081-4F97-AC29-EE972F113A2B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChatUIConsoleApp", "ChatUIConsoleApp\ChatUIConsoleApp.csproj", "{9DD08338-E78C-4FAA-88FE-698ED43833BE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ChatUIConsoleApp", "ChatUIConsoleApp\ChatUIConsoleApp.csproj", "{9DD08338-E78C-4FAA-88FE-698ED43833BE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NumberGuessingGameConsoleApp", "NumberGuessingGameConsoleApp\NumberGuessingGameConsoleApp.csproj", "{6119D525-352C-4B40-B942-8810BA9E0863}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NumberGuessingGameConsoleApp", "NumberGuessingGameConsoleApp\NumberGuessingGameConsoleApp.csproj", "{6119D525-352C-4B40-B942-8810BA9E0863}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StudentAttendanceConsoleApp", "StudentAttendanceConsoleApp\StudentAttendanceConsoleApp.csproj", "{99EC6127-CDD5-49BC-B49A-16FF2E9998E3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StudentAttendanceConsoleApp", "StudentAttendanceConsoleApp\StudentAttendanceConsoleApp.csproj", "{99EC6127-CDD5-49BC-B49A-16FF2E9998E3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StudentAttendance2ConsoleApp", "StudentAttendance2ConsoleApp\StudentAttendance2ConsoleApp.csproj", "{811D4626-465D-4E9A-89ED-9947103CBDFF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{99EC6127-CDD5-49BC-B49A-16FF2E9998E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{99EC6127-CDD5-49BC-B49A-16FF2E9998E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{99EC6127-CDD5-49BC-B49A-16FF2E9998E3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{811D4626-465D-4E9A-89ED-9947103CBDFF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{811D4626-465D-4E9A-89ED-9947103CBDFF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{811D4626-465D-4E9A-89ED-9947103CBDFF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{811D4626-465D-4E9A-89ED-9947103CBDFF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
