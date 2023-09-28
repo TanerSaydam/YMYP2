@@ -1,0 +1,14 @@
+C:\YMYP2\01.ConsoleApps\FirstConsoleSolution\TaskWithTimerConsoleApp\bin\Debug\net7.0\TaskWithTimerConsoleApp.exe
+C:\YMYP2\01.ConsoleApps\FirstConsoleSolution\TaskWithTimerConsoleApp\bin\Debug\net7.0\TaskWithTimerConsoleApp.deps.json
+C:\YMYP2\01.ConsoleApps\FirstConsoleSolution\TaskWithTimerConsoleApp\bin\Debug\net7.0\TaskWithTimerConsoleApp.runtimeconfig.json
+C:\YMYP2\01.ConsoleApps\FirstConsoleSolution\TaskWithTimerConsoleApp\bin\Debug\net7.0\TaskWithTimerConsoleApp.dll
+C:\YMYP2\01.ConsoleApps\FirstConsoleSolution\TaskWithTimerConsoleApp\bin\Debug\net7.0\TaskWithTimerConsoleApp.pdb
+C:\YMYP2\01.ConsoleApps\FirstConsoleSolution\TaskWithTimerConsoleApp\obj\Debug\net7.0\TaskWithTimerConsoleApp.GeneratedMSBuildEditorConfig.editorconfig
+C:\YMYP2\01.ConsoleApps\FirstConsoleSolution\TaskWithTimerConsoleApp\obj\Debug\net7.0\TaskWithTimerConsoleApp.AssemblyInfoInputs.cache
+C:\YMYP2\01.ConsoleApps\FirstConsoleSolution\TaskWithTimerConsoleApp\obj\Debug\net7.0\TaskWithTimerConsoleApp.AssemblyInfo.cs
+C:\YMYP2\01.ConsoleApps\FirstConsoleSolution\TaskWithTimerConsoleApp\obj\Debug\net7.0\TaskWithTimerConsoleApp.csproj.CoreCompileInputs.cache
+C:\YMYP2\01.ConsoleApps\FirstConsoleSolution\TaskWithTimerConsoleApp\obj\Debug\net7.0\TaskWithTimerConsoleApp.dll
+C:\YMYP2\01.ConsoleApps\FirstConsoleSolution\TaskWithTimerConsoleApp\obj\Debug\net7.0\refint\TaskWithTimerConsoleApp.dll
+C:\YMYP2\01.ConsoleApps\FirstConsoleSolution\TaskWithTimerConsoleApp\obj\Debug\net7.0\TaskWithTimerConsoleApp.pdb
+C:\YMYP2\01.ConsoleApps\FirstConsoleSolution\TaskWithTimerConsoleApp\obj\Debug\net7.0\TaskWithTimerConsoleApp.genruntimeconfig.cache
+C:\YMYP2\01.ConsoleApps\FirstConsoleSolution\TaskWithTimerConsoleApp\obj\Debug\net7.0\ref\TaskWithTimerConsoleApp.dll

@@ -13,6 +13,12 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StudentAttendanceConsoleApp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StudentAttendance2ConsoleApp", "StudentAttendance2ConsoleApp\StudentAttendance2ConsoleApp.csproj", "{811D4626-465D-4E9A-89ED-9947103CBDFF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TimerConsoleApp", "TimerConsoleApp\TimerConsoleApp.csproj", "{530EF786-DFB4-4A0A-A04F-6BCB0CFF13C5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskWithTimerConsoleApp", "TaskWithTimerConsoleApp\TaskWithTimerConsoleApp.csproj", "{3F27E19F-7590-46C2-AC6B-B0186007B9CC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AddTaskConsoleApp", "AddTaskConsoleApp\AddTaskConsoleApp.csproj", "{F6C780A0-E9EC-4667-95E9-1E8AABC36CA5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +45,18 @@ Global
 		{811D4626-465D-4E9A-89ED-9947103CBDFF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{811D4626-465D-4E9A-89ED-9947103CBDFF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{811D4626-465D-4E9A-89ED-9947103CBDFF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{530EF786-DFB4-4A0A-A04F-6BCB0CFF13C5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{530EF786-DFB4-4A0A-A04F-6BCB0CFF13C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{530EF786-DFB4-4A0A-A04F-6BCB0CFF13C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{530EF786-DFB4-4A0A-A04F-6BCB0CFF13C5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3F27E19F-7590-46C2-AC6B-B0186007B9CC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3F27E19F-7590-46C2-AC6B-B0186007B9CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3F27E19F-7590-46C2-AC6B-B0186007B9CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3F27E19F-7590-46C2-AC6B-B0186007B9CC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F6C780A0-E9EC-4667-95E9-1E8AABC36CA5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F6C780A0-E9EC-4667-95E9-1E8AABC36CA5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F6C780A0-E9EC-4667-95E9-1E8AABC36CA5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F6C780A0-E9EC-4667-95E9-1E8AABC36CA5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
