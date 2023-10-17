@@ -2,6 +2,7 @@
 
 internal class Program
 {
+    //
     static void Main(string[] args)
     {
         Timer timer = new(TimerCallback, null, 0, 1000);
