@@ -1,0 +1,16 @@
+C:\YMYP2\02.DesktopApp\MyFirstDesktop\bin\Debug\net7.0-windows\MyFirstDesktop.exe
+C:\YMYP2\02.DesktopApp\MyFirstDesktop\bin\Debug\net7.0-windows\MyFirstDesktop.deps.json
+C:\YMYP2\02.DesktopApp\MyFirstDesktop\bin\Debug\net7.0-windows\MyFirstDesktop.runtimeconfig.json
+C:\YMYP2\02.DesktopApp\MyFirstDesktop\bin\Debug\net7.0-windows\MyFirstDesktop.dll
+C:\YMYP2\02.DesktopApp\MyFirstDesktop\bin\Debug\net7.0-windows\MyFirstDesktop.pdb
+C:\YMYP2\02.DesktopApp\MyFirstDesktop\obj\Debug\net7.0-windows\MyFirstDesktop.Form1.resources
+C:\YMYP2\02.DesktopApp\MyFirstDesktop\obj\Debug\net7.0-windows\MyFirstDesktop.csproj.GenerateResource.cache
+C:\YMYP2\02.DesktopApp\MyFirstDesktop\obj\Debug\net7.0-windows\MyFirstDesktop.GeneratedMSBuildEditorConfig.editorconfig
+C:\YMYP2\02.DesktopApp\MyFirstDesktop\obj\Debug\net7.0-windows\MyFirstDesktop.AssemblyInfoInputs.cache
+C:\YMYP2\02.DesktopApp\MyFirstDesktop\obj\Debug\net7.0-windows\MyFirstDesktop.AssemblyInfo.cs
+C:\YMYP2\02.DesktopApp\MyFirstDesktop\obj\Debug\net7.0-windows\MyFirstDesktop.csproj.CoreCompileInputs.cache
+C:\YMYP2\02.DesktopApp\MyFirstDesktop\obj\Debug\net7.0-windows\MyFirstDesktop.dll
+C:\YMYP2\02.DesktopApp\MyFirstDesktop\obj\Debug\net7.0-windows\refint\MyFirstDesktop.dll
+C:\YMYP2\02.DesktopApp\MyFirstDesktop\obj\Debug\net7.0-windows\MyFirstDesktop.pdb
+C:\YMYP2\02.DesktopApp\MyFirstDesktop\obj\Debug\net7.0-windows\MyFirstDesktop.genruntimeconfig.cache
+C:\YMYP2\02.DesktopApp\MyFirstDesktop\obj\Debug\net7.0-windows\ref\MyFirstDesktop.dll
