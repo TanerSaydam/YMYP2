@@ -1,5 +1,12 @@
 # YMYP 2.Eğitim
 
+## 11.Ders İşlenen Konular
+- OpenDialog ile Dosya Yakalama
+- EPPlus NuGet Package ile Excel okuma
+- Sql.Data NuGet Package ile Database İşlemleri
+- EntityFramework Giriş
+- Örnek Excel Okuma ve Database'e Yazma Projesi
+
 ## 10. Ders İşlenen Konular
 - İş Analizi Nedir
 - OOP Sınıf ve Nesne Nedir
