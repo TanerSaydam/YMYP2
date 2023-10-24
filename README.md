@@ -1,5 +1,15 @@
 # YMYP 2.Eğitim
 
+## 12.Ders İşlenen Konular
+- ORM'den Kısaca Bahsettik
+- Index / Unique Kısmından Kabaca Örnek ile Bahsettik
+- EF Core ile Database Bağlantısı Yaptık
+- Database Tarafında RestaurantDb Oluşturduk
+- Masa, Ürün, Ürün Varyantı, Adisyon ve Ödeme Geçmişi Tabloları Oluşturduk
+- Masaları ve Ürünleri Database'den Aldık
+- Adisyon ekleme, Masa Açıp Kapatma, Masa Fiyatı Değiştirme vb. İşlemleri Database'e bağladık
+
+
 ## 11.Ders İşlenen Konular
 - OpenDialog ile Dosya Yakalama
 - EPPlus NuGet Package ile Excel okuma

@@ -1,6 +1,7 @@
 ﻿namespace MyRestaurantApp.Models;
 public sealed class Table
 {
+    public int Id { get; set; }
     public int Number { get; set; } //Masa numarası
     public bool IsAvailable { get; set; } //Masa müsait mi
     public bool IsPayment { get; set; } //Ödemesi Yapıldı mı

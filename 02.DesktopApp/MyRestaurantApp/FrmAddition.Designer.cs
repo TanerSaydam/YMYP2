@@ -65,7 +65,6 @@ partial class FrmAddition
         lstMenu.Font = new Font("Times New Roman", 24F, FontStyle.Regular, GraphicsUnit.Point);
         lstMenu.FormattingEnabled = true;
         lstMenu.ItemHeight = 36;
-        lstMenu.Items.AddRange(new object[] { "Tam İskender (175 ₺)", "1,5 İskender (225 ₺)", "Çorba  (75 ₺)", "Kola  (25 ₺)", "Fanta  (25 ₺)", "Ayran  (25 ₺)" });
         lstMenu.Location = new Point(11, 72);
         lstMenu.Name = "lstMenu";
         lstMenu.Size = new Size(550, 580);
@@ -102,6 +101,7 @@ partial class FrmAddition
         lbTotal.TabIndex = 1;
         lbTotal.Text = "100,00 ₺";
         lbTotal.TextAlign = ContentAlignment.MiddleCenter;
+        lbTotal.MouseDoubleClick += lbTotal_MouseDoubleClick;
         // 
         // lstAddition
         // 
@@ -112,6 +112,7 @@ partial class FrmAddition
         lstAddition.Name = "lstAddition";
         lstAddition.Size = new Size(318, 544);
         lstAddition.TabIndex = 0;
+        lstAddition.MouseDoubleClick += lstAddition_MouseDoubleClick;
         // 
         // btnTableIsAvailable
         // 
@@ -140,6 +141,8 @@ partial class FrmAddition
         Name = "FrmAddition";
         StartPosition = FormStartPosition.CenterScreen;
         Text = "Addition Form";
+        FormClosed += FrmAddition_FormClosed;
+        Load += FrmAddition_Load;
         groupBox1.ResumeLayout(false);
         groupBox1.PerformLayout();
         groupBox2.ResumeLayout(false);
