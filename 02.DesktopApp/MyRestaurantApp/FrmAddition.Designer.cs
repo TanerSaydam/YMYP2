@@ -101,7 +101,7 @@ partial class FrmAddition
         lbTotal.TabIndex = 1;
         lbTotal.Text = "100,00 ₺";
         lbTotal.TextAlign = ContentAlignment.MiddleCenter;
-        lbTotal.MouseDoubleClick += lbTotal_MouseDoubleClick;
+        lbTotal.Click += lbTotal_Click;
         // 
         // lstAddition
         // 
@@ -110,6 +110,7 @@ partial class FrmAddition
         lstAddition.ItemHeight = 36;
         lstAddition.Location = new Point(5, 20);
         lstAddition.Name = "lstAddition";
+        lstAddition.SelectionMode = SelectionMode.MultiSimple;
         lstAddition.Size = new Size(318, 544);
         lstAddition.TabIndex = 0;
         lstAddition.MouseDoubleClick += lstAddition_MouseDoubleClick;

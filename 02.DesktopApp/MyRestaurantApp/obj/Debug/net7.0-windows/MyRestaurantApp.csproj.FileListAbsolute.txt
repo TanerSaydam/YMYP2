@@ -55,3 +55,6 @@ C:\YMYP2\02.DesktopApp\MyRestaurantApp\bin\Debug\net7.0-windows\runtimes\win\lib
 C:\YMYP2\02.DesktopApp\MyRestaurantApp\obj\Debug\net7.0-windows\MyRestaurantApp.csproj.AssemblyReference.cache
 C:\YMYP2\02.DesktopApp\MyRestaurantApp\obj\Debug\net7.0-windows\MyRestaurantApp.csproj.CopyComplete
 C:\YMYP2\02.DesktopApp\MyRestaurantApp\obj\Debug\net7.0-windows\MyRestaurantApp.FrmProductVariants.resources
+C:\YMYP2\02.DesktopApp\MyRestaurantApp\obj\Debug\net7.0-windows\MyRestaurantApp.FrmPayment.resources
+C:\YMYP2\02.DesktopApp\MyRestaurantApp\bin\Debug\net7.0-windows\Iyzipay.dll
+C:\YMYP2\02.DesktopApp\MyRestaurantApp\bin\Debug\net7.0-windows\Newtonsoft.Json.dll

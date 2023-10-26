@@ -1,5 +1,10 @@
 # YMYP 2.Eğitim
 
+## 13.Ders İşlenen Konular
+- Iyzico Entegrasyonu
+- Ödeme Formunun Tasarlanması
+- Iyzico ile Ödeme İşlemi (Ödeme Sonucunda Hata var. Sonraki ders çözeceğiz)
+
 ## 12.Ders İşlenen Konular
 - ORM'den Kısaca Bahsettik
 - Index / Unique Kısmından Kabaca Örnek ile Bahsettik

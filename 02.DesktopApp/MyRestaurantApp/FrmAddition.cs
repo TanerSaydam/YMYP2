@@ -1,6 +1,11 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Iyzipay;
+using Iyzipay.Model;
+using Iyzipay.Request;
+using Microsoft.EntityFrameworkCore;
 using MyRestaurantApp.Context;
+using MyRestaurantApp.DTOs;
 using MyRestaurantApp.Models;
+using System.Net;
 using static System.Net.Mime.MediaTypeNames;
 
 namespace MyRestaurantApp;
@@ -33,7 +38,7 @@ public partial class FrmAddition : Form
             context.Additions
                 .Where(p => p.TableId == table.Id)
                 .Include(p => p.Product)
-                .Include(p=> p.ProductVariant)
+                .Include(p => p.ProductVariant)
                 .ToList();
 
         foreach (var addition in additions)
@@ -98,7 +103,8 @@ public partial class FrmAddition : Form
                 IsPaid = false,
                 Price = product.Price,
                 ProductId = product.Id,
-                TableId = table.Id
+                TableId = table.Id,
+                ProductVariantId = null
             };
 
             additions.Add(addition);
@@ -184,16 +190,73 @@ public partial class FrmAddition : Form
         }
     }
 
-    private void PayTableAmount()
+    public bool PayTableAmount(IyzipayRequest iyzipayRequest)
     {
+        if(iyzipayRequest.Cash + iyzipayRequest.CreditCartAmount <= 0)
+        {
+            MessageBox.Show("Ödeme tutarı 0 olamaz!","", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            return false;
+        }
+
+        if (iyzipayRequest.Cash + iyzipayRequest.CreditCartAmount != (table.TotalAmount - table.PaidAmount))
+        {
+            MessageBox.Show("Ödeme tutarı ödenecek tutardan farklı olamaz!", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            return false;
+        }
+
         if (table.IsAvailable == false && table.TotalAmount > table.PaidAmount)
         {
             if (MessageBox.Show(
-                    "Masanın hesabını kapatmak istiyor musunuz?",
-                    "Hesabı Öde",
-                    MessageBoxButtons.YesNo,
-                    MessageBoxIcon.Question) == DialogResult.Yes)
+                   "Masanın hesabını kapatmak istiyor musunuz?",
+                   "Hesabı Öde",
+                   MessageBoxButtons.YesNo,
+                   MessageBoxIcon.Question) == DialogResult.Yes)
             {
+                if (iyzipayRequest.CreditCartAmount > 0)
+                {
+                    try
+                    {
+                        List<BasketItem> basketItems = new();
+                        decimal ccAmount = iyzipayRequest.CreditCartAmount;
+                        int index = -1;
+                        while (ccAmount > 0)
+                        {
+                            index++;
+                            var data = this.additions[index];
+
+                            string productName = "";
+                            if (data.ProductVariantId is not null) productName = data.ProductVariant.Name;
+                            else productName = data.Product.Name;
+
+
+
+                            BasketItem basketItem = new BasketItem();
+                            basketItem.Id = index.ToString();
+                            basketItem.Name = productName;
+                            basketItem.Category1 = "Category1";
+                            basketItem.Category2 = "Category2";
+                            basketItem.ItemType = BasketItemType.PHYSICAL.ToString();
+                            basketItem.Price = (data.Price > ccAmount ? ccAmount : data.Price).ToString();
+
+                            basketItems.Add(basketItem);
+
+                            ccAmount -= data.Price;
+                        }
+
+                        var result = PayWithIyzico(iyzipayRequest, basketItems);
+                        if (!result)
+                            return false;
+                        else
+                            return true;
+
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message, "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return false;
+                    }
+                }
+
                 ApplicationDbContext context = new();
                 table.TotalAmount = 0;
                 table.PaidAmount = 0;
@@ -206,6 +269,7 @@ public partial class FrmAddition : Form
                         TableId = table.Id,
                         PaymentDate = DateTime.Now,
                         Price = addition.Price,
+                        PaymentType = iyzipayRequest.Cash > 0 ? PaymentType.Cash : PaymentType.CreditCart,
                         ProductId = addition.ProductId,
                         ProductVariantId = addition.ProductVariantId
                     };
@@ -224,13 +288,52 @@ public partial class FrmAddition : Form
                 changeBtnTableIsAvailableProperties();
 
                 lbTotal.Text = 0.ToString("C2");
+
+                return true;
             }
         }
+        
+        
+        return false;
     }
 
-    private void lbTotal_MouseDoubleClick(object sender, MouseEventArgs e)
+    private bool PayWithIyzico(IyzipayRequest iyzipayRequest,
+    List<BasketItem> basketItems)
     {
-        PayTableAmount();
+        //iyzico ile gerçekten çalışmaya başarsanız bu kısmı değiştirmeniz yeterli.
+        var options = new Options()
+        {
+            ApiKey = "sandbox-uKTe5VmnUQMQVpyGRCbMqZQOjTCyb0yM",
+            SecretKey = "sandbox-WyungnQ9HfKf0SCgY66gqkL5J5PCvhFb",
+            BaseUrl = "https://sandbox-api.iyzipay.com"
+        };
+
+        CreatePaymentRequest request = new CreatePaymentRequest();
+        request.Locale = Locale.TR.ToString();
+        request.ConversationId = Guid.NewGuid().ToString();
+        request.Price = iyzipayRequest.CreditCartAmount.ToString(); //ödeme tutarımız
+        request.PaidPrice = iyzipayRequest.CreditCartAmount.ToString(); //kullanıcın ödeyeceğiz komisyonlu
+        request.Currency = Currency.TRY.ToString();
+        request.Installment = 1;
+        request.BasketId = Guid.NewGuid().ToString(); //sipariş numarası
+        request.PaymentChannel = PaymentChannel.WEB.ToString();
+        request.PaymentGroup = PaymentGroup.PRODUCT.ToString();
+
+        request.PaymentCard = iyzipayRequest.PaymentCard;
+        request.Buyer = iyzipayRequest.Buyer;
+        request.ShippingAddress = iyzipayRequest.ShippingAddress;
+        request.BillingAddress = iyzipayRequest.BillingAddress;
+        request.BasketItems = basketItems;
+
+        Payment payment = Payment.Create(request, options); //ödeme işlemini gerçekleştir
+
+        if(payment.Status != "success")
+        {
+            MessageBox.Show(payment.ErrorMessage, "Hata!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            return false;
+        }
+
+        return payment.Status == "success";
     }
 
     private void FrmAddition_FormClosed(object sender, FormClosedEventArgs e)
@@ -240,11 +343,11 @@ public partial class FrmAddition : Form
 
     private void RemoveProductInAddition(string name)
     {
-        Product product = 
+        Product product =
             products
-                .Where(p => 
-                    p.Name == name || 
-                    p.ProductVariants.Any(p=> p.Name == name)).FirstOrDefault();
+                .Where(p =>
+                    p.Name == name ||
+                    p.ProductVariants.Any(p => p.Name == name)).FirstOrDefault();
         if (product is null)
         {
             return;
@@ -274,5 +377,11 @@ public partial class FrmAddition : Form
     {
         string text = (sender as ListBox).Text;
         RemoveProductInAddition(text);
+    }
+
+    private void lbTotal_Click(object sender, EventArgs e)
+    {
+        FrmPayment frmPayment = new(lbTotal.Text, this);
+        frmPayment.ShowDialog();
     }
 }

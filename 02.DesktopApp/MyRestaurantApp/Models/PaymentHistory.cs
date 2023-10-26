@@ -10,4 +10,11 @@ public sealed class PaymentHistory
     public decimal Price { get; set; }
     public int? ProductVariantId { get; set; }
     public ProductVariant? ProductVariant { get; set; }
+    public PaymentType PaymentType { get; set; }
 }
+
+public enum PaymentType
+{
+    Cash=0,
+    CreditCart=1
+};

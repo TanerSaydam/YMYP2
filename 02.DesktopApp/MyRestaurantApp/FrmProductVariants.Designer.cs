@@ -52,7 +52,7 @@ partial class FrmProductVariants
         Margin = new Padding(5, 6, 5, 6);
         Name = "FrmProductVariants";
         StartPosition = FormStartPosition.CenterScreen;
-        Text = "FrmProductVariants";
+        Text = "Ürün Varyantları";
         FormClosed += FrmProductVariants_FormClosed;
         ResumeLayout(false);
     }
