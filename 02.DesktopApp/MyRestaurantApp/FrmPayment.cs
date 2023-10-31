@@ -3,6 +3,7 @@ using Iyzipay.Model;
 using MyRestaurantApp.DTOs;
 
 namespace MyRestaurantApp;
+
 public partial class FrmPayment : Form
 {
     private readonly FrmAddition _frmAdition;
@@ -12,27 +13,37 @@ public partial class FrmPayment : Form
         InitializeComponent();
         lbTotal.Text = total;
         _frmAdition = frmAddition;
-        this.Size = new System.Drawing.Size(394, 290);
-        this.Location = new System.Drawing.Point(this.Location.X, this.Location.Y + 245);
+        gbCC.Visible = true;
+        gbCC.Enabled = false;
+        //this.Size = new System.Drawing.Size(394, 290);
+        //this.Location = new System.Drawing.Point(this.Location.X, this.Location.Y + 245);
     }
 
     private void cbCC_CheckedChanged(object sender, EventArgs e)
     {
         if (cbCC.Checked)
         {
-            gbCC.Visible = true;
-            btnMakeThePayment.Location = new System.Drawing.Point(12, 537);
-            gbCC.Location = new System.Drawing.Point(9, 197);
-            this.Size = new System.Drawing.Size(394, 635);
-            this.Location = new System.Drawing.Point(this.Location.X, this.Location.Y - 245);
+            gbCC.Enabled = true;
         }
         else
         {
-            gbCC.Visible = false;
-            btnMakeThePayment.Location = new System.Drawing.Point(9, 197);
-            this.Size = new System.Drawing.Size(394, 290);
-            this.Location = new System.Drawing.Point(this.Location.X, this.Location.Y + 245);
+            gbCC.Enabled = false;
         }
+        //if (cbCC.Checked)
+        //{
+        //    gbCC.Visible = true;
+        //    btnMakeThePayment.Location = new System.Drawing.Point(13, 535);
+        //    gbCC.Location = new System.Drawing.Point(9, 197);
+        //    Size = new System.Drawing.Size(396, 639);
+        //    //Location = new System.Drawing.Point(Location.X, Location.Y - 245);
+        //}
+        //else
+        //{
+        //    gbCC.Visible = false;
+        //    btnMakeThePayment.Location = new System.Drawing.Point(9, 197);
+        //    Size = new System.Drawing.Size(394, 290);
+        //    //Location = new System.Drawing.Point(Location.X, Location.Y + 245);
+        //}
     }
 
     private void btnMakeThePayment_Click(object sender, EventArgs e)
@@ -87,12 +98,11 @@ public partial class FrmPayment : Form
             ShippingAddress: shippingAddress,
             BillingAddress: billingAddress);
 
-        var result = this._frmAdition.PayTableAmount(iyzipayRequest);
-        if(result) this.Close();
+        var result = _frmAdition.PayTableAmount(iyzipayRequest);
+        if (result) Close();
     }
 
     private void FrmPayment_Load(object sender, EventArgs e)
     {
-
     }
 }

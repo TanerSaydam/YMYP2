@@ -1,5 +1,14 @@
 # YMYP 2.Eğitim
 
+## 14.Ders İşlenen Konular
+- Iyzico ile Ödeme İşlemindeki Hatayı Düzelttik
+- Ürün ve Ürün Varyantı Ekleme Sayfası Yaptık
+- Seed Data için Menüye Seçenek Ekledik
+- Rapor Sayfası Hazırladık
+- Raporu Excel Çıktısı Olarak Aldık 
+        (full Detaylı değil. Excel için kullandığımız kütüphaneye aşağıdaki dökümantasyondan bakıp isterseniz detaylı kullanımını inceleyebilirsiniz.: 
+        https://www.epplussoftware.com/en/Developers/)
+
 ## 13.Ders İşlenen Konular
 - Iyzico Entegrasyonu
 - Ödeme Formunun Tasarlanması

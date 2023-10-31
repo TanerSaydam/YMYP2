@@ -10,11 +10,11 @@
         "projectUniqueName": "C:\\YMYP2\\02.DesktopApp\\MyRestaurantApp\\MyRestaurantApp.csproj",
         "projectName": "MyRestaurantApp",
         "projectPath": "C:\\YMYP2\\02.DesktopApp\\MyRestaurantApp\\MyRestaurantApp.csproj",
-        "packagesPath": "C:\\Users\\taner\\.nuget\\packages\\",
+        "packagesPath": "C:\\Users\\tugay\\.nuget\\packages\\",
         "outputPath": "C:\\YMYP2\\02.DesktopApp\\MyRestaurantApp\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\taner\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\tugay\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -40,11 +40,21 @@
         "net7.0-windows7.0": {
           "targetAlias": "net7.0-windows",
           "dependencies": {
+            "EPPlus": {
+              "target": "Package",
+              "version": "[7.0.0, )"
+            },
             "Iyzipay": {
               "target": "Package",
               "version": "[2.1.55, )"
             },
             "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[7.0.13, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
               "target": "Package",
               "version": "[7.0.13, )"
             }

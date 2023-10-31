@@ -35,18 +35,18 @@ partial class FrmProductVariants
         // 
         lstMenu.Font = new Font("Times New Roman", 24F, FontStyle.Regular, GraphicsUnit.Point);
         lstMenu.FormattingEnabled = true;
-        lstMenu.ItemHeight = 36;
+        lstMenu.ItemHeight = 46;
         lstMenu.Location = new Point(12, 12);
         lstMenu.Name = "lstMenu";
-        lstMenu.Size = new Size(212, 400);
+        lstMenu.Size = new Size(410, 418);
         lstMenu.TabIndex = 2;
         lstMenu.MouseDoubleClick += lstMenu_MouseDoubleClick;
         // 
         // FrmProductVariants
         // 
-        AutoScaleDimensions = new SizeF(12F, 30F);
+        AutoScaleDimensions = new SizeF(14F, 36F);
         AutoScaleMode = AutoScaleMode.Font;
-        ClientSize = new Size(236, 438);
+        ClientSize = new Size(434, 438);
         Controls.Add(lstMenu);
         Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
         Margin = new Padding(5, 6, 5, 6);

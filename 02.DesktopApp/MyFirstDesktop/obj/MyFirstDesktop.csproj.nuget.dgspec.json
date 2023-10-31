@@ -10,11 +10,11 @@
         "projectUniqueName": "C:\\YMYP2\\02.DesktopApp\\MyFirstDesktop\\MyFirstDesktop.csproj",
         "projectName": "MyFirstDesktop",
         "projectPath": "C:\\YMYP2\\02.DesktopApp\\MyFirstDesktop\\MyFirstDesktop.csproj",
-        "packagesPath": "C:\\Users\\taner\\.nuget\\packages\\",
+        "packagesPath": "C:\\Users\\tugay\\.nuget\\packages\\",
         "outputPath": "C:\\YMYP2\\02.DesktopApp\\MyFirstDesktop\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\taner\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\tugay\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

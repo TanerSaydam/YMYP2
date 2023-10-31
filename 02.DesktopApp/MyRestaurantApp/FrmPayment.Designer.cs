@@ -65,18 +65,18 @@ partial class FrmPayment
         // 
         // txtCash
         // 
-        txtCash.Location = new Point(12, 126);
+        txtCash.Location = new Point(18, 134);
         txtCash.Name = "txtCash";
-        txtCash.Size = new Size(340, 32);
+        txtCash.Size = new Size(340, 38);
         txtCash.TabIndex = 3;
         txtCash.Text = "0";
         // 
         // label1
         // 
         label1.AutoSize = true;
-        label1.Location = new Point(12, 100);
+        label1.Location = new Point(17, 100);
         label1.Name = "label1";
-        label1.Size = new Size(56, 23);
+        label1.Size = new Size(73, 31);
         label1.TabIndex = 4;
         label1.Text = "Nakit";
         // 
@@ -85,7 +85,7 @@ partial class FrmPayment
         label2.AutoSize = true;
         label2.Location = new Point(6, 257);
         label2.Name = "label2";
-        label2.Size = new Size(54, 23);
+        label2.Size = new Size(72, 31);
         label2.TabIndex = 6;
         label2.Text = "Tutar";
         // 
@@ -93,18 +93,19 @@ partial class FrmPayment
         // 
         txtCC.Location = new Point(6, 283);
         txtCC.Name = "txtCC";
-        txtCC.Size = new Size(326, 32);
+        txtCC.Size = new Size(326, 38);
         txtCC.TabIndex = 5;
         txtCC.Text = "0";
         // 
         // btnMakeThePayment
         // 
-        btnMakeThePayment.Location = new Point(9, 197);
+        btnMakeThePayment.BackColor = Color.Moccasin;
+        btnMakeThePayment.Location = new Point(12, 554);
         btnMakeThePayment.Name = "btnMakeThePayment";
         btnMakeThePayment.Size = new Size(357, 47);
         btnMakeThePayment.TabIndex = 7;
         btnMakeThePayment.Text = "Ödeme Yap";
-        btnMakeThePayment.UseVisualStyleBackColor = true;
+        btnMakeThePayment.UseVisualStyleBackColor = false;
         btnMakeThePayment.Click += btnMakeThePayment_Click;
         // 
         // label3
@@ -112,7 +113,7 @@ partial class FrmPayment
         label3.AutoSize = true;
         label3.Location = new Point(6, 29);
         label3.Name = "label3";
-        label3.Size = new Size(138, 23);
+        label3.Size = new Size(184, 31);
         label3.TabIndex = 9;
         label3.Text = "Kart Sahibi Adı";
         // 
@@ -120,7 +121,7 @@ partial class FrmPayment
         // 
         txtCCOwner.Location = new Point(6, 55);
         txtCCOwner.Name = "txtCCOwner";
-        txtCCOwner.Size = new Size(326, 32);
+        txtCCOwner.Size = new Size(326, 38);
         txtCCOwner.TabIndex = 8;
         txtCCOwner.Text = "John Doe";
         // 
@@ -129,7 +130,7 @@ partial class FrmPayment
         label4.AutoSize = true;
         label4.Location = new Point(6, 99);
         label4.Name = "label4";
-        label4.Size = new Size(133, 23);
+        label4.Size = new Size(172, 31);
         label4.TabIndex = 11;
         label4.Text = "Kart Numarası";
         // 
@@ -137,7 +138,7 @@ partial class FrmPayment
         // 
         txtCCNumber1.Location = new Point(6, 125);
         txtCCNumber1.Name = "txtCCNumber1";
-        txtCCNumber1.Size = new Size(79, 32);
+        txtCCNumber1.Size = new Size(79, 38);
         txtCCNumber1.TabIndex = 10;
         txtCCNumber1.Text = "5528";
         // 
@@ -145,7 +146,7 @@ partial class FrmPayment
         // 
         txtCCNumber2.Location = new Point(91, 125);
         txtCCNumber2.Name = "txtCCNumber2";
-        txtCCNumber2.Size = new Size(79, 32);
+        txtCCNumber2.Size = new Size(79, 38);
         txtCCNumber2.TabIndex = 12;
         txtCCNumber2.Text = "7900";
         // 
@@ -153,7 +154,7 @@ partial class FrmPayment
         // 
         txtCCNumber3.Location = new Point(176, 125);
         txtCCNumber3.Name = "txtCCNumber3";
-        txtCCNumber3.Size = new Size(79, 32);
+        txtCCNumber3.Size = new Size(79, 38);
         txtCCNumber3.TabIndex = 13;
         txtCCNumber3.Text = "0000";
         // 
@@ -161,7 +162,7 @@ partial class FrmPayment
         // 
         txtCCNumber4.Location = new Point(261, 125);
         txtCCNumber4.Name = "txtCCNumber4";
-        txtCCNumber4.Size = new Size(79, 32);
+        txtCCNumber4.Size = new Size(79, 38);
         txtCCNumber4.TabIndex = 14;
         txtCCNumber4.Text = "0008";
         // 
@@ -181,7 +182,7 @@ partial class FrmPayment
         gbCC.Controls.Add(txtCCNumber3);
         gbCC.Controls.Add(label4);
         gbCC.Controls.Add(txtCCNumber2);
-        gbCC.Location = new Point(13, 251);
+        gbCC.Location = new Point(12, 205);
         gbCC.Name = "gbCC";
         gbCC.Size = new Size(353, 332);
         gbCC.TabIndex = 15;
@@ -194,7 +195,7 @@ partial class FrmPayment
         label6.AutoSize = true;
         label6.Location = new Point(209, 171);
         label6.Name = "label6";
-        label6.Size = new Size(53, 23);
+        label6.Size = new Size(69, 31);
         label6.TabIndex = 19;
         label6.Text = "CVC";
         // 
@@ -202,7 +203,7 @@ partial class FrmPayment
         // 
         txtCVC.Location = new Point(210, 197);
         txtCVC.Name = "txtCVC";
-        txtCVC.Size = new Size(79, 32);
+        txtCVC.Size = new Size(79, 38);
         txtCVC.TabIndex = 18;
         txtCVC.Text = "123";
         // 
@@ -210,7 +211,7 @@ partial class FrmPayment
         // 
         txtExpireMounth.Location = new Point(6, 197);
         txtExpireMounth.Name = "txtExpireMounth";
-        txtExpireMounth.Size = new Size(79, 32);
+        txtExpireMounth.Size = new Size(79, 38);
         txtExpireMounth.TabIndex = 15;
         txtExpireMounth.Text = "12";
         // 
@@ -219,7 +220,7 @@ partial class FrmPayment
         label5.AutoSize = true;
         label5.Location = new Point(6, 171);
         label5.Name = "label5";
-        label5.Size = new Size(138, 23);
+        label5.Size = new Size(182, 31);
         label5.TabIndex = 16;
         label5.Text = "Son Kul. Tarihi";
         // 
@@ -227,16 +228,16 @@ partial class FrmPayment
         // 
         txtExpireYear.Location = new Point(91, 197);
         txtExpireYear.Name = "txtExpireYear";
-        txtExpireYear.Size = new Size(79, 32);
+        txtExpireYear.Size = new Size(79, 38);
         txtExpireYear.TabIndex = 17;
         txtExpireYear.Text = "2030";
         // 
         // cbCC
         // 
         cbCC.AutoSize = true;
-        cbCC.Location = new Point(12, 164);
+        cbCC.Location = new Point(18, 164);
         cbCC.Name = "cbCC";
-        cbCC.Size = new Size(154, 27);
+        cbCC.Size = new Size(200, 35);
         cbCC.TabIndex = 20;
         cbCC.Text = "K.K İle Ödeme";
         cbCC.UseVisualStyleBackColor = true;
@@ -244,9 +245,9 @@ partial class FrmPayment
         // 
         // FrmPayment
         // 
-        AutoScaleDimensions = new SizeF(12F, 23F);
+        AutoScaleDimensions = new SizeF(14F, 29F);
         AutoScaleMode = AutoScaleMode.Font;
-        ClientSize = new Size(378, 596);
+        ClientSize = new Size(381, 613);
         Controls.Add(btnMakeThePayment);
         Controls.Add(cbCC);
         Controls.Add(label1);

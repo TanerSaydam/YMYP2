@@ -1,4 +1,5 @@
-﻿using Iyzipay;
+﻿using Azure.Core;
+using Iyzipay;
 using Iyzipay.Model;
 using Iyzipay.Request;
 using Microsoft.EntityFrameworkCore;
@@ -9,15 +10,20 @@ using System.Net;
 using static System.Net.Mime.MediaTypeNames;
 
 namespace MyRestaurantApp;
+
 public partial class FrmAddition : Form
 {
+    private ApplicationDbContext context = new();
+
     //tekrar yaz-sil-yaz
-    string _tableName = string.Empty;
-    List<Product> products = new();
-    List<Addition> additions = new();
-    int tableNumber = 0;
-    Table table = new();
-    FrmRestaurant _frmRestaurant = new();
+    private string _tableName = string.Empty;
+
+    private List<Product> products = new();
+    private List<Addition> additions = new();
+    private int tableNumber = 0;
+    private Table table = new();
+    private FrmRestaurant _frmRestaurant = new();
+
     public FrmAddition(string tableName, FrmRestaurant restaurantForm)
     {
         InitializeComponent();
@@ -30,7 +36,6 @@ public partial class FrmAddition : Form
 
         btnTableIsAvailable.BackColor = table.IsAvailable ? Color.DarkSeaGreen : Color.IndianRed;
         btnTableIsAvailable.Text = table.IsAvailable ? "Masa Müsait" : "Dolu";
-
 
         ApplicationDbContext context = new();
 
@@ -64,7 +69,6 @@ public partial class FrmAddition : Form
         }
 
         lbTotal.Text = table.TotalAmount.ToString("C2");
-
     }
 
     private void lstMenu_MouseDoubleClick(object sender, MouseEventArgs e)
@@ -133,7 +137,6 @@ public partial class FrmAddition : Form
         }
         context.Tables.Update(table);
 
-
         Addition addition = new()
         {
             AdditionDate = DateTime.Now,
@@ -192,9 +195,9 @@ public partial class FrmAddition : Form
 
     public bool PayTableAmount(IyzipayRequest iyzipayRequest)
     {
-        if(iyzipayRequest.Cash + iyzipayRequest.CreditCartAmount <= 0)
+        if (iyzipayRequest.Cash + iyzipayRequest.CreditCartAmount <= 0)
         {
-            MessageBox.Show("Ödeme tutarı 0 olamaz!","", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            MessageBox.Show("Ödeme tutarı 0 olamaz!", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             return false;
         }
 
@@ -225,18 +228,31 @@ public partial class FrmAddition : Form
                             var data = this.additions[index];
 
                             string productName = "";
-                            if (data.ProductVariantId is not null) productName = data.ProductVariant.Name;
-                            else productName = data.Product.Name;
-
-
+                            if (data.ProductVariantId is not null)
+                            {
+                                productName =
+                                    context.ProductVariants
+                                    .Where(p => p.Id == data.ProductVariantId)
+                                    .AsNoTracking()
+                                    .FirstOrDefault()
+                                    .Name;
+                            }
+                            else
+                            {
+                                productName = context.Products
+                                    .Where(p => p.Id == data.ProductId)
+                                    .AsNoTracking()
+                                    .FirstOrDefault()
+                                    .Name;
+                            }
 
                             BasketItem basketItem = new BasketItem();
-                            basketItem.Id = index.ToString();
+                            basketItem.Id = Guid.NewGuid().ToString();
                             basketItem.Name = productName;
                             basketItem.Category1 = "Category1";
                             basketItem.Category2 = "Category2";
                             basketItem.ItemType = BasketItemType.PHYSICAL.ToString();
-                            basketItem.Price = (data.Price > ccAmount ? ccAmount : data.Price).ToString();
+                            basketItem.Price = (data.Price > ccAmount ? ccAmount : data.Price).ToString().Replace(",", ".");
 
                             basketItems.Add(basketItem);
 
@@ -246,9 +262,6 @@ public partial class FrmAddition : Form
                         var result = PayWithIyzico(iyzipayRequest, basketItems);
                         if (!result)
                             return false;
-                        else
-                            return true;
-
                     }
                     catch (Exception ex)
                     {
@@ -257,7 +270,6 @@ public partial class FrmAddition : Form
                     }
                 }
 
-                ApplicationDbContext context = new();
                 table.TotalAmount = 0;
                 table.PaidAmount = 0;
 
@@ -282,6 +294,8 @@ public partial class FrmAddition : Form
 
                 context.SaveChanges();
 
+                additions = new();
+
                 lstAddition.Items.Clear();
 
                 _frmRestaurant.ChangeTableAvailability(tableNumber);
@@ -292,8 +306,7 @@ public partial class FrmAddition : Form
                 return true;
             }
         }
-        
-        
+
         return false;
     }
 
@@ -327,7 +340,7 @@ public partial class FrmAddition : Form
 
         Payment payment = Payment.Create(request, options); //ödeme işlemini gerçekleştir
 
-        if(payment.Status != "success")
+        if (payment.Status != "success")
         {
             MessageBox.Show(payment.ErrorMessage, "Hata!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             return false;
