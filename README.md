@@ -1,4 +1,10 @@
 # YMYP 2.Eğitim
+## 15.Ders İşlenen Konular
+- Kariyer Yol Haritası
+- HTML Nedir
+- Örnek HTML Kodları Kullanımı
+- Örnek Portfolio Sitesi
+- Örnek CSS'ler ile Ön Bakış
 
 ## 14.Ders İşlenen Konular
 - Iyzico ile Ödeme İşlemindeki Hatayı Düzelttik
