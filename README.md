@@ -1,4 +1,12 @@
 # YMYP 2.Eğitim
+## 16.Ders İşlenen Konular
+- CSS Nedir?
+- CSS Syntax Yapısı
+- En Çok Kullanacağımız CSS Propertyleri
+- Örnek Navbar ve Sidebar Tasarımı
+- Örnek Layout ve Responsive Yapısı
+- Hamburger Menü Tasarımı
+
 ## 15.Ders İşlenen Konular
 - Kariyer Yol Haritası
 - HTML Nedir

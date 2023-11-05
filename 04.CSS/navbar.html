@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+           position: relative; 
+           background-image: url("https://png.pngtree.com/thumb_back/fh260/background/20200714/pngtree-modern-double-color-futuristic-neon-background-image_351866.jpg");
+        }
+
+        nav {            
+            width: 92%;
+            position: fixed;
+            background-color: #f1f1f1;
+            /* background-color: transparent; */
+            display: flex;
+            justify-content: space-between;
+            border: 1px solid #ccc;
+            padding-left: 20px;
+            padding-right: 20px;
+            align-items: center;
+        }       
+
+        div{
+            background-color: #ccc;
+        }
+
+        .head{
+            padding-top: 100px;
+        }
+
+        ul {
+            display: flex;
+            gap: 10px;
+            list-style: none;
+        }
+
+        ul li {
+            position: relative;           
+            padding: 8px;
+            border-radius: 10px;
+            cursor: pointer;
+            text-decoration: none;
+            overflow: hidden;            
+        }
+
+        ul li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            height: 2px;
+            background-color: black;
+            /* Use whatever color you want for the overline */
+            transform: scaleX(0);
+            transition: transform .5s ease;
+            /* Animate the transform property */
+            transform-origin: left;
+            /* Start the transform from the left */
+        }
+
+        ul li:hover::before {
+            transform: scaleX(1);
+            /* Scale the pseudo-element to full width on hover */
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <h1>Logo</h1>
+        <ul>
+            <li>Home</li>
+            <li>About</li>
+            <li>Contact</li>
+        </ul>
+    </nav>
+
+    <div>
+        <p class="head">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laudantium debitis architecto totam necessitatibus repellat numquam tempore quibusdam maiores eligendi ut culpa provident nam porro nihil minus, labore exercitationem, saepe voluptatem.</p>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laudantium debitis architecto totam necessitatibus repellat numquam tempore quibusdam maiores eligendi ut culpa provident nam porro nihil minus, labore exercitationem, saepe voluptatem.</p>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laudantium debitis architecto totam necessitatibus repellat numquam tempore quibusdam maiores eligendi ut culpa provident nam porro nihil minus, labore exercitationem, saepe voluptatem.</p>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjX_D_SgpvrbxJvTHKktYfIgS_q8hpj9MB_w&usqp=CAU" alt="">
+        <img src="https://bigumigu.com/wp-content/uploads/2023/02/koy-manzaralari_-bigumigu-403x211.jpeg" alt="">
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laudantium debitis architecto totam necessitatibus repellat numquam tempore quibusdam maiores eligendi ut culpa provident nam porro nihil minus, labore exercitationem, saepe voluptatem.</p>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laudantium debitis architecto totam necessitatibus repellat numquam tempore quibusdam maiores eligendi ut culpa provident nam porro nihil minus, labore exercitationem, saepe voluptatem.</p>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laudantium debitis architecto totam necessitatibus repellat numquam tempore quibusdam maiores eligendi ut culpa provident nam porro nihil minus, labore exercitationem, saepe voluptatem.</p>
+    </div>
+   
+</body>
+
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sidebar</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        body{
+            display: flex;
+            gap: 20px;
+            padding: 30px;
+        }
+
+        nav{
+            position: absolute;
+            top: 30px;
+            bottom: 30px;
+            width: 80px;
+            border: 1px solid;
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            justify-content: left;
+            align-items: left;
+        }
+
+        nav ul {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            list-style: none;
+            padding: 0px;
+        }
+
+        nav h1{
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        nav ul li{
+            position: relative;
+            padding: 5px 2px;
+            cursor: pointer;
+            /* border: 1px solid; */
+        }
+
+        nav ul li::after{
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            left: 0;
+            height: 2px;
+            background-color: black;
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform .4s linear;
+        }
+
+        nav ul li:hover::after{
+            transform: scaleX(1);
+        }
+
+        section{
+            border: 1px solid;
+            padding: 10px;
+            margin-left: 120px;
+        }
+
+    </style>
+</head>
+<body>
+    <nav>
+        <h1>Logo</h1>
+        <ul>
+            <li>Home</li>
+            <li>About</li>
+            <li>Contact</li>
+        </ul>
+    </nav>
+
+    <section>
+        <h1>My HTML Page</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam rerum libero quia laborum asperiores modi cupiditate aliquid sit, in ullam, excepturi ad animi, officia dignissimos molestias aut inventore numquam vero?</p>
+    </section>
+
+    
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: #f1f1f1;
+            height: 95vh;
+            width: 95vw;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .spinner1{            
+            height: 50px;
+            width: 50px;
+            border: 4px solid blue;
+            border-radius: 70px;
+            border-left-color: transparent;
+            animation: spinner 1s linear infinite;
+        }
+
+        @keyframes spinner {
+            0% {transform: rotate(0deg);}
+            100% {transform: rotate(360deg);}
+        }
+
+
+        .spinner2{
+            position: relative;
+            height: 50px;
+            width: 50px;
+            background-color: red;
+            animation: spinner2 3s linear infinite;
+        }
+
+        @keyframes spinner2 {
+            0% {right: 0px; top: 0px;}
+            25% {right: 200px; top: 0px}
+            50% {right: 200px; top: 100px;}
+            75% {right: 0px; top: 100px;}
+            100% {top: 0px; right: 0px;}
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="spinner1"></div>
+
+    <div class="spinner2"></div>
+</body>
+</html>

@@ -1,0 +1,187 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    position: relative;
+    font-family: 'Poppins', sans-serif;
+    padding: 10px;
+}
+
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid ;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+nav ul{
+    display: flex;
+    list-style: none;
+}
+
+nav ul li{
+    cursor: pointer;
+    position: relative;    
+    padding: 5px;
+}
+
+nav ul li::after{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background-color: black;
+    transform: scaleX(0);
+    transition: all .2s linear;
+    transform-origin: left;
+}
+
+nav ul li:hover::after{
+    transform: scaleX(1);
+}
+
+.logo{
+    width: 100px;
+    height: 100px;
+    border-radius: 100px;
+    max-width: 100%;
+}
+
+.sidebar{
+    margin-top: 10px;
+    border-radius: 10px;
+    border: 1px solid;
+    height: 88vh;
+    display: flex;
+    flex-direction: column;    
+    align-items: center;
+    width: 15%;
+    float: left;
+    gap: 20px;
+    padding-top: 20px;
+}
+
+.sidebar div{
+    width: 100%;
+    height: 2px;
+    background-color: black;
+}
+
+.sidebar ul{
+    list-style: none;
+    display: flex;    
+    flex-direction: column;
+    gap: 10px;
+}
+
+.sidebar ul li{
+    padding: 10px;    
+    position: relative;
+    cursor: pointer;
+}
+
+.sidebar ul li::after{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    height: 2px;
+    background-color: black;
+    transform: scale(0);
+    transition: all .2s linear;
+    transform-origin: left;
+}
+
+.sidebar ul li:hover::after{
+    transform: scale(1);
+}
+
+.content{
+    width: 83%;
+    float: right;
+    padding: 20px;
+}
+
+.hamburger{    
+    display: none;
+}
+
+.hamburger-nav{
+    display: none;
+    position: absolute;    
+    flex-direction: column;
+    align-items: center;
+    gap:10px;
+    top: 55px;
+    width: 97%;
+    left: 10px;
+    height: 90vh;
+
+    background-color: black;
+    color: white;    
+}
+
+.checkbox-label{
+    cursor: pointer;
+    user-select: none;
+    outline: none;
+}
+
+#checkbox {
+    display: none; /* Checkbox'ı gizle */
+}
+  
+#checkbox:checked + .hamburger-nav {
+    display: flex; /* Checkbox işaretli olduğunda .hamburger-nav'ı göster */
+}
+
+.hamburger-main{
+    display: none;
+}
+
+@media screen and (max-width:1110px) {   
+    .sidebar{
+        width: 20%;
+    }
+
+    .content{
+        width: 80%;
+    }
+}
+
+@media screen and (max-width:750px) {  
+    .sidebar{
+        display: none;
+    }
+
+    nav{
+        display: none;
+    }
+
+    .hamburger-main{
+        display: block;
+    }
+
+    .content{
+        width: 100%;
+    }
+
+    .hamburger{
+        display: block;
+        font-size: x-large;
+    }
+
+    .menu{
+        display: none;
+    }   
+}
