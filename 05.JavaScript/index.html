@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript</title>  
+</head>
+<body>
+    <form onsubmit="add(event)">
+        <div>
+            Subject
+            <input type="text" value="Taner">
+        </div>
+        <div>
+            <button type="submit">Send</button>
+        </div>
+    </form>
+
+    <ul>
+
+    </ul>
+
+    <script>
+        //let const        
+        const el = document.querySelector("ul");
+        const inputEl = document.querySelector("input");  //referans 101      
+        const name = "asdasd";
+
+        function add(event){
+            event.preventDefault();
+            el.innerHTML += `<li>${inputEl.value}</li>`;
+            inputEl.value = "";
+            inputEl.focus();
+            //ters tırnak ctrl + alt + enterın yanındaki ya da üstündeki virgüle iki defa bas
+        }
+    </script>
+</body>
+</html>

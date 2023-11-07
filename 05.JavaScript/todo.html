@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo App</title>
+</head>
+<body>
+    <h1>Todo App</h1>
+    <hr>
+    <form onsubmit="save(event)">
+        <div>
+            Work
+            <input type="text" id="work">
+        </div>
+        <div>
+            Is Done
+            <input type="checkbox" id="isDone">
+        </div>
+        <div>
+            <button type="submit">Save</button>
+        </div>
+    </form>
+
+
+    <hr>
+
+    <table>
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Work</th>
+                <th>Is Done</th>
+                <th>Operations</th>
+            </tr>
+        </thead>
+        <tbody>
+            
+        </tbody>
+    </table>
+
+
+
+    <script>
+        const workEl = document.getElementById("work");
+        const isDoneEl = document.getElementById("isDone");
+        const tbodyEl = document.querySelector("tbody");
+
+        //let count = localStorage.getItem("count") ? localStorage.getItem("count") : 0;
+        let count = 0;
+
+        function save(e){
+            e.preventDefault(); //form elementinin default yenileme özelliğini kapatıyor!
+            //ternary operatörü
+            // şart ? doğruysa bunu yap : yanlışsa bunu yap
+
+            count++;
+
+            //localStorage.setItem("count", count);
+            tbodyEl.innerHTML += `
+            <tr>
+                <td>${count}</td>
+                <td>${workEl.value}</td>
+                <td>${isDoneEl.checked ? 'Done' : 'UnDone'}</td>
+                <td>
+                    <button>Edit</button>
+                    <button>Remove</button>
+                </td>
+            </tr>
+            `
+
+        }
+    </script>
+</body>
+</html>
