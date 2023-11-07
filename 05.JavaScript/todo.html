@@ -8,19 +8,40 @@
 <body>
     <h1>Todo App</h1>
     <hr>
-    <form onsubmit="save(event)">
-        <div>
-            Work
-            <input type="text" id="work">
-        </div>
-        <div>
-            Is Done
-            <input type="checkbox" id="isDone">
-        </div>
-        <div>
-            <button type="submit">Save</button>
-        </div>
-    </form>
+    <div id="save">
+        <h4>Save Form</h4>
+        <form onsubmit="save(event)">
+            <div>
+                Work
+                <input type="text" id="work">
+            </div>
+            <div>
+                Is Done
+                <input type="checkbox" id="isDone">
+            </div>
+            <div>
+                <button type="submit">Save</button>
+            </div>
+        </form>
+    </div>
+       
+    <div id="update" style="display: none;">
+        <h4>Update Form</h4>
+        <form onsubmit="update(event)">
+            <div>
+                Work
+                <input type="text" id="updateWork">
+            </div>
+            <div>
+                Is Done
+                <input type="checkbox" id="updateIsDone">
+            </div>
+            <div>
+                <button type="submit">Update</button>
+                <button type="button" onclick="cancel()">Cancel</button>
+            </div>
+        </form>
+    </div>
 
 
     <hr>
@@ -45,30 +66,94 @@
         const workEl = document.getElementById("work");
         const isDoneEl = document.getElementById("isDone");
         const tbodyEl = document.querySelector("tbody");
+        const updateFormEl = document.getElementById("update");
+        const saveFormEl = document.getElementById("save");
+        const updateWorkEl = document.getElementById("updateWork");
+        const updateIsDoneEl = document.getElementById("updateIsDone");
 
-        //let count = localStorage.getItem("count") ? localStorage.getItem("count") : 0;
-        let count = 0;
+        const todos = [];
+
+        let updateIndex = 0;
 
         function save(e){
-            e.preventDefault(); //form elementinin default yenileme özelliğini kapatıyor!
-            //ternary operatörü
-            // şart ? doğruysa bunu yap : yanlışsa bunu yap
+            e.preventDefault(); 
 
-            count++;
+            const obj = {
+                work: workEl.value,
+                isDone: isDoneEl.checked
+            }
 
-            //localStorage.setItem("count", count);
-            tbodyEl.innerHTML += `
-            <tr>
-                <td>${count}</td>
-                <td>${workEl.value}</td>
-                <td>${isDoneEl.checked ? 'Done' : 'UnDone'}</td>
-                <td>
-                    <button>Edit</button>
-                    <button>Remove</button>
-                </td>
-            </tr>
-            `
+            todos.push(obj);  
 
+            createTBodyHTMLUsingTodos();
+
+            workEl.value = "";
+            isDoneEl.checked = false;
+            workEl.focus();            
+        }
+
+        function edit(index){
+            updateIndex = index;
+
+            updateFormEl.style.display = "block";
+            saveFormEl.style.display = "none";
+
+            updateWorkEl.value = todos[index].work;
+            updateIsDoneEl.checked = todos[index].isDone;
+
+            const hideElements = document.querySelectorAll(".hide");
+            for(let el of hideElements){
+                el.style.display = "none";
+            }
+        }
+
+        function cancel(){      
+            updateFormEl.style.display = "none";
+            saveFormEl.style.display = "block";
+
+            const hideElements = document.querySelectorAll(".hide");
+            for(let el of hideElements){
+                el.style.display = "inline";
+            }
+        }
+
+        function update(e){
+            e.preventDefault();
+            
+            todos[updateIndex].work = updateWorkEl.value;
+            todos[updateIndex].isDone = updateIsDoneEl.checked;
+
+            cancel();
+            createTBodyHTMLUsingTodos();
+        }
+       
+        function remove(index){
+            const result = confirm("You want to delete this record?");
+            if(result){
+                todos.splice(index,1);
+                const el = document.getElementById('tr' + ((+index) + 1));
+                el.remove();
+                createTBodyHTMLUsingTodos();                
+            }            
+        }
+
+        function createTBodyHTMLUsingTodos(){
+            let text = "";
+                for(let i in todos){
+                text += `
+                <tr id="tr${+i + 1}">
+                    <td>${+i + 1}</td>
+                    <td>${todos[i].work}</td>
+                    <td>${todos[i].isDone ? 'Done' : 'UnDone'}</td>
+                    <td>
+                        <button class="hide" onclick="edit('${i}')">Edit</button>
+                        <button class="hide" onclick="remove('${i}')">Remove</button>
+                    </td>
+                </tr>
+                `
+                }
+
+                tbodyEl.innerHTML = text;
         }
     </script>
 </body>
