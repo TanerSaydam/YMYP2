@@ -65,22 +65,34 @@
     <script>
         const workEl = document.getElementById("work");
         const isDoneEl = document.getElementById("isDone");
-        const tbodyEl = document.querySelector("tbody");
+        const tbodyEl = document.querySelector("tbody");//$("#updateIsDone")
         const updateFormEl = document.getElementById("update");
         const saveFormEl = document.getElementById("save");
         const updateWorkEl = document.getElementById("updateWork");
-        const updateIsDoneEl = document.getElementById("updateIsDone");
+        const updateIsDoneEl = document.getElementById("updateIsDone"); 
 
-        const todos = [];
+        let todos = [];
 
         let updateIndex = 0;
+
+        getApiRequest();
+
+        function getApiRequest(){
+            fetch("https://jsonplaceholder.typicode.com/todos")
+            .then(res=> res.json())
+            .then(data => {
+                console.log(data);
+                todos = data;
+                createTBodyHTMLUsingTodos();
+            })
+        }
 
         function save(e){
             e.preventDefault(); 
 
             const obj = {
-                work: workEl.value,
-                isDone: isDoneEl.checked
+                title: workEl.value,
+                completed: isDoneEl.checked
             }
 
             todos.push(obj);  
@@ -98,8 +110,8 @@
             updateFormEl.style.display = "block";
             saveFormEl.style.display = "none";
 
-            updateWorkEl.value = todos[index].work;
-            updateIsDoneEl.checked = todos[index].isDone;
+            updateWorkEl.value = todos[index].title;
+            updateIsDoneEl.checked = todos[index].completed;
 
             const hideElements = document.querySelectorAll(".hide");
             for(let el of hideElements){
@@ -120,8 +132,8 @@
         function update(e){
             e.preventDefault();
             
-            todos[updateIndex].work = updateWorkEl.value;
-            todos[updateIndex].isDone = updateIsDoneEl.checked;
+            todos[updateIndex].title = updateWorkEl.value;
+            todos[updateIndex].completed = updateIsDoneEl.checked;
 
             cancel();
             createTBodyHTMLUsingTodos();
@@ -143,8 +155,8 @@
                 text += `
                 <tr id="tr${+i + 1}">
                     <td>${+i + 1}</td>
-                    <td>${todos[i].work}</td>
-                    <td>${todos[i].isDone ? 'Done' : 'UnDone'}</td>
+                    <td>${todos[i].title}</td>
+                    <td>${todos[i].completed ? 'Done' : 'UnDone'}</td>
                     <td>
                         <button class="hide" onclick="edit('${i}')">Edit</button>
                         <button class="hide" onclick="remove('${i}')">Remove</button>

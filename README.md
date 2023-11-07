@@ -1,4 +1,11 @@
 # YMYP 2.Eğitim
+## 17.Ders İşlenen Konular
+- JavaScript Syntax Yapısı
+- Elemente Ulaşma, Elemente Müdahele Etme
+- Element üzerinden CRUD İşlemleri
+- Api Bağlantısı ve Elemente Apiden Alınan Değeri Basma
+- Senkron Programlama ve Asenkron Programlama
+
 ## 16.Ders İşlenen Konular
 - CSS Nedir?
 - CSS Syntax Yapısı
