@@ -1,0 +1,14 @@
+C:\YMYP2\01.ConsoleApps\PropertyVeClassYapilari\bin\Debug\net7.0\PropertyVeClassYapilari.exe
+C:\YMYP2\01.ConsoleApps\PropertyVeClassYapilari\bin\Debug\net7.0\PropertyVeClassYapilari.deps.json
+C:\YMYP2\01.ConsoleApps\PropertyVeClassYapilari\bin\Debug\net7.0\PropertyVeClassYapilari.runtimeconfig.json
+C:\YMYP2\01.ConsoleApps\PropertyVeClassYapilari\bin\Debug\net7.0\PropertyVeClassYapilari.dll
+C:\YMYP2\01.ConsoleApps\PropertyVeClassYapilari\bin\Debug\net7.0\PropertyVeClassYapilari.pdb
+C:\YMYP2\01.ConsoleApps\PropertyVeClassYapilari\obj\Debug\net7.0\PropertyVeClassYapilari.GeneratedMSBuildEditorConfig.editorconfig
+C:\YMYP2\01.ConsoleApps\PropertyVeClassYapilari\obj\Debug\net7.0\PropertyVeClassYapilari.AssemblyInfoInputs.cache
+C:\YMYP2\01.ConsoleApps\PropertyVeClassYapilari\obj\Debug\net7.0\PropertyVeClassYapilari.AssemblyInfo.cs
+C:\YMYP2\01.ConsoleApps\PropertyVeClassYapilari\obj\Debug\net7.0\PropertyVeClassYapilari.csproj.CoreCompileInputs.cache
+C:\YMYP2\01.ConsoleApps\PropertyVeClassYapilari\obj\Debug\net7.0\PropertyVeClassYapilari.dll
+C:\YMYP2\01.ConsoleApps\PropertyVeClassYapilari\obj\Debug\net7.0\refint\PropertyVeClassYapilari.dll
+C:\YMYP2\01.ConsoleApps\PropertyVeClassYapilari\obj\Debug\net7.0\PropertyVeClassYapilari.pdb
+C:\YMYP2\01.ConsoleApps\PropertyVeClassYapilari\obj\Debug\net7.0\PropertyVeClassYapilari.genruntimeconfig.cache
+C:\YMYP2\01.ConsoleApps\PropertyVeClassYapilari\obj\Debug\net7.0\ref\PropertyVeClassYapilari.dll

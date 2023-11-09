@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "SP9wV1q9BBlmtAFEfvdT9VShBfqf5yg9KcTopsIhKPs=",
+  "Source": "TodoServer",
+  "BasePath": "_content/TodoServer",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

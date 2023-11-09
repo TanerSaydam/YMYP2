@@ -78,7 +78,7 @@
         getApiRequest();
 
         function getApiRequest(){
-            fetch("https://jsonplaceholder.typicode.com/todos")
+            fetch("https://localhost:7164/api/Values/GetAll")
             .then(res=> res.json())
             .then(data => {
                 console.log(data);
@@ -95,13 +95,19 @@
                 completed: isDoneEl.checked
             }
 
-            todos.push(obj);  
-
-            createTBodyHTMLUsingTodos();
-
-            workEl.value = "";
-            isDoneEl.checked = false;
-            workEl.focus();            
+            fetch("https://localhost:7164/api/Values/Add",{
+                method: "POST",
+                body: JSON.stringify(obj),
+                headers: {
+                    "content-type": "text/json"
+                }
+            })
+            .then(()=> {
+                getApiRequest();
+                workEl.value = "";
+                isDoneEl.checked = false;
+                workEl.focus();  
+            });      
         }
 
         function edit(index){
@@ -132,20 +138,31 @@
         function update(e){
             e.preventDefault();
             
-            todos[updateIndex].title = updateWorkEl.value;
-            todos[updateIndex].completed = updateIsDoneEl.checked;
+            const obj = {
+                id: todos[updateIndex].id,
+                title: updateWorkEl.value,
+                completed: updateIsDoneEl.checked
+            }
 
-            cancel();
-            createTBodyHTMLUsingTodos();
+            fetch("https://localhost:7164/api/Values/Update",{
+                method: "POST",
+                body: JSON.stringify(obj),
+                headers: {
+                    "Content-Type": "text/json"
+                }
+            }).then(()=> {
+                cancel();
+                getApiRequest();
+            })
         }
        
         function remove(index){
             const result = confirm("You want to delete this record?");
             if(result){
-                todos.splice(index,1);
-                const el = document.getElementById('tr' + ((+index) + 1));
-                el.remove();
-                createTBodyHTMLUsingTodos();                
+                fetch("https://localhost:7164/api/Values/RemoveById/" + todos[index].id)
+                .then(()=> {
+                    getApiRequest();
+                });       
             }            
         }
 

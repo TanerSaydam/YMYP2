@@ -1,4 +1,14 @@
 # YMYP 2.Eğitim
+## 18.Ders İşlenen Konular
+- .NET WebApi Giriş
+- Örnek Api Projesi ve Metotları Yazdık
+- Todo Projemiz için Apileri Yazdık
+- ORM Nedir
+- EtityFramework Nedir
+- Database Bağlantısını EF ile Kurma ve CRUD İşlemleri
+- Frontend Projemizi APİ mize bağlama
+- CORS Politikası
+
 ## 17.Ders İşlenen Konular
 - JavaScript Syntax Yapısı
 - Elemente Ulaşma, Elemente Müdahele Etme
