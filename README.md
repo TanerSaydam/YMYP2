@@ -1,5 +1,5 @@
 # YMYP 2.Eğitim
-## 18.Ders İşlenen Konular
+## 18.Ders İşlenen Konular (09.11.2023)
 - .NET WebApi Giriş
 - Örnek Api Projesi ve Metotları Yazdık
 - Todo Projemiz için Apileri Yazdık
@@ -9,14 +9,14 @@
 - Frontend Projemizi APİ mize bağlama
 - CORS Politikası
 
-## 17.Ders İşlenen Konular
+## 17.Ders İşlenen Konular (07.11.2023)
 - JavaScript Syntax Yapısı
 - Elemente Ulaşma, Elemente Müdahele Etme
 - Element üzerinden CRUD İşlemleri
 - Api Bağlantısı ve Elemente Apiden Alınan Değeri Basma
 - Senkron Programlama ve Asenkron Programlama
 
-## 16.Ders İşlenen Konular
+## 16.Ders İşlenen Konular (05.11.2023)
 - CSS Nedir?
 - CSS Syntax Yapısı
 - En Çok Kullanacağımız CSS Propertyleri
@@ -24,7 +24,7 @@
 - Örnek Layout ve Responsive Yapısı
 - Hamburger Menü Tasarımı
 
-## 15.Ders İşlenen Konular
+## 15.Ders İşlenen Konular (02.11.2023)
 - Kariyer Yol Haritası
 - HTML Nedir
 - Örnek HTML Kodları Kullanımı

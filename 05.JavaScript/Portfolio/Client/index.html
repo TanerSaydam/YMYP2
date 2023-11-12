@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/style.css">
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">My Portfolio</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#home">Ana Sayfa</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#skills">Yeteneklerim</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#projects">Projelerim</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#experiences">Tecrübelerim</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Sosyal Medya Hesaplarım
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item"
+                                    href="https://www.youtube.com/channel/UC6Pw9YDMHq3EeNhIF8FMemw">Youtube</a></li>
+                            <li><a class="dropdown-item"
+                                    href="https://www.linkedin.com/in/taner-saydam-b26336222/">Linkedin</a></li>
+                            <li><a class="dropdown-item" href="https://github.com/TanerSaydam">GitHub</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Navbar -->
+
+    <!-- Home -->
+    <section id="home" class="home d-flex justify-content-center align-items-center gap-5">
+        <div>
+            <h1>Taner Saydam</h1>
+            <h3>Senior Software Developer</h3>
+            <p>A goal without plan is just a wish</p>
+        </div>
+        <div>
+            <img src="./assets/img/1-09.jpg" class="home-img">
+        </div>
+    </section>
+    <!-- Home -->
+
+    <!-- Skills -->
+    <section id="skills">
+        <ul class="skills d-flex justify-content-between align-items-center mt-3">
+            <li>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/.NET_Core_Logo.svg/2048px-.NET_Core_Logo.svg.png">
+            </li>
+            <li>
+                <img src="https://blog.ninja-squad.com/assets/images/angular_gradient.png">
+            </li>
+            <li>
+                <img src="https://pluralsight2.imgix.net/paths/images/domain-driven-design-6d10f953a0.png">
+            </li>
+            <li>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/e/ea/Docker_%28container_engine%29_logo_%28cropped%29.png">
+            </li>
+        </ul>
+        
+    </section>
+    <!-- Skills -->
+
+    <!-- Projects -->
+    <section id="projects" class="projects">
+        <h1 class="text-center">Projelerim</h1>
+        <hr>
+        <div class="row">
+            <div class="col-lg-4 col-md-6 col-sm-6 col-12 mt-2">
+                <div class="card">
+                    <div class="card-body">
+                        <img src="./assets/projects/project1.png" class="project-img">
+                    </div>
+                    <div class="card-header text-center">
+                        <h1 class="text-center">e-Muhasebe Projesi</h1>
+                        <div>
+                            <span>Canlı Linki: </span>
+                            <a target="_blank" href="https://emuhasebe.ecnorow.com/">                            
+                                <i class="fa-solid fa-link"></i>
+                            </a> 
+                        </div>
+                        <div>
+                            <span>GitHub Linki: </span>
+                            <a target="_blank" href="https://emuhasebe.ecnorow.com/">                            
+                                <i class="fa-solid fa-link"></i>
+                            </a> 
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <h4>Kullandığım Teknolojiler</h4>
+                        <ul>
+                            <li>.NET</li>
+                            <li>Angular</li>
+                        </ul>
+                        <hr>
+                        <h4>Kullandığım Mimari ve Yaklaşımlar</h4>
+                        <ul>
+                            <li>Clean Architecture</li>
+                            <li>CQRS</li>                            
+                        </ul>
+                        <h4>Uyguladığım Prensipler</h4>
+                        <ul>
+                            <li>SOLID</li>
+                            <li>DRY</li>
+                            <li>YAGNI</li>
+                            <li>KISS</li>
+                        </ul>
+                        <hr>
+                        <h4>Kullandığım Kütüphaneler</h4>
+                        <ul>
+                            <li>Entity Framework Core</li>
+                            <li>RabbitMQ</li>
+                            <li>AutoMapper</li>
+                            <li>MediatR</li>
+                            <li>Fluent Validation</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 col-sm-6 col-12 mt-2">
+                <div class="card">
+                    <div class="card-body">
+                        <img src="./assets/projects/project2.png" class="project-img">
+                    </div>
+                    <div class="card-header text-center">
+                        <h1 class="text-center">e-Finans Projesi</h1>
+                        <div>
+                            <span>Canlı Linki: </span>
+                            <a target="_blank" href="https://emuhasebe.ecnorow.com/">                            
+                                <i class="fa-solid fa-link"></i>
+                            </a> 
+                        </div>
+                        <div>
+                            <span>GitHub Linki: </span>
+                            <a target="_blank" href="https://emuhasebe.ecnorow.com/">                            
+                                <i class="fa-solid fa-link"></i>
+                            </a> 
+                        </div>                       
+                    </div>
+                    <div class="card-body">
+                        <h4>Kullandığım Teknolojiler</h4>
+                        <ul>
+                            <li>.NET</li>
+                            <li>Angular</li>
+                        </ul>
+                        <hr>
+                        <h4>Kullandığım Mimari ve Yaklaşımlar</h4>
+                        <ul>
+                            <li>N Katmanlı Mimari</li>
+                        </ul>
+                        <hr>
+                        <h4>Uyguladığım Prensipler</h4>
+                        <ul>
+                            <li>SOLID</li>
+                            <li>DRY</li>
+                            <li>YAGNI</li>
+                            <li>KISS</li>
+                        </ul>
+                        <hr>
+                        <h4>Kullandığım Kütüphaneler</h4>
+                        <ul>
+                            <li>Entity Framework Core</li>
+                            <li>AutoMapper</li>
+                            <li>MediatR</li>
+                            <li>Fluent Validation</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 col-sm-6 col-12 mt-2">
+                <div class="card">
+                    <div class="card-body">
+                        <img src="./assets/projects/project3.png" class="project-img">
+                    </div>
+                    <div class="card-header text-center">
+                        <h1 class="text-center">My Portfolio Projesi</h1>
+                        <div>
+                            <span>Canlı Linki: </span>
+                            <a target="_blank" href="https://www.tanersaydam.net/">                            
+                                <i class="fa-solid fa-link"></i>
+                            </a> 
+                        </div>
+                        <div>
+                            <span>GitHub Linki: </span>
+                            <a target="_blank" href="https://emuhasebe.ecnorow.com/">                            
+                                <i class="fa-solid fa-link"></i>
+                            </a> 
+                        </div>                       
+                    </div>
+                    <div class="card-body">
+                        <h4>Kullandığım Teknolojiler</h4>
+                        <ul>
+                            <li>.NET</li>
+                            <li>Angular</li>
+                        </ul>
+                        <hr>
+                        <h4>Uyguladığım Prensipler</h4>
+                        <ul>
+                            <li>SOLID</li>
+                            <li>DRY</li>
+                            <li>YAGNI</li>
+                            <li>KISS</li>
+                        </ul>
+                        <hr>
+                        <h4>Kullandığım Kütüphaneler</h4>
+                        <ul>
+                            <li>Entity Framework Core</li>
+                            <li>Fluent Validation</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </section>
+    <!-- Projects -->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://kit.fontawesome.com/dc59d75dac.js" crossorigin="anonymous"></script>
+</body>
+
+</html>
