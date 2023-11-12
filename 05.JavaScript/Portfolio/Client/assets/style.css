@@ -1,7 +1,7 @@
-.home{    
+.home{
     background-color: #f1f1f1;
     width: 99vw;
-    height: 70vh;
+    height: 72vh;
 }
 
 .home-img{
@@ -26,6 +26,26 @@
     max-width: 100vw;
     padding: 30px;
 }
+
+.card-img{
+}
+
 .project-img{
     width: 100%;
+}
+
+.experiences{
+    padding: 30px;
+}
+
+.card{
+    height: 1050px;
+}
+
+.fs-30{
+    font-size: 30px;
+}
+
+.fs-30:hover{
+    color: #084298;
 }
