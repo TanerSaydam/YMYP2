@@ -1,4 +1,10 @@
 # YMYP 2.Eğitim
+## 19.Ders İşlenen Konular (12.11.2023)
+- Portfolio Sitesinin Frontend Tasarımını Bootstrap Kullanarak Yaptık
+- Backend Projesi Oluşturduk ve Classlarını Kodlamaya Başladık
+- CORS için bir NuGet Package Yazdık
+- NuGet Package'lerin Yayımlanmasını Örnek Üzerinde İnceledik
+
 ## 18.Ders İşlenen Konular (09.11.2023)
 - .NET WebApi Giriş
 - Örnek Api Projesi ve Metotları Yazdık

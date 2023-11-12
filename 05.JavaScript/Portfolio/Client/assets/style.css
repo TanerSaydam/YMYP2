@@ -1,51 +1,56 @@
-.home{
+.home {
     background-color: #f1f1f1;
     width: 99vw;
     height: 72vh;
 }
 
-.home-img{
+.home-img {
     width: 300px;
+    border-radius: 300px;
 }
 
-.skills{
+.skills {
     height: 18vh;
     list-style: none;
     padding: 10px;
     flex-wrap: wrap;
 }
 
-.skills img{
+.skills img {
     width: 150px;
     height: 150px;
-    object-fit: contain;    
+    object-fit: contain;
 }
 
-.projects{
+.projects {
     background-color: #f1f1f1;
     max-width: 100vw;
     padding: 30px;
 }
 
-.card-img{
-}
+.card-img {}
 
-.project-img{
+.project-img {
     width: 100%;
 }
 
-.experiences{
+.experiences {
     padding: 30px;
 }
 
-.card{
+.card {
     height: 1050px;
 }
 
-.fs-30{
+.fs-30 {
     font-size: 30px;
 }
 
-.fs-30:hover{
+.fs-30:hover {
     color: #084298;
+}
+
+.typed-cursor,
+#element {
+    font-size: 30px;
 }
