@@ -1,4 +1,15 @@
 # YMYP 2.Eğitim
+## 20.Ders İşlenen Konular (14.11.2023)
+- Public, Private, Interval ve Protected Erişim Belirleyicilerini İnceledik
+- Portfolio Sitemizin Yapısını JavaScript Staticden Dinamik Yapıya Aldık
+- Placeholder ile Loading Kısmında Tasarım Yaptık
+- WebApi tarafında Models Yapısını Tamamladık
+- Entity Framework ile DbContext Yapısını Tasarladık
+- Seed Data Ekledik
+- CodeFirst ile DB'mizi Oluşturduk
+- Api İsteklerimizi Kodladık
+- Frontend Tarafında Api İsteği Yapıp Sayfada Gösterdik
+
 ## 19.Ders İşlenen Konular (12.11.2023)
 - Portfolio Sitesinin Frontend Tasarımını Bootstrap Kullanarak Yaptık
 - Backend Projesi Oluşturduk ve Classlarını Kodlamaya Başladık

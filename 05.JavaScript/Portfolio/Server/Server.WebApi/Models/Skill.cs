@@ -2,9 +2,10 @@
 
 public sealed class Skill
 {
-    public int Id { get; set; }
+    public Guid Id { get; set; }
     public string ImageUrl {get; set;}
     public byte[] Image { get; set; }
+    public int Order { get; set; }
 }
 
 

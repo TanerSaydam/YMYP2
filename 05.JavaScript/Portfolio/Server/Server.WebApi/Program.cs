@@ -1,6 +1,9 @@
 using DefaultCorsPolicyNugetPackage;
+using Server.WebApi.Context;
 
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddScoped<ApplicationDbContext>();
 
 #region Ýstediðiniz ismi verebiliyorsunuz
 builder.Services.AddDefaultCors();

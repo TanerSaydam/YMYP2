@@ -1,81 +1,33 @@
-let skills = [
-    "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/.NET_Core_Logo.svg/2048px-.NET_Core_Logo.svg.png",
-    "https://blog.ninja-squad.com/assets/images/angular_gradient.png",
-    "https://pluralsight2.imgix.net/paths/images/domain-driven-design-6d10f953a0.png",
-    "https://upload.wikimedia.org/wikipedia/commons/e/ea/Docker_%28container_engine%29_logo_%28cropped%29.png"
-]
-
-let projects = [
-    {
-        id: "1",
-        coverImageUrl: "project1.png",
-        name: "e-Muhasebe Projesi"
-    },
-    {
-        id: "2",
-        coverImageUrl: "project2.png",
-        name: "e-Finans Projesi"
-    },
-    {
-        id: "3",
-        coverImageUrl: "project3.png",
-        name: "My Portfolio Projesi"
-    }
-]
-
-let experiences= [
-    {
-        year: "2 Years",
-        title: "Visual Art &amp; Design",
-        date: "09.2011 - 08.2013",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed efficitur ex sit amet massa scelerisque scelerisque. Aliquam erat volutpat. Aenean interdum finibus efficitur. Praesent dapibus dolor felis, eu ultrices elit molestie.",
-    },
-    {
-        year: "2 Years",
-        title: "Visual Art &amp; Design",
-        date: "09.2011 - 08.2013",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed efficitur ex sit amet massa scelerisque scelerisque. Aliquam erat volutpat. Aenean interdum finibus efficitur. Praesent dapibus dolor felis, eu ultrices elit molestie.",
-    },
-    {
-        year: "2 Years",
-        title: "Visual Art &amp; Design",
-        date: "09.2011 - 08.2013",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed efficitur ex sit amet massa scelerisque scelerisque. Aliquam erat volutpat. Aenean interdum finibus efficitur. Praesent dapibus dolor felis, eu ultrices elit molestie.",
-    },
-    {
-        year: "2 Years",
-        title: "Visual Art &amp; Design",
-        date: "09.2011 - 08.2013",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed efficitur ex sit amet massa scelerisque scelerisque. Aliquam erat volutpat. Aenean interdum finibus efficitur. Praesent dapibus dolor felis, eu ultrices elit molestie.",
-    }
-]
-
 getSkills();
 getProjects();
 getExperiences();
 
 function getSkills(){
-    let text = "";
-    const el = document.querySelector(".skills");
-
-    for(let s of skills){
-        text += 
-        `<li>
-            <img src="${s}"/>
-        </li>`
-    }
-
-    setTimeout(() => {
-        el.innerHTML = text;    
-    }, 3000);
+    fetch("https://localhost:7131/api/Home/GetSkills")
+    .then(res=> res.json())
+    .then(data=> {
+        let text = "";
+        const el = document.querySelector(".skills");
     
+        for(let s of data){
+            text += 
+            `<li>
+                <img src="${s.imageUrl}"/>
+            </li>`
+        }
+    
+        el.innerHTML = text; 
+    });    
 }
 
-function getProjects(){
+async function getProjects(){
+    var res = await fetch("https://localhost:7131/api/Home/GetProjects").then(res=> res.json());
+    
+    // console.log(data);
     let text = "";
     const el = document.getElementById("projectRow");
 
-    for(let p of projects){
+    for(let p of res){
         text += `
             <div class="col-lg-4 col-md-6 col-sm-6 col-12 mt-2">                
                 <div class="card">
@@ -94,17 +46,16 @@ function getProjects(){
         `
     }
 
-    setTimeout(() => {
-        el.innerHTML = text;    
-    }, 3000);
-    
+    el.innerHTML = text;
 }
 
-function getExperiences(){
+async function getExperiences(){
+    var res = await fetch("https://localhost:7131/api/Home/GetExperiences").then(res=> res.json());;
+    
     let text = "";
     const el = document.getElementById("timeline");
 
-    for(let e of experiences){
+    for(let e of res){
         text += `
             <div class="timeline">
                     <div class="icon"></div>
@@ -125,8 +76,5 @@ function getExperiences(){
                 </div>
         `
     }
-
-    setTimeout(() => {
-        el.innerHTML = text;        
-    }, 3000);
+    el.innerHTML = text;
 }
