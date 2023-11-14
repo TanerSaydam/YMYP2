@@ -22,13 +22,17 @@
     object-fit: contain;
 }
 
+.loader-skills{
+    width: 150px;
+    height: 150px;
+    border-radius: 150px;
+}
+
 .projects {
     background-color: #f1f1f1;
     max-width: 100vw;
     padding: 30px;
 }
-
-.card-img {}
 
 .project-img {
     width: 100%;
@@ -38,8 +42,18 @@
     padding: 30px;
 }
 
-.card {
-    height: 1050px;
+.card{
+    cursor: pointer;
+    transform: scale(1);
+    transition: all .2s ease-in-out;
+}
+
+.card:hover{
+    transform: scale(1.05);
+}
+
+.float-right{
+    float: right;
 }
 
 .fs-30 {
@@ -53,4 +67,9 @@
 .typed-cursor,
 #element {
     font-size: 30px;
+}
+
+.loader-project-image{
+    height: 390px;
+    width: 100%;
 }
