@@ -34,4 +34,11 @@ public class HomeController : ControllerBase
         var response = _context.Experiences.ToList();
         return Ok(response);
     }
+
+    [HttpGet]
+    public IActionResult GetSocialMedias()
+    {
+        var response = _context.SocialMedias.ToList();
+        return Ok(response);
+    }
 }

@@ -1,6 +1,7 @@
 getSkills();
 getProjects();
 getExperiences();
+getSocialMedias();
 
 function getSkills(){
     fetch("https://localhost:7131/api/Home/GetSkills")
@@ -50,7 +51,7 @@ async function getProjects(){
 }
 
 async function getExperiences(){
-    var res = await fetch("https://localhost:7131/api/Home/GetExperiences").then(res=> res.json());;
+    var res = await fetch("https://localhost:7131/api/Home/GetExperiences").then(res=> res.json());
     
     let text = "";
     const el = document.getElementById("timeline");
@@ -77,4 +78,36 @@ async function getExperiences(){
         `
     }
     el.innerHTML = text;
+}
+
+
+async function getSocialMedias(){
+    var res = await axios.get("https://localhost:7131/api/Home/GetSocialMedias")
+
+    let text = "";
+    let textNavbar = "";
+    const el = document.getElementById("socialMedia");
+    const navbarEl = document.getElementById("navbarSocialMedia");
+
+    for(let d of res.data){
+        text += `
+        <li class="ms-3">
+            <a class="text-body-secondary" title="${d.name}" target="_blank" href="${d.link}">
+               <i class="${d.icon}"></i>
+            </a>
+        </li>
+        `
+
+        textNavbar += `
+        <li>
+           <a class="dropdown-item"
+              target="_blank"
+              href="${d.link}">
+             ${d.name}
+           </a>
+        </li>
+        `
+    }
+    el.innerHTML = text;
+    navbarEl.innerHTML = textNavbar;
 }

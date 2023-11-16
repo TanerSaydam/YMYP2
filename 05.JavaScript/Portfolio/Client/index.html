@@ -42,12 +42,7 @@
                             aria-expanded="false">
                             Sosyal Medya Hesaplarım
                         </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item"
-                                    href="https://www.youtube.com/channel/UC6Pw9YDMHq3EeNhIF8FMemw">Youtube</a></li>
-                            <li><a class="dropdown-item"
-                                    href="https://www.linkedin.com/in/taner-saydam-b26336222/">Linkedin</a></li>
-                            <li><a class="dropdown-item" href="https://github.com/TanerSaydam">GitHub</a></li>
+                        <ul class="dropdown-menu" id="navbarSocialMedia">
                         </ul>
                     </li>
                 </ul>
@@ -229,22 +224,8 @@
                 <span class="mb-3 mb-md-0 text-body-secondary">© 2023 My Portfolio</span>
               </div>
           
-              <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
-                <li class="ms-3">
-                    <a class="text-body-secondary" target="_blank" href="#">
-                        <i class="fa-brands fa-linkedin fs-30"></i>
-                    </a>
-                </li>   
-                <li class="ms-3">
-                    <a class="text-body-secondary" target="_blank" href="#">
-                        <i class="fa-brands fa-youtube fs-30"></i>
-                    </a>
-                </li>              
-                <li class="ms-3">
-                    <a class="text-body-secondary" target="_blank" href="#">
-                        <i class="fa-brands fa-github fs-30"></i>
-                    </a>
-                </li>
+              <ul class="nav col-md-4 justify-content-end list-unstyled d-flex" id="socialMedia">
+                
               </ul>
             </footer>
           </div>
@@ -254,6 +235,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://kit.fontawesome.com/dc59d75dac.js" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.6.2/axios.min.js"></script>
     <script>
          var typed = new Typed('#element', {
             strings: ['<b>Senior</b> Software Developer', '<b>Full Stack</b> Trainer'],
@@ -261,7 +243,7 @@
             loop: true
         });
     </script>
-    <script src="./assets/script.js"></script>
+    <script src="./assets/script.js"></script>    
 </body>
 
 </html>
