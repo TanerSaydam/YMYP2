@@ -14,6 +14,7 @@ let hareketY = 0;
 let hiz = 10;
 let yilanParcalari = [];
 let yilanUzunlugu = 3;
+let skor = 0;
 
 class YilanParcasi{
     constructor(x,y){
@@ -29,6 +30,8 @@ function oyunuCiz(){
     yilaniCiz();
     yilanHareketiniGuncelle();
     elmayiCiz();
+    elmaninKonumunuDegistir();
+    skoruCiz();
     setTimeout(oyunuCiz, 1000/hiz);
 }
 
@@ -79,6 +82,36 @@ function yilanHareketiniGuncelle(){
 function elmayiCiz(){
     ctx.fillStyle = "red";
     ctx.fillRect(elmaX * konum, elmaY * konum, boyut, boyut);
+}
+
+function elmaninKonumunuDegistir(){
+    if(x === elmaX && y === elmaY){
+        elmaX = Math.floor(Math.random() * konum);
+        elmaY = Math.floor(Math.random() * konum);
+
+        let elmaKonumuMusaitMi = false;
+
+        while(!elmaKonumuMusaitMi){
+            elmaKonumuMusaitMi = true;
+            yilanParcalari.forEach(kuyruk=> {
+                if(kuyruk.x === elmaX && kuyruk.y === elmaY){
+                    elmaX = Math.floor(Math.random() * konum);
+                    elmaY = Math.floor(Math.random() * konum);
+                    elmaKonumuMusaitMi = false;
+                }
+            })
+        }
+
+
+        yilanUzunlugu++;
+        skor += 10;
+    }
+}
+
+function skoruCiz(){
+    ctx.fillStyle = "white";
+    ctx.font = "20px verdena";
+    ctx.fillText(`Skor: ${skor}`, 310,30)
 }
 
 function tusHareketleri(event){

@@ -1,4 +1,8 @@
 # YMYP 2.Eğitim
+## 21.Ders İşlenen Konular (16.11.2023)
+- Asenkron ve Senkron JavaScript Nedir?
+- Yılan Oyunu Yapmaya Başladık
+
 ## 20.Ders İşlenen Konular (14.11.2023)
 - Public, Private, Interval ve Protected Erişim Belirleyicilerini İnceledik
 - Portfolio Sitemizin Yapısını JavaScript Staticden Dinamik Yapıya Aldık
