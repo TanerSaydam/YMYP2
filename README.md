@@ -1,4 +1,9 @@
 # YMYP 2.Eğitim
+## 22.Ders İşlenen Konular (19.11.2023)
+- Linkedin Paylaşımları, Profil Sayfası vs. 
+- WebApi Nedir
+- GitHub Nedir, Repo Paylaşımı, Clone vs.
+
 ## 21.Ders İşlenen Konular (16.11.2023)
 - Asenkron ve Senkron JavaScript Nedir?
 - Yılan Oyunu Yapmaya Başladık

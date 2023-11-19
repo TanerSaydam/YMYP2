@@ -4,7 +4,7 @@ getExperiences();
 getSocialMedias();
 
 function getSkills(){
-    fetch("https://localhost:7131/api/Home/GetSkills")
+    fetch("https://testportfoliowebapi.ecnorow.com/api/Home/GetSkills")
     .then(res=> res.json())
     .then(data=> {
         let text = "";
@@ -22,7 +22,7 @@ function getSkills(){
 }
 
 async function getProjects(){
-    var res = await fetch("https://localhost:7131/api/Home/GetProjects").then(res=> res.json());
+    var res = await fetch("https://testportfoliowebapi.ecnorow.com/api/Home/GetProjects").then(res=> res.json());
     
     // console.log(data);
     let text = "";
@@ -51,7 +51,7 @@ async function getProjects(){
 }
 
 async function getExperiences(){
-    var res = await fetch("https://localhost:7131/api/Home/GetExperiences").then(res=> res.json());
+    var res = await fetch("https://testportfoliowebapi.ecnorow.com/api/Home/GetExperiences").then(res=> res.json());
     
     let text = "";
     const el = document.getElementById("timeline");
@@ -82,7 +82,7 @@ async function getExperiences(){
 
 
 async function getSocialMedias(){
-    var res = await axios.get("https://localhost:7131/api/Home/GetSocialMedias")
+    var res = await axios.get("https://testportfoliowebapi.ecnorow.com/api/Home/GetSocialMedias")
 
     let text = "";
     let textNavbar = "";
