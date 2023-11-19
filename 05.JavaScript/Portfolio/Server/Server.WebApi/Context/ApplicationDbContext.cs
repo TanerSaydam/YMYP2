@@ -7,12 +7,8 @@ public sealed class ApplicationDbContext : DbContext
 {
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
-        optionsBuilder.UseSqlServer("Data Source=185.8.128.21;Initial Catalog=ecnorowc_TestPortfolioDb;User ID=ecnorowc_test;Password=R094*un0a;Connect Timeout=30;Encrypt=True;Trust Server Certificate=True;Application Intent=ReadWrite;Multi Subnet Failover=False");
-    }
-    //ecnorowc_TestPortfolioDb
-
-    //ecnorowc_test
-    //R094*un0a
+        optionsBuilder.UseSqlServer("Data Source=DESKTOP-3BJ5GK9\\SQLEXPRESS;Initial Catalog=PortfolioDb;Integrated Security=True;Connect Timeout=30;Encrypt=False;Trust Server Certificate=False;Application Intent=ReadWrite;Multi Subnet Failover=False");
+    } 
 
     public DbSet<Experience> Experiences { get; set; }
     public DbSet<Project> Projects { get; set; }
