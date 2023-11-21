@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IT Desk Home Page</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <ul>
+        <li>
+            <a onclick="gotoHome()">Home Page</a>
+        </li>
+        <li>
+            <a onclick="gotoLogin()">Login Page</a>
+        </li>
+        <li>
+            <a onclick="gotoRegister()">Register Page</a>
+        </li>
+        <li>
+            <a onclick="gotoTicketDetail()">Ticket Detail Page</a>
+        </li>
+    </ul>
+
+    <div id="root">
+        <div class="d-flex justify-content-center align-items-center" style="height: 60vh;">
+            <div class="col-lg-5 col-12">
+                <div class="card">
+                    <div class="card-header text-center">
+                        <h1>Login Page</h1>
+                        <p>Giriş yapmak için bilgilerinizi girin</p>
+                    </div>
+                    <div class="card-body">
+                        <div class="form-group">
+                            <label for="userNameOrEmail">
+                                User Name or Email
+                            </label>
+                            <input type="text" class="form-control" placeholder="jhondoe" id="userNameOrEmail" onkeyup="checkValidation(event)" required minlength="3">
+                            <div class="invalid-feedback"></div>
+                        </div>
+                        <div class="form-group mt-2">
+                            <label for="password">
+                                Password
+                            </label>
+                            <input type="password" class="form-control" placeholder="******" id="password" onkeyup="checkValidationForPassword(event)" required minlength="6">
+                            <ul>
+                                <li class="text-danger" id="min6Length">
+                                    6 karakter uzunluğunda olmalıdır
+                                </li>
+                                <li class="text-danger">Büyük harf içermelidir</li>
+                                <li class="text-danger">Küçük harf içermelidir</li>
+                                <li class="text-danger">Özel karakter içermelidir</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="card-header">
+                        <button class="btn btn-dark w-100">
+                            Giriş Yap
+                        </button>
+                        <a href="" class="mt-1" style="float: right;">
+                            Ücretsiz kaydolmak için buraya tıklayın
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+   
+    <script src="/script.js"></script>    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
