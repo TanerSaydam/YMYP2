@@ -2,6 +2,6 @@
     text-decoration: line-through;
 }
 
-li{
+li, a{
     cursor: pointer;
 }

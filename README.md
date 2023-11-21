@@ -1,4 +1,15 @@
 # YMYP 2.Eğitim
+## 23.Ders İşlenen Konular (21.11.2023)
+- IT Desk Projesine Başladık
+- Frontend Tasarımına Başladık
+- Register ve Login Sayfalarını Tasarladık
+- Validation Kurallarını Ekledik
+- Frontend Projemizi Single Page Application'a Çevirdik
+- Bootstrap Ekledik
+- Backend Projemizi Oluşturduk
+- User Class'ı Oluşturduk
+- Warningleri Error'e Çevirmeyi İnceledik
+
 ## 22.Ders İşlenen Konular (19.11.2023)
 - Linkedin Paylaşımları, Profil Sayfası vs. 
 - WebApi Nedir
