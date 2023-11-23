@@ -1,4 +1,16 @@
 # YMYP 2.Eğitim
+## 24.Ders İşlenen Konular (23.11.2023)
+- Backend Kısmında Password Hash ve Salt Metodlarını Service içinde Yazdık
+- Service'i Kullanabileceğimiz Instance ve Static Yöntemlerini İnceledik
+- Auth Service Yazdık ve Register İşlemini Kodladık
+- Validation Kuralları için FluentValidation Kurduk
+- Register Metodumuzu Single Responsibility Prensibine Göre Parçaladık
+- User Kayıt Testini Yaptık
+- CORS Politikasını Yazdık
+- Frontend'e Axios Kütüphanesini Kurduk
+- Register Metodumuzu Api'ye Bağladık
+- Register İşlemi Sonrası SweetAlert2 ile Toast Mesajı Gösterdik
+
 ## 23.Ders İşlenen Konular (21.11.2023)
 - IT Desk Projesine Başladık
 - Frontend Tasarımına Başladık

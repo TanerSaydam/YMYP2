@@ -1,7 +1,7 @@
 const rootEl = document.getElementById("root");
-//gotoHome();
+gotoHome();
 
-function gotoLogin(){
+function gotoLogin() {
     rootEl.innerHTML = `
     <div class="d-flex justify-content-center align-items-center" style="height: 60vh;">
             <div class="col-lg-5 col-12">
@@ -56,7 +56,7 @@ function gotoLogin(){
         `
 }
 
-function gotoRegister(){
+function gotoRegister() {
     rootEl.innerHTML = `
     <div class="d-flex justify-content-center align-items-center" style="height: 60vh;">
     <div class="col-lg-5 col-12">
@@ -132,34 +132,34 @@ function gotoRegister(){
 }
 
 
-function gotoTicketDetail(){
+function gotoTicketDetail() {
     rootEl.innerHTML = "<h1>Ticket Detail Page</h1>";
 }
 
-function gotoHome(){
-    rootEl.innerHTML = "<h1>22:20 görüşelim</h1>";
+function gotoHome() {
+    rootEl.innerHTML = "<h1>Home Page</h1>";
 }
 
-function checkValidation(e){
+function checkValidation(e) {
     const isValid = e.target.validity.valid;
 
-    if(!isValid){
+    if (!isValid) {
         e.target.className = "form-control is-invalid";
         const errorMessage = e.target.validationMessage;
 
-        const divEl =document.querySelector("#" + e.target.id + " + div");
-        divEl.innerHTML =errorMessage;
-    }else{
+        const divEl = document.querySelector("#" + e.target.id + " + div");
+        divEl.innerHTML = errorMessage;
+    } else {
         e.target.className = "form-control is-valid"
     }
 }
 
-function checkValidationForPassword(e){
+function checkValidationForPassword(e) {
     e.target.className = "form-control is-invalid";
     checkValidationForPassword2(e.target.value);
 }
 
-function checkValidationForPassword2(value){
+function checkValidationForPassword2(value) {
     const ulEl = document.querySelector(`#password + ul`);
     ulEl.style.display = "block";
 
@@ -170,68 +170,68 @@ function checkValidationForPassword2(value){
         number: false,
         specialCharacter: false
     };
-    
-    const min6LengthLiEl = document.getElementById("min6Length");   
+
+    const min6LengthLiEl = document.getElementById("min6Length");
     min6LengthLiEl.className = isTrueReturnSuccessOrDanger(value.length >= 6);
 
     const upperCaseLiEl = document.getElementById("upperCase");
-    upperCaseLiEl.className = isTrueReturnSuccessOrDanger(/[A-Z]/.test(value));    
+    upperCaseLiEl.className = isTrueReturnSuccessOrDanger(/[A-Z]/.test(value));
 
     const lowerCaseLiEl = document.getElementById("lowerCase");
     lowerCaseLiEl.className = isTrueReturnSuccessOrDanger(/[a-z]/.test(value));
-    
+
     const numberLiEl = document.getElementById("number");
     numberLiEl.className = isTrueReturnSuccessOrDanger(/[0-9]/.test(value));
 
-    const specialCharacterLiEl =document.getElementById("specialCharacter");
+    const specialCharacterLiEl = document.getElementById("specialCharacter");
     specialCharacterLiEl.className = isTrueReturnSuccessOrDanger(/[^\w\s]/.test(value));
-    
+
     validation.min6Length = value.length >= 6;
     validation.upperCase = /[A-Z]/.test(value);
     validation.lowerCase = /[a-z]/.test(value);
     validation.number = /[0-9]/.test(value);
     validation.specialCharacter = /[^\w\s]/.test(value);
 
-    for(let i in validation){        
-        if(!validation[i]) return;
+    for (let i in validation) {
+        if (!validation[i]) return;
     }
 
     ulEl.style.display = "none";
     document.getElementById("password").className = "form-control is-valid";
 }
 
-function isTrueReturnSuccessOrDanger(expression){
-    if(expression) return "text-success"
+function isTrueReturnSuccessOrDanger(expression) {
+    if (expression) return "text-success"
 
     return "text-danger"
 }
 
-function login(){
+function login() {
     const userNameOrEmailEl = document.getElementById("userNameOrEmail");
     const userNameOrEmailIsValid = userNameOrEmail.validity.valid;
-    
+
     const passwordEl = document.getElementById("password");
     const passwordIsValid = passwordEl.validity.valid;
 
-    if(!userNameOrEmailIsValid){
+    if (!userNameOrEmailIsValid) {
         userNameOrEmailEl.className = "form-control is-invalid";
         document.querySelector(`#userNameOrEmail + div`).innerHTML = userNameOrEmailEl.validationMessage;
     }
 
-    if(!passwordIsValid){
+    if (!passwordIsValid) {
         passwordEl.className = "form-control is-invalid";
         checkValidationForPassword2(passwordEl.value);
     }
 
-    if(userNameOrEmailIsValid && passwordIsValid){
+    if (userNameOrEmailIsValid && passwordIsValid) {
         //login işlemi
     }
 }
 
-function register(){
+function register() {
     const nameEl = document.getElementById("name");
     const nameIsValid = nameEl.validity.valid;
-    
+
     const lastNameEl = document.getElementById("lastName");
     const lastNameIsValid = lastNameEl.validity.valid;
 
@@ -244,33 +244,58 @@ function register(){
     const passwordEl = document.getElementById("password");
     const passwordIsValid = passwordEl.validity.valid;
 
-    if(!nameIsValid){
+    if (!nameIsValid) {
         nameEl.className = "form-control is-invalid";
         document.querySelector(`#name + div`).innerHTML = nameEl.validationMessage;
     }
 
-    if(!lastNameIsValid){
+    if (!lastNameIsValid) {
         lastNameEl.className = "form-control is-invalid";
         document.querySelector(`#lastName + div`).innerHTML = lastNameEl.validationMessage;
     }
 
-    if(!userNameIsValid){
+    if (!userNameIsValid) {
         userNameEl.className = "form-control is-invalid";
         document.querySelector(`#userName + div`).innerHTML = userNameEl.validationMessage;
     }
 
-    if(!emailIsValid){
+    if (!emailIsValid) {
         emailEl.className = "form-control is-invalid";
         document.querySelector(`#email + div`).innerHTML = emailEl.validationMessage;
     }
 
 
-    if(!passwordIsValid){
+    if (!passwordIsValid) {
         passwordEl.className = "form-control is-invalid";
         checkValidationForPassword2(passwordEl.value);
     }
 
-    if(nameIsValid && passwordIsValid && userNameIsValid && emailIsValid && lastNameIsValid){
-        //login işlemi
+    if (nameIsValid && passwordIsValid && userNameIsValid && emailIsValid && lastNameIsValid) {
+        const data = {
+            name: nameEl.value,
+            lastName: lastNameEl.value,
+            username: userNameEl.value,
+            email: emailEl.value,
+            password: passwordEl.value
+        }
+
+        axios.post("https://localhost:7079/api/Auth/Register", data).then(res => {
+            const Toast = Swal.mixin({
+                toast: true,
+                position: "bottom-end",
+                showConfirmButton: false,
+                timer: 3000,
+                timerProgressBar: true,
+                didOpen: (toast) => {
+                    toast.onmouseenter = Swal.stopTimer;
+                    toast.onmouseleave = Swal.resumeTimer;
+                }
+            });
+            Toast.fire({
+                icon: "success",
+                title: "Kayıt işlemi başarıyla tamamlandı. Giriş yapabilirsiniz!"
+            });
+            gotoLogin();
+        });
     }
 }
