@@ -131,13 +131,16 @@ function gotoRegister() {
 </div>`
 }
 
-
 function gotoTicketDetail() {
-    rootEl.innerHTML = "<h1>Ticket Detail Page</h1>";
+    if(checkAuthentication()){
+        rootEl.innerHTML = "<h1>Ticket Detail Page</h1>";
+    }
 }
 
 function gotoHome() {
-    rootEl.innerHTML = "<h1>Home Page</h1>";
+    if(checkAuthentication()){
+        rootEl.innerHTML = "<h1>Home Page</h1>";
+    }    
 }
 
 function checkValidation(e) {
@@ -223,8 +226,20 @@ function login() {
         checkValidationForPassword2(passwordEl.value);
     }
 
+    const data = {
+        userNameOrEmail : userNameOrEmailEl.value,
+        password: passwordEl.value
+    }
+
     if (userNameOrEmailIsValid && passwordIsValid) {
-        //login işlemi
+        axios.post("https://localhost:7079/api/Auth/Login",data)
+        .then(res=> {
+            localStorage.setItem("response", JSON.stringify(res.data));
+            gotoHome();
+        })
+        .catch(err=> {
+            console.log(err)
+        })
     }
 }
 
@@ -298,4 +313,11 @@ function register() {
             gotoLogin();
         });
     }
+}
+
+function checkAuthentication(){
+    if(localStorage.getItem("response")) return true;
+
+    gotoLogin();
+    return false;
 }

@@ -10,11 +10,15 @@
         "projectUniqueName": "C:\\YMYP2\\05.JavaScript\\ITDesk\\Server\\Server.WebApi\\Server.WebApi.csproj",
         "projectName": "Server.WebApi",
         "projectPath": "C:\\YMYP2\\05.JavaScript\\ITDesk\\Server\\Server.WebApi\\Server.WebApi.csproj",
-        "packagesPath": "C:\\Users\\taner\\.nuget\\packages\\",
+        "packagesPath": "C:\\Users\\tugay\\.nuget\\packages\\",
         "outputPath": "C:\\YMYP2\\05.JavaScript\\ITDesk\\Server\\Server.WebApi\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\taner\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\tugay\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -45,6 +49,10 @@
               "target": "Package",
               "version": "[11.8.1, )"
             },
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
               "version": "[8.0.0, )"
@@ -54,6 +62,10 @@
               "suppressParent": "All",
               "target": "Package",
               "version": "[8.0.0, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.3, )"
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",

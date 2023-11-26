@@ -1,4 +1,22 @@
 # YMYP 2.Eğitim
+## 25.Ders İşlenen Konular (26.11.2023)
+- Login Metodu Yazdık
+- Login İşlemini Test Ettik
+- Login Validation Metodu Yazdık
+- Reflection Yapısından Bahsettik ve Örnek Bir Generic Metot Yazdık
+- Authentication Yöntemlerinden Bahsettik
+- Json Web Token Kütüphanesini Kurduk
+- Login İşleminde Token Ürettik
+- Authorize Attribute ile Token Kontrolünü için IoC de Authentication Kodları Ekledik
+- Options Pattern ile Kodları Daha Okunaklı ve Yönetilebilir Hale Getirdik
+- PostConfigure Yöntemi ile JWT'nin Options Kısmını Ayırdık
+- Login Denemesini Yaptık
+- Frontend Kısmında Giriş İşlemi Yaptık
+- Girişte Elde Ettiğimiz Değeri LocalStorage da Sakladık
+- Frontend de Authentication Kontrolü Yazdık
+- Hata Mesajlarını Kullanıcı Arayüzü için Okunaklı Hale Getirmek Üzerine Konuştuk
+- Exception Middleware Yazdık
+
 ## 24.Ders İşlenen Konular (23.11.2023)
 - Backend Kısmında Password Hash ve Salt Metodlarını Service içinde Yazdık
 - Service'i Kullanabileceğimiz Instance ve Static Yöntemlerini İnceledik

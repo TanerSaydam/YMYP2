@@ -1,4 +1,5 @@
-﻿using Server.WebApi.Context;
+﻿using Microsoft.EntityFrameworkCore.Infrastructure;
+using Server.WebApi.Context;
 using Server.WebApi.DTOs;
 using Server.WebApi.Extensions;
 using Server.WebApi.Models;
@@ -9,10 +10,11 @@ namespace Server.WebApi.Services;
 public sealed class AuthService
 {
     private readonly ApplicationDbContext _context;
-
-    public AuthService(ApplicationDbContext context)
+    private readonly JwtProvider _jwtProvider;
+    public AuthService(ApplicationDbContext context, JwtProvider jwtProvider)
     {
         _context = context;
+        _jwtProvider = jwtProvider;
     }
 
     public void Register(RegisterDto request)
@@ -38,6 +40,32 @@ public sealed class AuthService
         #region Kullanıcı Database Kayıt
         CreatingUserToDatabase(user);
         #endregion
+    }
+
+    public string Login(LoginDto request)
+    {
+        #region Validation Check
+        CheckValidation(request);
+        #endregion
+
+        //immutable => bir defa set edilip bir daha değiştirilemeyen nesnelere denir
+        User? user = 
+            _context.Users
+            .FirstOrDefault(p => p.UserName == request.UsernameOrEmail || p.Email == request.UsernameOrEmail);
+
+        if(user is null)  //iş kuralı | business logic
+        {
+            throw new ArgumentException("Kullanıcı bulunamadı");
+        }
+
+        var checkPasswordIsTrue = PasswordService.CheckPassword(user, request.Password);
+
+        if(!checkPasswordIsTrue) //iş kuralı | business logic
+        {
+            throw new ArgumentException("Şifre yanlış");
+        }
+
+        return _jwtProvider.CreateToken(user, request.RememberMe);
     }
 
     private void CreatingUserToDatabase(User user)
@@ -74,9 +102,47 @@ public sealed class AuthService
         }
     }
 
+    private void CheckValidation<T>(T request)
+        where T: class
+    {
+        string validatorName = typeof(T).FullName + "Validator";
+        Type? validatorType = Type.GetType(validatorName);
+
+        if (validatorType == null)
+        {
+            throw new InvalidOperationException("Validator class not found for " + typeof(T).FullName);
+        }
+
+        var validatorInstance = Activator.CreateInstance(validatorType);
+        var validateMethod = validatorType.GetMethod("Validate");
+
+        if (validateMethod == null)
+        {
+            throw new InvalidOperationException("Validate method not found in " + validatorName);
+        }
+
+        var result = validateMethod.Invoke(validatorInstance, new object[] { request });
+
+        if (result is FluentValidation.Results.ValidationResult validationResult && !validationResult.IsValid)
+        {
+            throw new ArgumentException(validationResult.Errors[0].ErrorMessage);
+        }
+    }
+
     private void CheckValidation(RegisterDto request)
     {
         var validator = new RegisterDtoValidator();
+        var result = validator.Validate(request);
+
+        if (!result.IsValid)
+        {
+            throw new ArgumentException(result.Errors[0].ErrorMessage);
+        }
+    }
+
+    private void CheckValidation(LoginDto request)
+    {
+        var validator = new LoginDtoValidator();
         var result = validator.Validate(request);
 
         if (!result.IsValid)

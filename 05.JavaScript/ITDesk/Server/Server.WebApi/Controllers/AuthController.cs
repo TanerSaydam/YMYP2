@@ -21,4 +21,11 @@ public class AuthController : ControllerBase
 
         return NoContent();
     }
+
+    [HttpPost]
+    public IActionResult Login(LoginDto request)
+    {
+        string token = _authService.Login(request);
+        return Ok(new {AccessToken = token});
+    }
 }
