@@ -10,4 +10,5 @@ public sealed class ApplicationDbContext : DbContext
     }
 
     public DbSet<User> Users { get; set; }
+    public DbSet<Ticket> Tickets { get; set; }
 }

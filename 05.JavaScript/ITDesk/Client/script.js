@@ -132,15 +132,126 @@ function gotoRegister() {
 }
 
 function gotoTicketDetail() {
-    if(checkAuthentication()){
+    if (checkAuthentication()) {
         rootEl.innerHTML = "<h1>Ticket Detail Page</h1>";
     }
 }
 
-function gotoHome() {
-    if(checkAuthentication()){
-        rootEl.innerHTML = "<h1>Home Page</h1>";
-    }    
+async function gotoHome() {
+    if (checkAuthentication()) {
+        const localStorageResponseString = localStorage.getItem("response");
+        const localStorageResponse = JSON.parse(localStorageResponseString);
+        const userId = localStorageResponse.userId;
+
+        const response = await axios.get("https://localhost:7079/api/Tickets/GetAll/" + userId)
+        
+        let text = "";
+
+        for(let index in response.data){
+            const data = response.data[index]
+            text += `
+                <tr>
+                    <td>${+index + 1}</td>
+                    <td>${data.subject}</td>
+                    <td>${data.isUrgent}</td>
+                    <td>${data.createdDate}</td>
+                    <td>
+                        <select onchange="changeTicketStatus('${data.id}', event)" class="form-control">
+                            ${data.status === "Open"}
+                            <option ${data.status === "Open" ? "selected" : ""}>Open</option>
+                            <option ${data.status === "Closed" ? "selected" : ""}>Closed</option>
+                        </select>
+                    </td>
+                </tr>
+            `
+        }
+
+        rootEl.innerHTML = `
+        <h1>ITDesk Home Page</h1>
+        <div class="mt-2">
+                <h3>New Task Form</h3>
+                <div>
+                    <div class="form-control">
+                    Subject
+                    <input id="subject" class="form-control mt-1" style="width:250px;" type="text">
+                    </div>
+
+                    <div class="form-control mt-1">
+                    IsUrgent
+                    <select id="isUrgent" class="form-control" style="width:150px;">
+                        <option>No Urgent</option>
+                        <option>Normal</option>
+                        <option>Urgent</option>
+                    </select>
+                    </div>
+
+                    <div class="form-control mt-1">
+                    <button onclick="createTicket()" class="btn btn-primary">Create a New Task</button>
+                    </div>
+                </div>
+        </div>
+        <hr>
+        <table class="table table-hover table-bordered mt-2">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Subject</th>
+                    <th>IsUrgent</th>
+                    <th>Created Date</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                ${text}
+            </tbody>
+        </table>`;
+    }
+}
+
+async function createTicket(){
+
+    const subjectEl = document.getElementById("subject");
+    const isUrgentEl = document.getElementById("isUrgent");
+    const localStorageResponseString = localStorage.getItem("response");
+    const localStorageResponse = JSON.parse(localStorageResponseString);
+    const userId = localStorageResponse.userId;
+
+
+    const data = {
+        userId: userId,
+        subject: subjectEl.value,
+        isUrgent: isUrgentEl.value
+    };
+
+    await axios.post("https://localhost:7079/api/Tickets/Create", data);
+
+    toastr.success('Ticket create is successful')
+
+    gotoHome();
+}
+
+async function changeTicketStatus(id, event){
+    var response = await Swal.fire({
+        title: 'Change Status!',
+        text: 'Do you want to change status this ticket',
+        icon: 'question',
+        confirmButtonText: 'Change',
+        showCancelButton: true,
+        cancelButtonText: "Cancel"
+      });
+
+      if(response.isConfirmed){
+        const data = {
+            id: id,
+            status: event.target.value
+        };
+    
+        await axios.post("https://localhost:7079/api/Tickets/ChangeStatus",data);
+    
+        toastr.info('Ticket status change is successful')    
+      }
+
+      gotoHome();
 }
 
 function checkValidation(e) {
@@ -227,19 +338,19 @@ function login() {
     }
 
     const data = {
-        userNameOrEmail : userNameOrEmailEl.value,
+        userNameOrEmail: userNameOrEmailEl.value,
         password: passwordEl.value
     }
 
     if (userNameOrEmailIsValid && passwordIsValid) {
-        axios.post("https://localhost:7079/api/Auth/Login",data)
-        .then(res=> {
-            localStorage.setItem("response", JSON.stringify(res.data));
-            gotoHome();
-        })
-        .catch(err=> {
-            console.log(err)
-        })
+        axios.post("https://localhost:7079/api/Auth/Login", data)
+            .then(res => {
+                localStorage.setItem("response", JSON.stringify(res.data));
+                gotoHome();
+            })
+            .catch(err => {
+                console.log(err)
+            })
     }
 }
 
@@ -315,8 +426,8 @@ function register() {
     }
 }
 
-function checkAuthentication(){
-    if(localStorage.getItem("response")) return true;
+function checkAuthentication() {
+    if (localStorage.getItem("response")) return true;
 
     gotoLogin();
     return false;

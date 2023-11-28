@@ -1,0 +1,4 @@
+﻿[*.cs]
+
+# CS9113: Parameter is unread.
+dotnet_diagnostic.CS9113.severity = none

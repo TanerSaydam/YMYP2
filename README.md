@@ -1,4 +1,10 @@
 # YMYP 2.Eğitim
+## 26.Ders İşlenen Konular (28.11.2023)
+- JavaScript Baştan Özetini Geçtik
+- WebApi Tarafında Authentication Authorization Kısmının Bir Tekrarını Yaptık
+- Ticket Projemizde Ticket Ekleme ve Status Değiştirme İşlemlerini Kodladık
+- Toast ve SweetAlert2 Kütüphanesini Projemizde Uyguladık
+
 ## 25.Ders İşlenen Konular (26.11.2023)
 - Login Metodu Yazdık
 - Login İşlemini Test Ettik

@@ -1,5 +1,6 @@
 ﻿using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
+using Server.WebApi.DTOs;
 using Server.WebApi.Models;
 using Server.WebApi.Options;
 using System.IdentityModel.Tokens.Jwt;
@@ -18,7 +19,7 @@ public sealed class JwtProvider
         _jwt = jwt.Value;
     }
 
-    public string CreateToken(User user, bool rememberMe)
+    public LoginResponseDto CreateToken(User user, bool rememberMe)
     {
         List<Claim> claims = new()
         {
@@ -47,6 +48,6 @@ public sealed class JwtProvider
         string token = handler.WriteToken(securityToken);
 
 
-        return token;
+        return new(token, user.Id);
     }
 }

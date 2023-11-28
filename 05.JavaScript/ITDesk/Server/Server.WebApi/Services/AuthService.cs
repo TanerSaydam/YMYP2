@@ -42,7 +42,7 @@ public sealed class AuthService
         #endregion
     }
 
-    public string Login(LoginDto request)
+    public LoginResponseDto Login(LoginDto request)
     {
         #region Validation Check
         CheckValidation(request);
