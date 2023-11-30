@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+    <style>
+        li:hover{
+            background-color: aquamarine;
+        }
+    </style>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+</head>
+<body>
+    <h1>Node JS Deneme Web Sayfası</h1>
+
+    <input>
+    <button onclick="save()">Save</button>
+
+    <ul></ul>
+    
+    <script>
+        getAll();
+
+        //Read
+        async function getAll(){
+            const data = 
+                await fetch("http://localhost:7000/api/getAll")
+                .then(res=> res.json());
+
+            const ulEl = document.querySelector("ul");
+            let text = "";
+
+            for(let i in data){
+                text += `
+                    <li>
+                        <input value="${data[i]}" id="input-${i}"> 
+                        <button onclick="update(event)" data-index="${i}">Update</button> 
+                        <button onclick="removeByIndex(event)" data-index="${i}">Remove</button>                      
+                    </li>`
+            }
+
+            ulEl.innerHTML = text;
+        }
+
+        //Create
+        const save = async () => {
+           const inputEl = document.querySelector("input");
+           const data = {value: inputEl.value};
+           
+           await fetch("http://localhost:7000/api/save", {
+            method: "POST",
+            body: JSON.stringify(data),
+            headers: {"Content-Type": "application/json"}
+           }).then(res=> res.json());
+
+           getAll();
+        }        
+    
+        //update
+        const update = async (event)=> {
+            const index = event.target.dataset["index"];
+            const value = document.getElementById("input-" + index).value;
+            
+            const data = {
+                index: index,
+                value: value
+            };
+
+            await fetch("http://localhost:7000/api/update", {
+                method: "POST",
+                body: JSON.stringify(data),
+                headers: {"Content-Type": "application/json"}
+            }).then(res=> res.json())
+
+            toastr.info("Update is successful");
+
+            getAll();
+        }
+
+        //Remove
+        async function removeByIndex(event){
+            const index = event.target.dataset["index"];
+
+            await fetch(`http://localhost:7000/api/removeByIndex/${index}`).then(res=> res.json())
+
+            getAll();
+        }
+    </script>
+</body>
+</html>

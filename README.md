@@ -1,4 +1,16 @@
 # YMYP 2.Eğitim
+## 27.Ders İşlenen Konular (30.11.2023)
+- NodeJS Nedir ve Nasıl Kurulur
+- NPM Paketleri Nedir
+- Örnek Proje Üzerinde NodeJS İnceleme
+- Express JS Kurulumu
+- Örnek WebAPI Yazma ve Testi
+- CORS
+- Örnek Todo Projesi ve WebApi ile Birleştirme
+- nodemon NPM Paketi
+- Todo Projesi için CRUD işlemleri
+
+
 ## 26.Ders İşlenen Konular (28.11.2023)
 - JavaScript Baştan Özetini Geçtik
 - WebApi Tarafında Authentication Authorization Kısmının Bir Tekrarını Yaptık
