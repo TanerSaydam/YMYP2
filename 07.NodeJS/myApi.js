@@ -1,44 +1,60 @@
 const express = require("express");
 const cors = require("cors");
-const { log } = require("console");
-const { todo } = require("node:test");
+const mongoose = require("mongoose");
+
 const app = express();
 
 app.use(cors());
 app.use(express.json());
 
+//12:38 görüşelim
+
+const uri = "mongodb://127.0.0.1:27017/tododb";
+mongoose.connect(uri).then(res=> {
+    console.log("Database bağlantısı başarılı")
+}).catch(err=> {
+    console.log(err);
+});
+
+const todoSchema = new mongoose.Schema({
+    work: String,
+    date: Date
+});
+
+const Todo = mongoose.model("Todo", todoSchema);
+
 //API metotlarımız => GET, POST, PUT, DELETE
-
-const todos = ["Todo 1", "Todo 2", "Todo 3"];
-
 
 app.get("/api", (req, res)=> {
     res.json({message: "API çalışıyor"});
 });
 
-app.get("/api/getAll", (req,res)=> {
+app.get("/api/getAll", async (req,res)=> {
+    const todos = await Todo.find().sort({date: -1});
     res.json(todos);
 });
 
-app.get("/api/removeByIndex/:id", (req,res)=> {
-    const index = req.params.id;
+app.post("/api/removeById", async (req,res)=> {
+    const {_id} = req.body;
 
-    todos.splice(index, 1);
+    await Todo.findByIdAndDelete(_id);
 
     res.json({});
 })
 
-app.post("/api/save", (req,res)=> {
+app.post("/api/save", async (req,res)=> {
     const {value} = req.body;
-    console.log(req.body);
-    todos.push(req.body.value);
-
+   
+    const todo = new Todo({work: value, date: new Date().setHours(new Date().getHours() + 15)});
+    await todo.save();
     res.json({});
 })
 
-app.post("/api/update", (req,res)=> {
-    const body = req.body;
-    todos[body.index] = body.value;
+app.post("/api/update", async (req,res)=> {
+    const {_id, value} = req.body;
+    
+    await Todo.findByIdAndUpdate(_id, {work: value});
+
 
     res.json({});
 })
