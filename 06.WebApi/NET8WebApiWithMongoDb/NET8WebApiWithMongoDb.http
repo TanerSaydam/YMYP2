@@ -1,0 +1,6 @@
+@NET8WebApiWithMongoDb_HostAddress = http://localhost:5273
+
+GET {{NET8WebApiWithMongoDb_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

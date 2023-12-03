@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\NET8WebApiWithMongoDb.props" />
+</Project>

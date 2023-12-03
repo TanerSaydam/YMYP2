@@ -1,4 +1,14 @@
 # YMYP 2.Eğitim
+## 28.Ders İşlenen Konular (03.12.2023)
+- MongoDb Nedir?
+- MongoDb Cloud Üzerinde Kullanma
+- MongoDb Pc'ye Kurma
+- MongoDb ile Database ve Collection Oluşturma
+- MongoDb ile terminal Üzerinden CRUD işlemleri
+- MongoDb'yi node.js Uygulmamamıza Bağlama ve CRUD İşlemleri
+- MongoDb'yi .NET WebApi Projesine Bağlama ve CRUD İşlemleri
+- Performans Testi
+
 ## 27.Ders İşlenen Konular (30.11.2023)
 - NodeJS Nedir ve Nasıl Kurulur
 - NPM Paketleri Nedir

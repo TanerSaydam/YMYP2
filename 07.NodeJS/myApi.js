@@ -7,7 +7,6 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-//12:38 görüşelim
 
 const uri = "mongodb://127.0.0.1:27017/tododb";
 mongoose.connect(uri).then(res=> {

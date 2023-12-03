@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "3tH33fLmz3+lYampz3fd7H3o2TfDX+q3LWZ+T/KYxZE=",
+  "Source": "NET8WebApiWithMongoDb",
+  "BasePath": "_content/NET8WebApiWithMongoDb",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
