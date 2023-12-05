@@ -1,4 +1,11 @@
 # YMYP 2.Eğitim
+## 29.Ders İşlenen Konular (05.12.2023)
+- JQuery Nedir?
+- JQuery Syntax Yapıları ve Örnek Kullanımları
+- Typescript Nedir?
+- Typescript Kurulumu
+- Typescript Değişkenler, Type, Enum, Class ve Array Kullanımı
+
 ## 28.Ders İşlenen Konular (03.12.2023)
 - MongoDb Nedir?
 - MongoDb Cloud Üzerinde Kullanma

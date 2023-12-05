@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<body>
+    <h1>JQuery</h1>
+    <!-- $(selector).action() -->
+    <!-- #id .class [type: value] elementAdi -->
+
+    <h2 class="h2">Hello World</h2>    
+    <h2>Hello World</h2>    
+
+    <input type="text">
+    <input type="password" class="asdasd">
+    <input type="email">
+
+    <style>
+        [type='text']{
+            color:red;
+        }
+    </style>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.6.2/axios.min.js"></script>
+
+   <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            //JQuery kodları
+          
+
+            fetch("https://jsonplaceholder.typicode.com/todos")
+            .then(res=> res.json())
+            .then(data=> console.log(data));
+
+            axios.get("https://jsonplaceholder.typicode.com/todos")
+            .then(res=> console.log(res));
+
+            $.ajax({
+                method: "GET",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                url: "https://jsonplaceholder.typicode.com/todos",
+                success: (res)=> {
+                    console.log(res);
+                }
+            })
+
+            //metot();
+
+            // function metot(){
+            //     $(".h2").html("<b>Taner Saydam</b>");
+            //     document.querySelector(".h2").innerHTML = "Taner Saydam 2"
+
+
+            //    $("[type]:text").val("Merhaba");
+            //    document.querySelector("[type='text']").value = "Merhaba 2"
+
+            //    $("[type]:password").removeAttr("class")
+            // }
+            
+
+            // function beniTikla(){
+            //     alert("Tıklandı");
+            // }
+
+
+            // $(".h2").mouseenter(()=> {
+            //    $("h2")[0].style.backgroundColor = "red"               
+            // });
+
+            // $(".h2").mouseleave(()=> {
+            //     $("h2")[0].style.backgroundColor = "white"
+            // })
+        });
+    </script>
+
+
+<script>
+    document.getElementById("id");
+
+    $("#id").html("asdasd");
+</script>
+
+<style>
+    h1{
+
+    }
+
+    #id{
+
+    }
+
+    .form-control{
+
+    }
+</style>
+</body>
+</html>

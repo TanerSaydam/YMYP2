@@ -1,0 +1,61 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <button onclick="getData()">Get Data</button>
+    <ul id="name"></ul>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.6.2/axios.min.js"></script>
+</div>
+
+<script>
+    function getData() {
+        // $.ajax({
+        //     method: "GET",
+        //     url: "/Home/GetData",
+        //     headers: {
+        //         "Content-Type": "application/json"
+        //     },
+        //     success: function (res) {
+        //         console.log(res);
+        //         const ulEl = document.querySelector("#name");
+
+        //         let text = "";
+
+        //         for (let data of res) {
+        //             text+= "<li>" + data + "</li>"
+        //         }
+
+        //         ulEl.innerHTML = text;
+        //     }
+        // })
+
+        // fetch("/Home/GetData").then(res => res.json()).then(data => {
+        //     const ulEl = document.querySelector("#name");
+
+        //     let text = "";
+
+        //     for (let d of data) {
+        //         text += "<li>" + d + "</li>"
+        //     }
+
+        //     ulEl.innerHTML = text;
+        // });
+
+        axios.get("/Home/GetData").then(res => {
+            const ulEl = document.querySelector("#name");
+
+            let text = "";
+
+            for (let d of res.data) {
+                text += "<li>" + d + "</li>"
+            }
+
+            ulEl.innerHTML = text;
+        })
+    }
+</script>
