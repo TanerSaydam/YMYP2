@@ -1,4 +1,11 @@
 # YMYP 2.Eğitim
+## 30.Ders İşlenen Konular (07.12.2023)
+- React Nedir?
+- React Proje Oluşturma
+- Angular Projesi ile Karşılaştırma
+- React For ve If Blogları Kullanımı
+- Next js Proje Oluşturma ve Routing Yapısı İncelemesi
+
 ## 29.Ders İşlenen Konular (05.12.2023)
 - JQuery Nedir?
 - JQuery Syntax Yapıları ve Örnek Kullanımları
