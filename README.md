@@ -1,4 +1,20 @@
 # YMYP 2.Eğitim
+## 31.Ders İşlenen Konular (10.12.2023)
+- Angular Nedir?
+- Angular CLI Nedir? Nasıl Kurulur?
+- Proje Oluşturma
+- HTML ve TS Yapısı
+- Değişken Oluşturma
+- HTML'de TS'deki Değişken ve Metoda Erişme
+- Örnek Todo Projesi
+- CRUD İşlemleri
+- Ayrı bir Component Ekleme
+- Component içinde Component Çağırma
+- Componentler Arası İletişim
+- JSON Dosyasından API ile Veri Okuma
+- Json-Server ile CRUD İşlemleri
+- Input-Output Yöntemi ile State Management
+
 ## 30.Ders İşlenen Konular (07.12.2023)
 - React Nedir?
 - React Proje Oluşturma
