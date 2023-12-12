@@ -1,4 +1,14 @@
 # YMYP 2.Eğitim
+## 32.Ders İşlenen Konular (12.12.2023)
+- Angular CLI Versiyonunu Downgrade Etme
+- Angular 16 ve eski Versiyonlarında Proje Kalıbı
+- Angular 16 ile Standalone Kullanımı
+- Angular Versiyonu Güncelleme
+- Angular 16 ile Todo CRUD Projesi
+- Angular 17 ile Personel Projesi
+- Angular Projesine Bootstrap Ekleme
+- Fetch Api ile JsonServer'a Api İsteği
+
 ## 31.Ders İşlenen Konular (10.12.2023)
 - Angular Nedir?
 - Angular CLI Nedir? Nasıl Kurulur?

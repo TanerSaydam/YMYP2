@@ -1,0 +1,10 @@
+@if (true) {
+  <li></li>
+}
+<ul>
+  @for (t of todos; track t;) {
+    <li>
+      {{$index}} {{t}}
+    </li>
+  }
+</ul>

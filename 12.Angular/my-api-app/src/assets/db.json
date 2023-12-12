@@ -1,0 +1,32 @@
+{
+  "personels": [
+    {
+      "firstname": "Taner",
+      "lastname": "Saydam",
+      "profession": "Software",
+      "salary": 5000,
+      "id": 1
+    },
+    {
+      "firstname": "Yusuf",
+      "lastname": "Badem",
+      "profession": "Software",
+      "salary": 6000,
+      "id": 2
+    },
+    {
+      "firstname": "Muhammet Furkan",
+      "lastname": "Ayhan",
+      "profession": "Software",
+      "salary": 7000,
+      "id": 3
+    },
+    {
+      "firstname": "Mehmet Can",
+      "lastname": "Unaldı",
+      "profession": "Software",
+      "salary": 8000,
+      "id": 4
+    }
+  ]
+}

@@ -1,0 +1,71 @@
+<h1 class="alert alert-success text-center mt-2">Personel App</h1>
+
+<div class="text-center">
+  <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#addPersonelModal">Add Personel</button>
+</div>
+<table class="table table-hover table-bordered mt-2">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Fistname</th>
+      <th>Lastname</th>
+      <th>Profession</th>
+      <th>Salary</th>
+    </tr>
+  </thead>
+  <tbody>
+    @for(personel of personels; track personel){
+      <tr>
+        <td>
+          <button class="btn btn-sm btn-outline-danger">Remove</button>
+        </td>
+        <td>{{personel.firstname}}</td>
+        <td>{{personel.lastname}}</td>
+        <td>{{personel.profession}}</td>
+        <td>{{personel.salary}}</td>
+      </tr>
+    }
+  </tbody>
+</table>
+
+<!-- Modal -->
+<div class="modal fade" id="addPersonelModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5">Add Personel Form</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" id="addPersonelCloseBtnModal"
+          aria-label="Close">
+        </button>
+      </div>
+      <form #addForm="ngForm" (ngSubmit)="add(addForm)">
+        <div class="modal-body">
+          <div class="form-group">
+            <label for="firstname">First Name</label>
+            <input type="text" [(ngModel)]="createModel.firstname" name="firstname" class="form-control" id="firstname">
+          </div>
+          <div class="form-group mt-1">
+            <label for="lastname">Last Name</label>
+            <input required type="text" [(ngModel)]="createModel.lastname" name="lastname" class="form-control" id="lastname">
+          </div>
+          <div class="form-group mt-1">
+            <label for="profession">Profession</label>
+            <select class="form-control" name="profession" [(ngModel)]="createModel.profession" id="profession">
+              @for(profession of professionTypes; track profession){
+              <option>{{profession}}</option>
+              }
+            </select>
+          </div>
+          <div class="form-group mt-1">
+            <label for="salary">Salary</label>
+            <input type="number" [(ngModel)]="createModel.salary" name="salary" class="form-control" id="salary">
+          </div>
+
+        </div>
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-success">Add</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

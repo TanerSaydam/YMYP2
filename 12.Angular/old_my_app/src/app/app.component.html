@@ -1,0 +1,35 @@
+<h1>Todo App</h1>
+@if (!isUpdateFormActive) {
+  <div>
+    <input
+      type="text"
+      [(ngModel)]="work"
+      placeholder="write me something...">
+    <button (click)="save()">Save</button>
+  </div>
+}
+@if (isUpdateFormActive) {
+  <div>
+    <input
+      type="text"
+      [(ngModel)]="updateWork">
+    <button (click)="update()">Update</button>
+    <button (click)="cancel()">Cancel</button>
+  </div>
+}
+<hr>
+  <ul>
+    @for (todo of todos; track todo; let i = $index) {
+      <li
+        (dblclick)="get(i)">
+        {{todo}}
+        @if (!isUpdateFormActive) {
+          <button
+            (click)="remove(i)">
+            Remove
+          </button>
+        }
+      </li>
+    }
+  </ul>
+  
