@@ -1,4 +1,13 @@
 # YMYP 2.Eğitim
+## 33.Ders İşlenen Konular (14.12.2023)
+- Angular Routing Yapısı
+- Angular Layout Yapısı
+- Personel Projesi
+- Bootstrap Dahil Etme
+- Ana Sayfada json-server ile .json Dosyasından Veri Okuma / Yazma
+- Pagination Yapısının Faydaları ve Gerekli Olduğu Durumlar
+- Ngx-Pagination
+
 ## 32.Ders İşlenen Konular (12.12.2023)
 - Angular CLI Versiyonunu Downgrade Etme
 - Angular 16 ve eski Versiyonlarında Proje Kalıbı
