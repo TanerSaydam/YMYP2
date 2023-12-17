@@ -1,0 +1,199 @@
+<title>Personel App | Home Page</title>
+<div class="row">
+    <div class="col-9">
+        <button class="btn btn-dark btn-sm" data-bs-toggle="modal" data-bs-target="#addPersonelModal">
+            Add Personel
+        </button>
+    </div>
+    <div class="col-3">
+        <input type="search" class="form-control no-use-select" placeholder="Search..." [(ngModel)]="search">
+    </div>
+</div>
+<div class="mt-2">
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Profession</th>
+                <th>Operations</th>
+            </tr>
+        </thead>
+        <tbody>
+            @for(personel of personels | personel: search | paginate: { itemsPerPage: 10, currentPage: p }; track
+            personel){
+            <tr>
+                <td>{{ ((p - 1) * 10) + $index + 1 }}</td>
+                <td>{{ personel?.firstName }}</td>
+                <td>{{ personel?.lastName }}</td>
+                <td>{{ personel?.profession }}</td>
+                <td style="padding: 5px">
+                    <button (click)="get(personel)" data-bs-toggle="modal" data-bs-target="#updatePersonelModal"
+                        class="btn btn-outline-dark btn-sm">
+                        <i class="fa-solid fa-edit"></i>
+                    </button>
+                    <button (click)="removeById(personel.id)" class="btn btn-outline-danger btn-sm ms-1">
+                        <i class="fa-solid fa-trash"></i>
+                    </button>
+                </td>
+            </tr>
+            }
+        </tbody>
+    </table>
+
+    <div class="text-center">
+        <pagination-controls (pageChange)="p = $event"></pagination-controls>
+    </div>
+</div>
+
+<!-- NG Form Add Modal -->
+<div class="modal fade" id="addPersonelModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5">Add Personel Form</h1>
+                <button type="button" #addPersonelModalCloseBtn id="addPersonelModalCloseBtn" class="btn-close"
+                    data-bs-dismiss="modal">
+                </button>
+            </div>
+            <form formValidation #createForm="ngForm" (ngSubmit)="create(createForm)" autocomplete="off">
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="firstName">First Name</label>
+                                <input (keyup)="checkValidation('firstName')" [(ngModel)]="createModel.firstName"
+                                    required minlength="3" name="firstName" type="text" class="form-control"
+                                    id="firstName">
+                                <div class="invalid-feedback"></div>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="lastName">Last Name</label>
+                                <input (keyup)="checkValidation('lastName')" [(ngModel)]="createModel.lastName" required
+                                    minlength="3" name="lastName" type="text" class="form-control" id="lastName">
+                                <div class="invalid-feedback"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group mt-2">
+                        <label for="profession">Profession</label>
+                        <select [(ngModel)]="createModel.profession" name="profession" class="form-control"
+                            id="profession">
+                            @for(profession of professions; track profession){
+                            <option>{{profession}}</option>
+                            }
+                        </select>
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-dark w-100">Save</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- Reactive Form Add Modal -->
+<div class="modal fade" id="addRactivePersonelModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5">Add Reactive Personel Form</h1>
+                <button type="button" #addRactivePersonelModalCloseBtn id="addRactivePersonelModalCloseBtn"
+                    class="btn-close" data-bs-dismiss="modal">
+                </button>
+            </div>
+            <form [formGroup]="addFormGroup" (ngSubmit)="createFormGroup()" autocomplete="off">
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="reactiveFirstName">First Name</label>
+                                <input formControlName="firstName" type="text" class="form-control"
+                                    id="reactiveFirstName">
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="reactiveLastName">Last Name</label>
+                                <input formControlName="lastName" type="text" class="form-control"
+                                    id="reactiveLastName">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group mt-2">
+                        <label for="reactiveProfession">Profession</label>
+                        <select formControlName="profession" name="reactiveProfession" class="form-control"
+                            id="reactiveProfession">
+                            @for(profession of professions; track profession){
+                            <option>{{profession}}</option>
+                            }
+                        </select>
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-dark w-100">Save</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- Update Modal -->
+<div class="modal fade" id="updatePersonelModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5">Update Personel Form</h1>
+                <button type="button" #updatePersonelModalCloseBtn id="updatePersonelModalCloseBtn" class="btn-close"
+                    data-bs-dismiss="modal">
+                </button>
+            </div>
+            <form formValidation #updateForm="ngForm" (ngSubmit)="update(updateForm)" autocomplete="off">
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="updateFirstName">First Name</label>
+                                <input (keyup)="checkValidation('updateFirstName')" required minlength="3"
+                                    [(ngModel)]="updateModel.firstName" name="updateFirstName" type="text"
+                                    class="form-control" id="updateFirstName">
+                                <div class="invalid-feedback"></div>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="updateLastName">Last Name</label>
+                                <input (keyup)="checkValidation('updateLastName')" required minlength="3"
+                                    [(ngModel)]="updateModel.lastName" name="updateLastName" type="text"
+                                    class="form-control" id="updateLastName">
+                                <div class="invalid-feedback"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group mt-2">
+                        <label for="updateProfession">Profession</label>
+                        <select [(ngModel)]="updateModel.profession" name="updateProfession" class="form-control"
+                            id="updateProfession">
+                            @for(profession of professions; track profession){
+                            <option>{{profession}}</option>
+                            }
+                        </select>
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-warning w-100">Update</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

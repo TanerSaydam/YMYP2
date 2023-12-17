@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "my-personel-app": {
+    "my-pipe-app": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:class": {
@@ -38,7 +38,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/my-personel-app",
+            "outputPath": "dist/my-pipe-app",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -82,10 +82,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "my-personel-app:build:production"
+              "buildTarget": "my-pipe-app:build:production"
             },
             "development": {
-              "buildTarget": "my-personel-app:build:development"
+              "buildTarget": "my-pipe-app:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -93,7 +93,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "buildTarget": "my-personel-app:build"
+            "buildTarget": "my-pipe-app:build"
           }
         },
         "test": {

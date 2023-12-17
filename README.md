@@ -1,4 +1,15 @@
 # YMYP 2.Eğitim
+## 34.Ders İşlenen Konular (17.12.2023)
+- Angular Personel Projesinde Update İşlemi
+- Reactive Form Yapısı
+- Validation Kontrolü
+- Directive 
+- Form Yapısı ile Validation
+- Valdation u Directive ile Generic Hale Getirme
+- Currency ve Date Pipe'ları
+- Service Yazma
+- Generic Http Service
+
 ## 33.Ders İşlenen Konular (14.12.2023)
 - Angular Routing Yapısı
 - Angular Layout Yapısı
