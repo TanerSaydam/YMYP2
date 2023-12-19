@@ -1,4 +1,11 @@
 # YMYP 2.Eğitim
+## 35.Ders İşlenen Konular (19.12.2023)
+- State Management Nedir? 
+- Input-Output ile State Management
+- Service ile State Management
+- Tema Giydirme
+- Generic Component
+
 ## 34.Ders İşlenen Konular (17.12.2023)
 - Angular Personel Projesinde Update İşlemi
 - Reactive Form Yapısı
