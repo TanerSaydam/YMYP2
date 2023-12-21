@@ -3,7 +3,7 @@
     <h5>Ana Sayfa</h5>
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
-            <li class="breadcrumb-item active" aria-current="page">Home</li>
+            <li class="breadcrumb-item active" aria-current="page">Ana Sayfa</li>
         </ol>
     </nav>
 </div>
@@ -21,7 +21,7 @@
                 <div class="card-body text-center">
                     <h5>{{product.price | trCurrency: '₺': true}}</h5>
                     @if(isAuthenticated){
-                        <button class="btn btn-dark w-100">
+                        <button class="btn btn-dark w-100" (click)="addShoppingCart(product.id)">
                             <i class="fa-solid fa-plus me-1"></i>
                             Sepete Ekle
                         </button>

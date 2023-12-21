@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { AuthService } from '../../../services/auth.service';
+import { ShoppingCartService } from '../../../services/shopping-cart.service';
 
 @Component({
   selector: 'app-navbar',
@@ -13,7 +14,8 @@ export class NavbarComponent {
   isAuthenticated: boolean = false;
 
   constructor(
-    private auth: AuthService
+    private auth: AuthService,
+    public cart: ShoppingCartService
   ) {
     this.isAuthenticated = this.auth.isAuthenticated();
   }

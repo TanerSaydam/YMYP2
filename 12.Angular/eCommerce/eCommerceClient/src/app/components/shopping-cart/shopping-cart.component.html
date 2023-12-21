@@ -1,2 +1,44 @@
 <title>e-Commerce | Sepetim</title>
-<p>shopping-cart works!</p>
+<div class="d-flex justify-content-between mt-2">
+    <h5>Ana Sayfa</h5>
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item" aria-current="page">Ana Sayfa</li>
+            <li class="breadcrumb-item active" aria-current="page">Sepetim</li>
+        </ol>
+    </nav>
+</div>
+<hr>
+<div class="row">
+    <div class="col-9">
+        @for(n of numbers; track n){
+            <div class="card mt-1">
+                <div class="card-body d-flex justify-content-between align-items-center">
+                    <img src="assets/elma.png" alt="" width="100">
+                    <h5>Elma</h5>
+                    <div class="form-group d-flex justify-content-center align-items-center" style="gap: 10px;">
+                        <i class="fa-solid fa-minus text-danger cursor" style="font-size: 25px;"></i>
+                        <h3 style="border: 1px solid; padding: 2px 15px; border-radius: 10px;">{{1}}</h3>
+                        <i class="fa-solid fa-plus cursor" style="font-size: 25px;"></i>
+                    </div>
+                    <i class="fa-solid fa-trash text-danger cursor"></i>
+                </div>                   
+            </div>
+        }        
+    </div>
+    <div class="col-3">
+        <div class="card">
+            <div class="card-header">
+                <h1 class="alert alert-dark text-center">
+                    {{15000 | trCurrency :'₺':true }}
+                </h1>
+            </div>
+            <div class="card-body">
+                <button class="btn btn-dark w-100">
+                    <i class="fa-solid fa-credit-card me-1"></i>
+                    Ödeme Yap
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

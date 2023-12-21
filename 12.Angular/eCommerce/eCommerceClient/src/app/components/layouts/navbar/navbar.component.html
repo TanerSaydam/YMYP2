@@ -24,9 +24,14 @@
             </ul>
             <div class="d-flex" role="search">
                 @if(isAuthenticated){
-                    <button class="btn btn-outline-light" routerLink="/shopping-carts">
+                    <button class="btn btn-outline-light position-relative" routerLink="/shopping-carts">
                         <i class="fa-solid fa-cart-shopping me-1"></i>
                         Sepet
+                        @if(cart.count > 0){
+                            <span class="position-absolute top-100 start-0 translate-middle badge rounded-pill bg-danger">
+                                {{cart.count}}
+                            </span>
+                        }                        
                     </button>
                     <button class="btn btn-outline-light ms-1">
                         <i class="fa-solid fa-power-off"></i>

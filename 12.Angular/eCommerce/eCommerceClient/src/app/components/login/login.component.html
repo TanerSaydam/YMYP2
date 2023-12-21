@@ -7,11 +7,11 @@
                 <h1>Giriş Sayfası</h1>
                 <p>Giriş yapmak için bilgilerinizi doldurun</p>
             </div>
-            <form #loginForm="ngForm" autocomplete="off">
+            <form #loginForm="ngForm" autocomplete="off" (ngSubmit)="signIn(loginForm)">
                 <div class="card-body">
                     <div class="form-group">
                         <label for="email">Email</label>
-                        <input type="email" ngModel required minlength="3" class="form-control" name="email" id="email">
+                        <input type="email" ngModel required minlength="3" email class="form-control" name="email" id="email">
                     </div>
                     <div class="form-group mt-2">
                         <label for="password">Password</label>

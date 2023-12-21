@@ -1,4 +1,11 @@
 # YMYP 2.Eğitim
+## 36.Ders İşlenen Konular (21.12.2023)
+- Angular ile E Ticaret Uygulamasına Başladık
+- Projeyi Oluşturup İhtiyacımız olan Yapıyı Kararlaştırdık
+- Sayfaları Oluşturduk
+- Register, Login, Layout, Home, Shopping Cart Tasarımlarını Yaptık
+- Bootstrap npm Paketi Olarak Dahil Ettik
+
 ## 35.Ders İşlenen Konular (19.12.2023)
 - State Management Nedir? 
 - Input-Output ile State Management
