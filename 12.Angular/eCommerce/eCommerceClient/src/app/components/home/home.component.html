@@ -1,0 +1,32 @@
+<title>e-Commerce | Ana Sayfa</title>
+<div class="d-flex justify-content-between mt-2">
+    <h5>Ana Sayfa</h5>
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item active" aria-current="page">Home</li>
+        </ol>
+    </nav>
+</div>
+<hr>
+<div class="row">
+    @for(n of numbers; track n){
+        <div class="col-3 mt-1">
+            <div class="card">
+                <div class="card-body">
+                    <img src="/assets/elma.png" style="width: 100%;">
+                </div>
+                <div class="card-header text-center">
+                    <h5>Elma</h5>
+                </div>
+                <div class="card-body text-center">
+                    <h5>{{5000 | trCurrency: '₺': true}}</h5>
+                    <button class="btn btn-dark w-100">
+                        <i class="fa-solid fa-plus me-1"></i>
+                        Sepete Ekle
+                    </button>
+                </div>
+            </div>
+        </div>
+    }
+   
+</div>

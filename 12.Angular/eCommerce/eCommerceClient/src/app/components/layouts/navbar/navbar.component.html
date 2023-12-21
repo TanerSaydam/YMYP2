@@ -1,0 +1,39 @@
+<nav class="navbar navbar-expand-lg bg-dark" data-bs-theme="dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" routerLink="/">e-Commerce</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" routerLink="/">
+                        <i class="fa-solid fa-house me-1"></i>
+                        Home
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/orders">
+                        <i class="fa-solid fa-file me-1"></i>
+                        Siparişlerim
+                    </a>
+                </li>
+            </ul>
+            <div class="d-flex" role="search">
+                <button class="btn btn-outline-light" routerLink="/shopping-carts">
+                    <i class="fa-solid fa-cart-shopping me-1"></i>
+                    Sepet
+                </button>
+                <button class="btn btn-outline-light ms-1" routerLink="/login">
+                    <i class="fa-solid fa-right-to-bracket"></i>
+                    Giriş
+                </button>
+                <button class="btn btn-outline-light ms-1">
+                    <i class="fa-solid fa-power-off"></i>
+                    Çıkış
+                </button>
+            </div>
+        </div>
+    </div>
+</nav>
