@@ -9,24 +9,30 @@
 </div>
 <hr>
 <div class="row">
-    @for(n of numbers; track n){
+    @for(product of products; track product){
         <div class="col-3 mt-1">
             <div class="card">
                 <div class="card-body">
-                    <img src="/assets/elma.png" style="width: 100%;">
+                    <img [src]="'/assets/' + product.coverImageUrl" style="width: 100%;">
                 </div>
                 <div class="card-header text-center">
-                    <h5>Elma</h5>
+                    <h5>{{product.name}}</h5>
                 </div>
                 <div class="card-body text-center">
-                    <h5>{{5000 | trCurrency: '₺': true}}</h5>
-                    <button class="btn btn-dark w-100">
-                        <i class="fa-solid fa-plus me-1"></i>
-                        Sepete Ekle
-                    </button>
+                    <h5>{{product.price | trCurrency: '₺': true}}</h5>
+                    @if(isAuthenticated){
+                        <button class="btn btn-dark w-100">
+                            <i class="fa-solid fa-plus me-1"></i>
+                            Sepete Ekle
+                        </button>
+                    }@else {
+                        <p class="text-danger">Sepete Eklemek için Giriş Yapmalısınız</p>
+                    }                    
                 </div>
             </div>
         </div>
+    }@empty {
+        <h1 class="alert alert-warning text-center">Gösterilecek ürün bulunamadı!</h1>
     }
    
 </div>

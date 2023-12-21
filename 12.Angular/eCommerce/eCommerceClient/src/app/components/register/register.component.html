@@ -1,2 +1,38 @@
 <title>e-Commerce | Kayıt Sayfası</title>
-<p>register works!</p>
+
+<div class="d-flex justify-content-center align-items-center" style="height: 82vh;">
+    <div class="col-4">
+        <div class="card">
+            <div class="card-header">
+                <h1>Kayıt Sayfası</h1>
+                <p>Kayıt olmak için bilgilerinizi doldurun</p>
+            </div>
+            <form #registerForm="ngForm" autocomplete="off">
+                <div class="card-body">
+                    <div class="form-group">
+                        <label for="email">FirstName</label>
+                        <input type="text" ngModel required minlength="3" class="form-control" name="firstName" id="firstName">
+                    </div>
+                    <div class="form-group mt-2">
+                        <label for="email">Lastname</label>
+                        <input type="text" ngModel required minlength="3" class="form-control" name="Lastname" id="Lastname">
+                    </div>
+                    <div class="form-group mt-2">
+                        <label for="email">Email</label>
+                        <input type="email" ngModel required minlength="3" class="form-control" name="email" id="email">
+                    </div>
+                    <div class="form-group mt-2">
+                        <label for="password">Password</label>
+                        <input type="password" ngModel required class="form-control" name="password" id="password">
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="form-group">
+                        <button class="btn btn-danger w-100" [disabled]="!registerForm.valid">Kayıt ol</button>
+                        <a routerLink="/login">Zaten hesabınız var mı? Buraya tıklayarak giriş yapabilirsiniz</a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

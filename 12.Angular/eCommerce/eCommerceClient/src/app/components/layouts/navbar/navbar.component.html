@@ -13,26 +13,31 @@
                         Home
                     </a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" routerLink="/orders">
-                        <i class="fa-solid fa-file me-1"></i>
-                        Siparişlerim
-                    </a>
-                </li>
+                @if(isAuthenticated){
+                    <li class="nav-item">
+                        <a class="nav-link" routerLink="/orders">
+                            <i class="fa-solid fa-file me-1"></i>
+                            Siparişlerim
+                        </a>
+                    </li>
+                }                
             </ul>
             <div class="d-flex" role="search">
-                <button class="btn btn-outline-light" routerLink="/shopping-carts">
-                    <i class="fa-solid fa-cart-shopping me-1"></i>
-                    Sepet
-                </button>
-                <button class="btn btn-outline-light ms-1" routerLink="/login">
-                    <i class="fa-solid fa-right-to-bracket"></i>
-                    Giriş
-                </button>
-                <button class="btn btn-outline-light ms-1">
-                    <i class="fa-solid fa-power-off"></i>
-                    Çıkış
-                </button>
+                @if(isAuthenticated){
+                    <button class="btn btn-outline-light" routerLink="/shopping-carts">
+                        <i class="fa-solid fa-cart-shopping me-1"></i>
+                        Sepet
+                    </button>
+                    <button class="btn btn-outline-light ms-1">
+                        <i class="fa-solid fa-power-off"></i>
+                        Çıkış
+                    </button>
+                }@else {
+                    <button class="btn btn-outline-light ms-1" routerLink="/login">
+                        <i class="fa-solid fa-right-to-bracket"></i>
+                        Giriş
+                    </button>
+                }
             </div>
         </div>
     </div>

@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
 import { TrCurrencyPipe } from 'tr-currency';
+import { AuthService } from '../../services/auth.service';
+import { ProductModel } from '../../models/product.model';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 
 @Component({
   selector: 'app-home',
@@ -9,11 +12,23 @@ import { TrCurrencyPipe } from 'tr-currency';
   styleUrl: './home.component.css'
 })
 export class HomeComponent {
-  numbers: number[] = [];
+  products: ProductModel[] = [];
+  isAuthenticated: boolean = false;
+  
+  constructor(private auth: AuthService, private http: HttpClient){
+    this.isAuthenticated = this.auth.isAuthenticated();
 
-  constructor(){
-    for (let i = 0; i < 100; i++) {
-      this.numbers.push(i);      
-    }
+    this.getAllProduct();
+  }
+
+  getAllProduct(){
+    this.http.get("assets/db.json").subscribe({
+      next: (res:any)=> {
+        this.products = res.products;
+      },
+      error: (err: HttpErrorResponse)=> {
+        console.log(err);        
+      }
+    })
   }
 }

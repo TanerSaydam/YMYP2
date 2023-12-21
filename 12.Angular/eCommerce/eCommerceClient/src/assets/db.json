@@ -1,0 +1,28 @@
+{
+    "products": [
+        {
+            "id": 1,
+            "name": "Elma",
+            "coverImageUrl": "elma.png",
+            "price": 100
+        },
+        {
+            "id": 2,
+            "name": "Armut",
+            "coverImageUrl": "armut.png",
+            "price": 120
+        },
+        {
+            "id": 3,
+            "name": "Karpuz",
+            "coverImageUrl": "karpuz.png",
+            "price": 200
+        },
+        {
+            "id": 4,
+            "name": "Muz",
+            "coverImageUrl": "muz.png",
+            "price": 300
+        }
+    ]
+}
