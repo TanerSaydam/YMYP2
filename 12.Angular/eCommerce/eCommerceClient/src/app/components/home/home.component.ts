@@ -48,4 +48,24 @@ export class HomeComponent {
     })
     
   }
+
+  showDownButton(event: any){
+    console.log(event);  
+    const id = event.target.id;
+    
+    event.target.classList.add("d-none");
+    const el:any = document.querySelector("#" + id + "+ div");
+    el.className = "d-flex mt-2"
+  }  
+
+  showOriginalButton(event:any){    
+    const divId:string = event.target.id;
+    const buttonId = divId.replace("div-","btn-");
+
+    const buttonEl = document.getElementById(buttonId);
+    buttonEl?.classList.remove("d-none");
+
+    const el:any = document.querySelector("#" + buttonId + "+ div");
+    el.className = "d-none mt-2"
+  }
 }

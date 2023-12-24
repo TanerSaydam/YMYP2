@@ -1,4 +1,13 @@
 # YMYP 2.Eğitim
+## 37.Ders İşlenen Konular (24.12.2023)
+- E Ticaret Uygulamasına Devam Ediyoruz
+- Sayfalarda Görsel Güzelleştirmeler Yaptık
+- Sipariş Sayfası Oluşturduk
+- .NET Üzerine Konuştuk
+- .NET WebAPI Projesi Oluşturduk
+- EntityFrameworkCore Kütüphanesini Kurduk
+- Code First ile Database Yapımızı Oluşturduk
+
 ## 36.Ders İşlenen Konular (21.12.2023)
 - Angular ile E Ticaret Uygulamasına Başladık
 - Projeyi Oluşturup İhtiyacımız olan Yapıyı Kararlaştırdık

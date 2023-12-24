@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { RouterLink } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { AuthService } from '../../../services/auth.service';
 import { ShoppingCartService } from '../../../services/shopping-cart.service';
 
@@ -11,12 +11,17 @@ import { ShoppingCartService } from '../../../services/shopping-cart.service';
   styleUrl: './navbar.component.css'
 })
 export class NavbarComponent {
-  isAuthenticated: boolean = false;
-
   constructor(
-    private auth: AuthService,
-    public cart: ShoppingCartService
+    public auth: AuthService,
+    public cart: ShoppingCartService,
+    private router: Router
   ) {
-    this.isAuthenticated = this.auth.isAuthenticated();
+    this.auth.isAuthenticated();
+  }
+
+  logout(){
+    localStorage.removeItem("response");
+    this.auth.isAuthenticated();
+    this.router.navigateByUrl("/");
   }
 }

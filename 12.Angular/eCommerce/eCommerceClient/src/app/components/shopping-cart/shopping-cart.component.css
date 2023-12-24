@@ -1,3 +1,7 @@
 .cursor{
     cursor: pointer;
 }
+
+span{
+    user-select: none;
+}

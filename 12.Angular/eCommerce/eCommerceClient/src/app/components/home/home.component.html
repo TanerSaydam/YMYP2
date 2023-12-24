@@ -1,16 +1,16 @@
 <title>e-Commerce | Ana Sayfa</title>
 <div class="d-flex justify-content-between mt-2">
-    <h5>Ana Sayfa</h5>
+    <h5>Ana Sayfa</h5>  
+    <h1>13:07 görüşelim</h1> 
     <nav aria-label="breadcrumb">
-        <ol class="breadcrumb">
-            <li class="breadcrumb-item active" aria-current="page">Ana Sayfa</li>
+        <ol class="breadcrumb">            
         </ol>
     </nav>
 </div>
 <hr>
 <div class="row">
     @for(product of products; track product){
-        <div class="col-3 mt-1">
+        <div class="col-3 mt-1" id="div-{{product.id}}" (mouseleave)="showOriginalButton($event)">
             <div class="card">
                 <div class="card-body">
                     <img [src]="'/assets/' + product.coverImageUrl" style="width: 100%;">
@@ -18,15 +18,22 @@
                 <div class="card-header text-center">
                     <h5>{{product.name}}</h5>
                 </div>
-                <div class="card-body text-center">
-                    <h5>{{product.price | trCurrency: '₺': true}}</h5>
+                <div class="card-body text-center" style="min-height: 80px;">
                     @if(isAuthenticated){
-                        <button class="btn btn-dark w-100" (click)="addShoppingCart(product.id)">
-                            <i class="fa-solid fa-plus me-1"></i>
-                            Sepete Ekle
+                        <button class="btn btn-dark w-100" style="margin-top: 8px;" id="btn-{{product.id}}" (mouseenter)="showDownButton($event)">
+                            <i class="fa-solid fa-plus"></i>
                         </button>
+                        <div class="d-none mt-2">
+                            <button class="btn btn-dark w-100">
+                                <i class="fa-solid fa-plus"></i>
+                            </button>
+                            <span class="ms-2 me-2" style="font-size: 25px; border: 1px solid; padding: 0px 15px; border-radius: 10px;">5</span>
+                            <button class="btn btn-danger w-100">
+                                <i class="fa-solid fa-minus"></i>
+                            </button>
+                        </div>
                     }@else {
-                        <p class="text-danger">Sepete Eklemek için Giriş Yapmalısınız</p>
+                        <p class="text-danger" style="margin-top: 15px;">Sepete Eklemek için Giriş Yapmalısınız</p>
                     }                    
                 </div>
             </div>

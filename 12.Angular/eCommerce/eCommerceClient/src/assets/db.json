@@ -24,5 +24,30 @@
             "coverImageUrl": "muz.png",
             "price": 300
         }
+    ],
+
+    "carts": [
+        {
+            "id": 1,
+            "productId": 1,
+            "product": {
+              "id": 1,
+              "name": "Elma",
+              "coverImageUrl": "elma.png",
+              "price": 100
+            },
+            "quantity": 1
+          },
+          {
+            "id": 2,
+            "productId": 3,
+            "product": {
+              "id": 3,
+              "name": "Karpuz",
+              "coverImageUrl": "karpuz.png",
+              "price": 200
+            },
+            "quantity": 1
+          }
     ]
 }
