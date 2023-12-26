@@ -1,4 +1,10 @@
 # YMYP 2.Eğitim
+## 38.Ders İşlenen Konular (26.12.2023)
+- Fluent Validation
+- Auto Mapper
+- Repository Pattern (Basic Seviye)
+- Register ve Login Metotları
+
 ## 37.Ders İşlenen Konular (24.12.2023)
 - E Ticaret Uygulamasına Devam Ediyoruz
 - Sayfalarda Görsel Güzelleştirmeler Yaptık
