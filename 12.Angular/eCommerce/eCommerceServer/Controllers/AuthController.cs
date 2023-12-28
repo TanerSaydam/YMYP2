@@ -3,6 +3,7 @@ using eCommerceServer.Context;
 using eCommerceServer.DTOs;
 using eCommerceServer.Models;
 using eCommerceServer.Repositories;
+using eCommerceServer.Services;
 using eCommerceServer.Validators;
 using FluentValidation.Results;
 using Microsoft.AspNetCore.Mvc;
@@ -13,10 +14,11 @@ namespace eCommerceServer.Controllers;
 public sealed class AuthController : ControllerBase
 {
     private readonly IMapper _mapper;
-
+    AppUserRepository appUserRepository;
     public AuthController(IMapper mapper)
     {
         _mapper = mapper;
+        appUserRepository = new();
     }
 
     [HttpPost]
@@ -31,9 +33,7 @@ public sealed class AuthController : ControllerBase
             return BadRequest(errorMessages);
         }
 
-        //Kaydın Unique Kontrolü
-        AppUserRepository appUserRepository = new();
-
+        //Kaydın Unique Kontrolü 
         bool isEmailExist = appUserRepository.IsEmailExists(request.Email);
         if (isEmailExist)
         {
@@ -61,8 +61,7 @@ public sealed class AuthController : ControllerBase
             return BadRequest(errorMessages);
         }
 
-        //User Kontrolü
-        AppUserRepository appUserRepository = new();
+        //User Kontrolü        
         AppUser? user = appUserRepository.Login(request.Email, request.Password);
 
         if(user is null)
@@ -71,6 +70,9 @@ public sealed class AuthController : ControllerBase
         }
 
         //Token - JWT ile token Üreteceğiz
-        return Ok(user);
+        JwtProvider jwtProvider = new();
+        string token = jwtProvider.CreateToken(user);
+
+        return Ok(new {AccessToken = token});
     }
 }

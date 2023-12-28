@@ -138,3 +138,4 @@ C:\YMYP2\12.Angular\eCommerce\eCommerceServer\bin\Debug\net8.0\runtimes\win\lib\
 C:\YMYP2\12.Angular\eCommerce\eCommerceServer\bin\Debug\net8.0\FluentValidation.dll
 C:\YMYP2\12.Angular\eCommerce\eCommerceServer\bin\Debug\net8.0\AutoMapper.dll
 C:\YMYP2\12.Angular\eCommerce\eCommerceServer\bin\Debug\net8.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+C:\YMYP2\12.Angular\eCommerce\eCommerceServer\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll

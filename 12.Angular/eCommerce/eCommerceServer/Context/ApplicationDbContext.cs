@@ -11,9 +11,13 @@ public sealed class ApplicationDbContext : DbContext
     }
 
     public DbSet<AppUser> Users { get; set; }
+    public DbSet<Product> Products { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.Entity<AppUser>().HasIndex(x => x.Email).IsUnique(true);
+
+        modelBuilder.Entity<Product>().Property(p => p.Price).HasColumnType("money");
+        modelBuilder.Entity<Product>().HasIndex(x=> x.Name).IsUnique();
     }
 }
