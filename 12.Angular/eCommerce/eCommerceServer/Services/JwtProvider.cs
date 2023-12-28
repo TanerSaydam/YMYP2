@@ -8,23 +8,27 @@ namespace eCommerceServer.Services;
 
 public sealed class JwtProvider
 {
+    IConfiguration _configuration;
+    public JwtProvider(IConfiguration configuration)
+    {
+        _configuration = configuration;
+    }
     public string CreateToken(AppUser user)
     {
         IEnumerable<Claim> claims = new List<Claim>()
         {
             new Claim("Email",user.Email),
-            new Claim(ClaimTypes.Name, string.Join(" ",user.FirstName,user.LastName)),
+            new Claim("Name", string.Join(" ",user.FirstName,user.LastName)),
         };
 
         DateTime expires = DateTime.Now.AddMinutes(20);
-
         JwtSecurityToken jwtSecurityToken = new(
-            issuer: "Taner Saydam",
-            audience: "localhost:4200",
+            issuer: _configuration.GetSection("Jwt:Issuer").Value,
+            audience: _configuration.GetSection("Jwt:Audience").Value,
             claims: claims,
             notBefore: DateTime.Now,
             expires: expires,
-            signingCredentials: new SigningCredentials(new SymmetricSecurityKey(Encoding.UTF8.GetBytes("my secret key my secret key my secret key my secret key my secret key my secret key 23123123.sadasdasd")),SecurityAlgorithms.HmacSha512));
+            signingCredentials: new SigningCredentials(new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration.GetSection("Jwt:SecretKey").Value ?? "")),SecurityAlgorithms.HmacSha512));
 
         JwtSecurityTokenHandler handler = new();
         string token = handler.WriteToken(jwtSecurityToken);

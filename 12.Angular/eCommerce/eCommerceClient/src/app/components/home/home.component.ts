@@ -26,9 +26,13 @@ export class HomeComponent {
   }
 
   getAllProduct(){
-    this.http.get("assets/db.json").subscribe({
+    this.http.get("https://localhost:7194/api/Products/GetAll",{
+      headers: {
+        "Authorization": "Bearer " + this.auth.token
+      }
+    }).subscribe({
       next: (res:any)=> {
-        this.products = res.products;
+        this.products = res;
       },
       error: (err: HttpErrorResponse)=> {
         console.log(err);        

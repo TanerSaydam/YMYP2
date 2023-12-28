@@ -1,4 +1,11 @@
 # YMYP 2.Eğitim
+## 39.Ders İşlenen Konular (28.12.2023)
+- Token Nedir?
+- Json Web Token
+- Backend Authentication Kontrolü
+- Frontend JWT Decode ve Exp Kontrolü
+- API isteğine Token Ekleme
+
 ## 38.Ders İşlenen Konular (26.12.2023)
 - Fluent Validation
 - Auto Mapper

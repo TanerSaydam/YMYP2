@@ -1,6 +1,12 @@
 @eCommerceServer_HostAddress = http://localhost:5191
 
-GET {{eCommerceServer_HostAddress}}/api/Products/GetAll
+POST http://localhost:5191/api/Auth/Login
 Accept: application/json
+Content-Type: application/json
 
+{
+  "email": "string@string.com",
+  "password": "String123"
+}
 ###
+

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Hepsi Burada API İsteği</h1>
+    <button onclick="apiRequest()">Api İsteği Yap</button>
+
+    <script>
+        function apiRequest(){
+            fetch("https://checkout.hepsiburada.com/api/basket/count", {
+                headers: {
+                    "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYmYiOjE3MDI5NjkyNTgsImV4cCI6MTcwMzIyODQ1OCwiaWF0IjoxNzAyOTY5MjU4LCJVc2VySWQiOiI4MzQ0MTJhZS0yNTg5LTQwOWEtOTRmMS0zNWJhMzIxNzY4NzgiLCJUaXRsZSI6IlRhbmVyIFNheWRhbSIsIkZpcnN0TmFtZSI6IlRhbmVyIiwiTGFzdE5hbWUiOiJTYXlkYW0iLCJFbWFpbCI6InRhbmVyc2F5ZGFtQGdtYWlsLmNvbSIsIklzQXV0aGVudGljYXRlZCI6IlRydWUiLCJBcHBLZXkiOiJBRjdGMkEzNy1DQzRCLTRGMUMtODdGRC1GRjM2NDJGNjdFQ0IiLCJQcm92aWRlciI6IkhlcHNpYnVyYWRhIiwiU2hhcmVEYXRhUGVybWlzc2lvbiI6IlRydWUiLCJHZW5kZXIiOiIxIiwicCI6eyJ0IjpbXX19.rwG0eZmtFWOyi8A4yCmKXyIJA2oqmLLfECUhN1U2MEI"
+                }
+            }).then(res=> res.json()).then(data=> console.log(data))
+        }
+    </script>
+</body>
+</html>

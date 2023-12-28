@@ -19,5 +19,44 @@ public sealed class ApplicationDbContext : DbContext
 
         modelBuilder.Entity<Product>().Property(p => p.Price).HasColumnType("money");
         modelBuilder.Entity<Product>().HasIndex(x=> x.Name).IsUnique();
+
+        List<Product> products = new();
+        Product product1 = new()
+        {
+            Id = 1,
+            Name = "Elma",
+            Price = 20,
+            CoverImageUrl = "elma.png"
+        };
+        products.Add(product1);
+
+        Product product2 = new()
+        {
+            Id = 2,
+            Name = "Armut",
+            Price = 30,
+            CoverImageUrl = "armut.png"
+        };
+        products.Add(product2);
+
+        Product product3 = new()
+        {
+            Id = 3,
+            Name = "Karpuz",
+            Price = 120,
+            CoverImageUrl = "karpuz.png"
+        };
+        products.Add(product3);
+
+        Product product4 = new()
+        {
+            Id = 4,
+            Name = "Muz",
+            Price = 50,
+            CoverImageUrl = "muz.png"
+        };
+        products.Add(product4);
+
+        modelBuilder.Entity<Product>().HasData(products);
     }
 }

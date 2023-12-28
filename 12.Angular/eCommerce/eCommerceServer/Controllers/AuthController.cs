@@ -15,10 +15,12 @@ public sealed class AuthController : ControllerBase
 {
     private readonly IMapper _mapper;
     AppUserRepository appUserRepository;
-    public AuthController(IMapper mapper)
+    IConfiguration _configuration;
+    public AuthController(IMapper mapper, IConfiguration configuration)
     {
         _mapper = mapper;
         appUserRepository = new();
+        _configuration = configuration;
     }
 
     [HttpPost]
@@ -70,7 +72,7 @@ public sealed class AuthController : ControllerBase
         }
 
         //Token - JWT ile token Üreteceğiz
-        JwtProvider jwtProvider = new();
+        JwtProvider jwtProvider = new(_configuration);
         string token = jwtProvider.CreateToken(user);
 
         return Ok(new {AccessToken = token});

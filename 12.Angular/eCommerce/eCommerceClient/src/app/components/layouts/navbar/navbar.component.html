@@ -23,8 +23,9 @@
                     </li>
                 }                
             </ul>
-            <div class="d-flex" role="search">
+            <div class="d-flex align-items-center" style="gap: 5px;" role="search">
                 @if(auth.hasAuthenticated){
+                    <span class="text-light">Hoşgeldiniz {{auth.decode.Name}}</span>
                     <button class="btn btn-outline-light position-relative" routerLink="/shopping-carts">
                         <i class="fa-solid fa-cart-shopping me-1"></i>
                         Sepet

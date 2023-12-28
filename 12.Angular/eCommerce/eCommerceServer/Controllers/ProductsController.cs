@@ -1,4 +1,7 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using eCommerceServer.Context;
+using eCommerceServer.Models;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 
 namespace eCommerceServer.Controllers;
 [Route("api/[controller]/[action]")]
@@ -6,8 +9,11 @@ namespace eCommerceServer.Controllers;
 public sealed class ProductsController : ControllerBase
 {
     [HttpGet]
+    [Authorize(AuthenticationSchemes ="Bearer")]
     public IActionResult GetAll()
     {
-        return Ok();
+        ApplicationDbContext context = new();
+        List<Product> products = context.Products.ToList();
+        return Ok(products);
     }
 }

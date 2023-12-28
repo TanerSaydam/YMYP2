@@ -15,7 +15,7 @@ export class LoginComponent {
 
   signIn(form:NgForm) {
     if(form.valid){
-      this.http.post("", form.value)
+      this.http.post("https://localhost:7194/api/Auth/Login", form.value)
       .subscribe({
         next: (res: any)=> {
           localStorage.setItem("response", JSON.stringify(res));

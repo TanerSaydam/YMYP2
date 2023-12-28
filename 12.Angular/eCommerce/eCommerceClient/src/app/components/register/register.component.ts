@@ -19,7 +19,7 @@ export class RegisterComponent {
 
   signUp(form:NgForm){
     if(form.valid){
-      this.http.post("",form.value)
+      this.http.post("https://localhost:7194/api/Auth/Register",form.value)
       .subscribe({
         next: (res:any)=> {
           this.router.navigateByUrl("/login");
