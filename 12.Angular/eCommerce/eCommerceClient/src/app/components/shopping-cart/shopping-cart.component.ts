@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { TrCurrencyPipe } from 'tr-currency';
 import { ShoppingCartModel } from '../../models/shopping-cart.model';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { ShoppingCartService } from '../../services/shopping-cart.service';
+import { AuthService } from '../../services/auth.service';
+import { api } from '../../constants/api';
 
 @Component({
   selector: 'app-shopping-cart',
@@ -11,62 +14,59 @@ import { HttpClient, HttpErrorResponse } from '@angular/common/http';
   styleUrl: './shopping-cart.component.css'
 })
 export class ShoppingCartComponent implements OnInit {
-  carts: ShoppingCartModel[] = [];
-  sum: number = 0;
+  constructor(
+     private http: HttpClient,
+     private auth: AuthService,
+     public _cart: ShoppingCartService) { } //yapıcı metot => class çağrıldığı esnada ilk çalışan metot
 
-  constructor(private http: HttpClient) { } //yapıcı metot => class çağrıldığı esnada ilk çalışan metot
+  ngOnInit(): void { }  
 
-  ngOnInit(): void {
-    this.getAll();
-  }
-
-  getAll() {
-    this.http.get("assets/db.json")
-      .subscribe({
-        next: (res: any) => {
-          this.carts = res.carts;
-
-          this.calculateSum();
-        },
-        error: (err: HttpErrorResponse) => {
-          console.log(err);
-        }
-      })
-  }
-
-  increment(cart: ShoppingCartModel) {
-    cart.quantity++;
-
-    this.calculateSum();
-  }
-
-  decrement(cart: ShoppingCartModel) {
-    if (cart.quantity === 1) {
+  decrement(cart: ShoppingCartModel){
+    if(cart.quantity === 1){
       const response = confirm("Ürünü sepetten kaldırmak istiyor musunuz?")
       if (response) {
-        const index = this.carts.findIndex(p => p === cart);
-        this.carts.splice(index, 1);
-
-        this.calculateSum();
+        this._cart.decrement(cart.productId);
       }
-      return;
+    }else{
+      this._cart.decrement(cart.productId);
     }
-    cart.quantity--;
+  } 
 
-    this.calculateSum();
-  }
-
-  remove(index: number) {
+  remove(id: number) {
     const response = confirm("Ürünü sepetten kaldırmak istiyor musunuz?")
     if (response) {
-      this.carts.splice(index, 1);
+      this.http.get(`${api}/ShoppingCarts/RemoveById?id=${id}`, {
+        headers: {
+          "Authorization": "Bearer " + this.auth.token
+        }
+      })
+      .subscribe({
+        next: ()=> {
+          this._cart.getAll();
+        },
+        error: (err: HttpErrorResponse)=> {
+          console.log(err);          
+        }
+      })
     }
-  }
+  }  
 
-  calculateSum(){
-    this.sum = 0;
-    for(const cart of this.carts){
-        this.sum += cart.quantity * cart.product.price;
-    }
+  pay(){
+    const response = confirm("Ödeme yapmak istiyor musunuz?");
+    if(response){
+      this.http.get(`${api}/ShoppingCarts/Pay`,{
+        headers: {
+          "Authorization": "Bearer " + this.auth.token
+        }
+      })
+      .subscribe({
+        next: ()=> {
+          this._cart.getAll();
+        },
+        error: (err: HttpErrorResponse)=> {
+          console.log(err);        
+        }
+      })
+    }    
   }
 }

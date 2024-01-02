@@ -2,6 +2,7 @@ import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
 import { Router, RouterLink } from '@angular/router';
+import { api } from '../../constants/api';
 
 @Component({
   selector: 'app-register',
@@ -19,7 +20,7 @@ export class RegisterComponent {
 
   signUp(form:NgForm){
     if(form.valid){
-      this.http.post("https://localhost:7194/api/Auth/Register",form.value)
+      this.http.post(`${api}/Auth/Register`,form.value)
       .subscribe({
         next: (res:any)=> {
           this.router.navigateByUrl("/login");

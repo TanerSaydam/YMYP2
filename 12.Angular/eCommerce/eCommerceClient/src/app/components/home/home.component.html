@@ -1,6 +1,6 @@
 <title>e-Commerce | Ana Sayfa</title>
-<div class="d-flex justify-content-between mt-2">
-    <h5>Ana Sayfa</h5>      
+<div class="d-flex justify-content-between mt-2">     
+    <h5>Ana Sayfa</h5>   
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">            
         </ol>
@@ -9,7 +9,7 @@
 <hr>
 <div class="row">
     @for(product of products; track product){
-        <div class="col-3 mt-1" id="div-{{product.id}}" (mouseleave)="showOriginalButton($event)">
+        <div class="col-3 mt-1" id="div-{{product.id}}" (mouseleave)="showOriginalButton($event, product.id)">
             <div class="card">
                 <div class="card-body">
                     <img [src]="'/assets/' + product.coverImageUrl" style="width: 100%;">
@@ -17,17 +17,19 @@
                 <div class="card-header text-center">
                     <h5>{{product.name}}</h5>
                 </div>
-                <div class="card-body text-center" style="min-height: 80px;">
+                <div class="card-body text-center">
                     @if(isAuthenticated){
-                        <button class="btn btn-dark w-100" style="margin-top: 8px;" id="btn-{{product.id}}" (mouseenter)="showDownButton($event)">
+                        <button class="btn btn-dark w-100" [ngClass]="getCartsCountByProductId(product.id) > 0 ? 'd-none' : 'd-flex'" style="margin-top: 8px;" id="btn-{{product.id}}" (mouseenter)="showDownButton($event, product.id)">
                             <i class="fa-solid fa-plus"></i>
                         </button>
-                        <div class="d-none mt-2">
-                            <button class="btn btn-dark w-100">
+                        <div class="mt-2" [ngClass]="getCartsCountByProductId(product.id) > 0 ? 'd-flex' : 'd-none'">
+                            <button class="btn btn-dark w-100 btn-sm text-center" (click)="cart.increment(product.id)">
                                 <i class="fa-solid fa-plus"></i>
                             </button>
-                            <span class="ms-2 me-2" style="font-size: 25px; border: 1px solid; padding: 0px 15px; border-radius: 10px;">5</span>
-                            <button class="btn btn-danger w-100">
+                            <span class="ms-2 me-2" style="border: 1px solid #c2c2c2; padding: 0px 15px; border-radius: 30px;">
+                                {{getCartsCountByProductId(product.id)}}
+                            </span>
+                            <button class="btn btn-danger w-100 btn-sm text-center" (click)="cart.decrement(product.id)">
                                 <i class="fa-solid fa-minus"></i>
                             </button>
                         </div>

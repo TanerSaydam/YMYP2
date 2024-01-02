@@ -12,6 +12,9 @@ public sealed class ApplicationDbContext : DbContext
 
     public DbSet<AppUser> Users { get; set; }
     public DbSet<Product> Products { get; set; }
+    public DbSet<ShoppingCart> ShoppingCarts { get; set; }
+    public DbSet<Order> Orders { get; set; }
+    public DbSet<OrderDetail> OrderDetails { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -19,6 +22,8 @@ public sealed class ApplicationDbContext : DbContext
 
         modelBuilder.Entity<Product>().Property(p => p.Price).HasColumnType("money");
         modelBuilder.Entity<Product>().HasIndex(x=> x.Name).IsUnique();
+
+        modelBuilder.Entity<OrderDetail>().Property(p => p.Price).HasColumnType("money");
 
         List<Product> products = new();
         Product product1 = new()

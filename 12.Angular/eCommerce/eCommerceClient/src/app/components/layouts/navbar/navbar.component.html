@@ -29,9 +29,9 @@
                     <button class="btn btn-outline-light position-relative" routerLink="/shopping-carts">
                         <i class="fa-solid fa-cart-shopping me-1"></i>
                         Sepet
-                        @if(cart.count > 0){
+                        @if(cart.carts.length > 0){
                             <span class="position-absolute top-100 start-0 translate-middle badge rounded-pill bg-danger">
-                                {{cart.count}}
+                                <span>{{calculateShoppingCartsQuantity()}}</span>
                             </span>
                         }                        
                     </button>

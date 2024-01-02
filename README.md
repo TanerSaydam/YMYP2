@@ -1,4 +1,12 @@
 # YMYP 2.Eğitim
+## 40.Ders İşlenen Konular (02.01.2024)
+- Product Listemizi API ile Aldık
+- Sepet Modelini Oluşturduk
+- Sepete Ekleme ve Sepetteki Adet Değişikliği API Yazdık
+- Refactoring Kodlarımızı İyileştirdik
+- Order ve Detail Modelini Oluşturduk
+- Sepetten Ödeme İle Sipariş Oluşturma İşlemini Tamamladık
+
 ## 39.Ders İşlenen Konular (28.12.2023)
 - Token Nedir?
 - Json Web Token

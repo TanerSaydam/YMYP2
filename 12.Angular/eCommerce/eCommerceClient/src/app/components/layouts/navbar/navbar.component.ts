@@ -19,6 +19,15 @@ export class NavbarComponent {
     this.auth.isAuthenticated();
   }
 
+  calculateShoppingCartsQuantity(){
+    let totalQuantity = 0;
+    for(let c of this.cart.carts){
+      totalQuantity += c.quantity
+    }
+
+    return totalQuantity;
+  }
+
   logout(){
     localStorage.removeItem("response");
     this.auth.isAuthenticated();
