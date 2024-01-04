@@ -32,7 +32,7 @@ public sealed class AuthController : ControllerBase
         if (!result.IsValid)
         {
             List<string> errorMessages = result.Errors.Select(s=> s.ErrorMessage).ToList();
-            return BadRequest(errorMessages);
+            return StatusCode(422,errorMessages);
         }
 
         //Kaydın Unique Kontrolü 
@@ -60,7 +60,7 @@ public sealed class AuthController : ControllerBase
         if(!result.IsValid)
         {
             List<string> errorMessages = result.Errors.Select(s => s.ErrorMessage).ToList();
-            return BadRequest(errorMessages);
+            return StatusCode(422, errorMessages);
         }
 
         //User Kontrolü        

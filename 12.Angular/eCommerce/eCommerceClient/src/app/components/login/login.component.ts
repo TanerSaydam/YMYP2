@@ -3,6 +3,8 @@ import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
 import { Router, RouterLink } from '@angular/router';
 import { api } from '../../constants/api';
+import { MessageService } from 'primeng/api';
+import { ErrorService } from '../../services/error.service';
 
 @Component({
   selector: 'app-login',
@@ -14,7 +16,10 @@ import { api } from '../../constants/api';
 export class LoginComponent implements AfterViewInit {
   @ViewChild("email") emailInput: ElementRef<HTMLInputElement> | undefined;
 
-  constructor(private http: HttpClient, private router: Router){}
+  constructor(
+    private http: HttpClient, 
+    private router: Router,
+    private error:ErrorService){}
 
   ngAfterViewInit(): void {
     this.emailInput?.nativeElement.focus();
@@ -28,9 +33,7 @@ export class LoginComponent implements AfterViewInit {
           localStorage.setItem("response", JSON.stringify(res));
           this.router.navigateByUrl("/");
         },
-        error: (err: HttpErrorResponse)=> {
-          console.log(err);          
-        }
+        error: (err: HttpErrorResponse)=> this.error.errorHandler(err)
       })
     }
   }

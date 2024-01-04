@@ -6,6 +6,7 @@ import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { ShoppingCartService } from '../../services/shopping-cart.service';
 import { CommonModule } from '@angular/common';
 import { api } from '../../constants/api';
+import { ErrorService } from '../../services/error.service';
 
 @Component({
   selector: 'app-home',
@@ -21,11 +22,12 @@ export class HomeComponent {
   constructor(
     private auth: AuthService, 
     private http: HttpClient,
-    public cart: ShoppingCartService){
+    public cart: ShoppingCartService,
+    private error: ErrorService){
     this.isAuthenticated = this.auth.isAuthenticated();
 
     this.getAllProduct();
-  }
+  }  
 
   getAllProduct(){
     this.http.get(`${api}/Home/GetProducts`,{
@@ -36,9 +38,7 @@ export class HomeComponent {
       next: (res:any)=> {
         this.products = res;
       },
-      error: (err: HttpErrorResponse)=> {
-        console.log(err);        
-      }
+      error: (err: HttpErrorResponse)=> this.error.errorHandler(err)
     })
   }
 

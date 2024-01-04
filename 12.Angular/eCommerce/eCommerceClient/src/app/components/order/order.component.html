@@ -1,6 +1,6 @@
 <title>e-Commerce | Sepetim</title>
 <div class="d-flex justify-content-between mt-2">
-    <h5>Ana Sayfa</h5>
+    <h5>Siparişlerim</h5>
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
             <li class="breadcrumb-item" aria-current="page">Ana Sayfa</li>
@@ -37,25 +37,28 @@
                         <div class="d-flex">
                             <h5>SİPARİŞ <span class="text-primary font-weight-bold">{{order.number}}</span></h5>
                         </div>
-                        <div class="d-flex flex-column text-sm-right">
-                            <p class="mb-0">Tahmini Teslim Tarihi <span>{{order.expectedArrival}}</span></p>
-                            <p>{{order.cargoCompany}} <span class="font-weight-bold">{{order.cargoTrackingNumber}}</span></p>
-                        </div>
+                        @if(order.orderStatus >= 1){
+                            <div class="d-flex flex-column text-sm-right">
+                                <p class="mb-0 bold">Tahmini Teslim Tarihi: <span>{{order.expectedArrival}}</span></p> 
+                                <p class="mb-0 bold">Kargo Şirketi: <span>{{order.cargoCompany}}</span></p>
+                                <p class="mb-0 bold">Takip Numarası: <span class="text-danger">{{order.cargoTrackingNumber}}</span></p>
+                            </div>
+                        }                        
                     </div>
                     <!-- Add class 'active' to progress -->
                     <div class="row d-flex justify-content-center">
                         <div class="col-12">
                         <ul id="progressbar" class="text-center">
-                            <li class="active step0">
+                            <li class="step0" [ngClass]="order.orderStatus >= 0 ? 'active' : ''">
                                 <h6>Sipariş Onaylandı</h6>
                             </li>
-                            <li class="active step0">
+                            <li class="step0" [ngClass]="order.orderStatus >= 1 ? 'active' : ''">
                                 <h6>Kargoya Teslim Edildi</h6>
                             </li>
-                            <li class="active step0">
+                            <li class="step0" [ngClass]="order.orderStatus >= 2 ? 'active' : ''">
                                 <h6>Dağıtıma Çıktı</h6>
                             </li>
-                            <li class="step0">
+                            <li class="step0" [ngClass]="order.orderStatus >= 3 ? 'active' : ''">
                                 <h6>Teslim Edildi</h6>
                             </li>
                         </ul>
@@ -71,4 +74,9 @@
     </div>
 
 </a>
+}
+@empty {
+    <h1 class="alert alert-danger text-center">
+        Sipariş bulunamadı!
+    </h1>
 }

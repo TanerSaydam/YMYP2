@@ -1,5 +1,6 @@
 ﻿using eCommerceServer.Context;
 using eCommerceServer.Models;
+using eCommerceServer.Repositories;
 using Microsoft.AspNetCore.Mvc;
 
 namespace eCommerceServer.Controllers;
@@ -7,11 +8,16 @@ namespace eCommerceServer.Controllers;
 [ApiController]
 public sealed class HomeController : ControllerBase
 {
+    private ProductRepository productRepository;
+    public HomeController()
+    {
+        productRepository = new();
+    }
+
     [HttpGet]
     public IActionResult GetProducts()
     {
-        ApplicationDbContext context = new();
-        IEnumerable<Product> products = context.Products.OrderBy(p=> p.Name).ToList();
+        IEnumerable<Product> products = productRepository.GetAll();
         
         return Ok(products);
     }

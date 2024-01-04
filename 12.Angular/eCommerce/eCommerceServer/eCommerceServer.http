@@ -5,8 +5,20 @@ Accept: application/json
 Content-Type: application/json
 
 {
-  "email": "string@string.com",
-  "password": "String123"
+  "email": "tanersaydam@gmail.com ",
+  "password": "Password1234"
 }
+
 ###
 
+GET https://localhost:7194/api/ShoppingCarts/GetAll
+Accept: application/json
+Authorization: Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJVc2VySWQiOiI0IiwiRW1haWwiOiJ0YW5lcnNheWRhbUBnbWFpbC5jb20iLCJOYW1lIjoiVGFuZXIgU2F5ZGFtIiwibmJmIjoxNzA0Mzg4Nzk0LCJleHAiOjE3MDcwNjcxOTQsImlzcyI6IlRhbmVyIFNheWRhbSIsImF1ZCI6ImxvY2FsaG9zdDo0MjAwIn0.QL0wkq7N58ZhOzgY085Z9kdLe16UQkuClbW_GGh4sVW91B18EGJfuArqvkp4xNPoGAxkePsWM5PJ2_BqQMhN5Q
+
+###
+
+GET https://localhost:7194/api/Orders/GetAll
+Accept: application/json
+Authorization: Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJVc2VySWQiOiI0IiwiRW1haWwiOiJ0YW5lcnNheWRhbUBnbWFpbC5jb20iLCJOYW1lIjoiVGFuZXIgU2F5ZGFtIiwibmJmIjoxNzA0Mzg4Nzk0LCJleHAiOjE3MDcwNjcxOTQsImlzcyI6IlRhbmVyIFNheWRhbSIsImF1ZCI6ImxvY2FsaG9zdDo0MjAwIn0.QL0wkq7N58ZhOzgY085Z9kdLe16UQkuClbW_GGh4sVW91B18EGJfuArqvkp4xNPoGAxkePsWM5PJ2_BqQMhN5Q
+
+###

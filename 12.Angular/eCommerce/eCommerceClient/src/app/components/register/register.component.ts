@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
 import { Router, RouterLink } from '@angular/router';
 import { api } from '../../constants/api';
+import { ErrorService } from '../../services/error.service';
 
 @Component({
   selector: 'app-register',
@@ -15,7 +16,8 @@ export class RegisterComponent {
 
   constructor(
     private http: HttpClient,
-    private router: Router
+    private router: Router,
+    private error: ErrorService
   ){}
 
   signUp(form:NgForm){
@@ -25,9 +27,7 @@ export class RegisterComponent {
         next: (res:any)=> {
           this.router.navigateByUrl("/login");
         },
-        error: (err: HttpErrorResponse)=> {
-          console.log(err);          
-        }
+        error: (err: HttpErrorResponse)=> this.error.errorHandler(err)
       })
     }
   }

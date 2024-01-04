@@ -7,7 +7,7 @@
     </nav>
 </div>
 <hr>
-<div class="row">
+<div class="row">    
     @for(product of products; track product){
         <div class="col-3 mt-1" id="div-{{product.id}}" (mouseleave)="showOriginalButton($event, product.id)">
             <div class="card">

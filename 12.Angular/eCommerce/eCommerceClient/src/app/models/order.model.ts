@@ -7,5 +7,13 @@ export class OrderModel{
     expectedArrival: string = "";
     cargoCompany: string = "";
     cargoTrackingNumber: string = "";
+    orderStatus: OrderStatusEnum = OrderStatusEnum.Onaylandi;
     details: OrderDetailModel[] = [];
+  }
+
+  export enum OrderStatusEnum{
+    Onaylandi = 0,
+    KargoyaTeslimEdildi = 1,
+    DagitimaCikti = 2,
+    TeslimEdildi = 3
   }

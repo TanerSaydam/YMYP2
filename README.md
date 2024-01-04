@@ -1,4 +1,12 @@
 # YMYP 2.Eğitim
+## 41.Ders İşlenen Konular (04.01.2023)
+- Sipariş Listesini Ekrana Alma
+- Sipariş Status Type Oluşturma
+- .NET Enum ve Angular Enum
+- ngx-sweetalert2 ile Toast ve Fire Metotlarının Örnek Kullanımı
+- Priment Toast Örnek Kullanımı
+- Repository Pattern ile Backend de Son Refactoring
+
 ## 40.Ders İşlenen Konular (02.01.2024)
 - Product Listemizi API ile Aldık
 - Sepet Modelini Oluşturduk
