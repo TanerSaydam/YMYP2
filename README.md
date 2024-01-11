@@ -1,5 +1,13 @@
 # YMYP 2.Eğitim
-## 41.Ders İşlenen Konular (04.01.2023)
+## 42.Ders İşlenen Konular (11.01.2024)
+- Angular Konuları üzerine Tekrar
+- Angular Nedir?
+- Angular CLI ve versiyonları Nedir?
+- Module ve Standalone proje oluşturma ve Farkları
+- Component, Directive, Pipe, Module ve Service Oluşturma
+- Bağımlılık Yönetimi
+
+## 41.Ders İşlenen Konular (04.01.2024)
 - Sipariş Listesini Ekrana Alma
 - Sipariş Status Type Oluşturma
 - .NET Enum ve Angular Enum

@@ -1,0 +1,14 @@
+<h1 class="test" [myDirective]="isTrue" name="Taner Saydam">App Component</h1>
+<button (click)="isTrue = !isTrue">IsTrue Değerini Değiştir</button>
+
+<h2><b>
+  {{name}}
+</b></h2>
+
+<input type="text" [(ngModel)]="filterText">
+<ul>
+  <li *ngFor="let n of names | search: filterText">
+    {{n}}
+  </li>
+</ul>
+<app-blog></app-blog>
