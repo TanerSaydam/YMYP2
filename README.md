@@ -1,4 +1,13 @@
 # YMYP 2.Eğitim
+## 43.Ders İşlenen Konular (14.01.2024)
+- Eager Loading
+- Lazy Loading
+- Module Yapısında Lazy Loading
+- Standalone Yapısında Lazy Loading
+- Router Params / Query Params
+- Angular Material
+- Primeng
+
 ## 42.Ders İşlenen Konular (11.01.2024)
 - Angular Konuları üzerine Tekrar
 - Angular Nedir?

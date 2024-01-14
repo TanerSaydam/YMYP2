@@ -1,0 +1,45 @@
+
+<div class="card mt-3">
+    <p-carousel [value]="products" [numVisible]="3" [numScroll]="3" [circular]="false" [responsiveOptions]="responsiveOptions">
+        <ng-template let-product pTemplate="item">
+            <div class="border-1 surface-border border-round m-2 text-center py-5 px-3">
+                <div class="mb-3">
+                    <img [src]="product.image" [alt]="product.name" class="w-6 shadow-2" />
+                </div>
+                <div>
+                    <h4 class="mb-1">{{ product.name }}</h4>
+                    <h6 class="mt-0 mb-3">{{ '$' + product.price }}</h6>
+                    <p-tag [value]="product.inventoryStatus" [severity]="getSeverity(product.inventoryStatus)"></p-tag>
+                    <div class="mt-5 flex align-items-center justify-content-center gap-2">
+                    <p-button class="me-1" icon="pi pi-search" [rounded]="true" />
+                    <p-button icon="pi pi-star-fill" [rounded]="true" severity="secondary" />
+                </div>
+                </div>
+            </div>
+        </ng-template>
+    </p-carousel>
+</div>
+
+<span class="p-input-icon-left mt-3" style="width: 100%;">
+    <i class="pi pi-search"></i>
+    <input type="text" pInputText style="width: 100%;" placeholder="Search something..."/>
+</span>
+
+<div class="card mt-3 flex justify-content-between" style="border: none;">
+    @for(p of products; track p){
+        <p-card header="Advanced Card" class="mt-3" subheader="Card Subheader" [style]="{ width: '360px' }">
+            <ng-template pTemplate="header">
+                <img alt="Card" src="https://primefaces.org/cdn/primeng/images/usercard.png" />
+            </ng-template>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore sed consequuntur error repudiandae numquam deserunt quisquam repellat libero asperiores earum nam nobis, culpa ratione quam perferendis esse, cupiditate neque
+                quas!
+            </p>
+            <ng-template pTemplate="footer">
+                <p-button label="Save" icon="pi pi-check"></p-button>
+                <p-button label="Cancel" icon="pi pi-times" styleClass="p-button-secondary" [style]="{ 'margin-left': '.5em' }"></p-button>
+            </ng-template>
+        </p-card>
+    }
+    
+</div>

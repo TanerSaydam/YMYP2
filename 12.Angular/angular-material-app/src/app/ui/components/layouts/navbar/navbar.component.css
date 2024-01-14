@@ -1,0 +1,12 @@
+.example-spacer {
+    flex: 1 1 auto;
+  }
+
+  .example-icon{
+    border: none;
+  }
+ 
+
+  span{
+    cursor: pointer;
+  }

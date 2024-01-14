@@ -1,0 +1,20 @@
+<h1>contact works!</h1>
+<form action="">
+    @if(roles.includes('subject')){
+        <div>
+            Subject
+            <input type="text">
+        </div>
+    }    
+    <div *ngIf="roles.includes('email')">
+        Email
+        <input type="text">
+    </div>
+    <div *ngIf="roles.includes('content')">
+        Content
+        <textarea name="" id="" cols="30" rows="10"></textarea>
+    </div>
+    <div *ngIf="roles.includes('send')">
+        <button>Send</button>
+    </div>
+</form>
