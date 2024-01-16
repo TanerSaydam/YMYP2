@@ -1,0 +1,7 @@
+@Test.WebApi_HostAddress = http://localhost:5057
+
+GET https://localhost:7028/api/Values/GetAll
+Accept: application/json
+SecretKey: Taner Saydam
+
+###

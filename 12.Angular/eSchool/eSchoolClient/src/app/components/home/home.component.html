@@ -1,0 +1,42 @@
+<h1 class="text-center alert alert-dark">Student List</h1>
+<hr>
+<div class="row">
+    <div class="col-9">
+        <button class="btn btn-dark" routerLink="/add">+</button>
+    </div>
+    <div class="col-3">
+        <input type="search" [(ngModel)]="search" class="form-control" placeholder="Search student...">
+    </div>
+</div>
+
+
+<table class="table table-bordered table-hover mt-2">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Picture</th>
+            <th>Firstname</th>
+            <th>Lastname</th>
+            <th>Date of birth</th>
+            <th>Operations</th>
+        </tr>       
+    </thead>
+    <tbody>
+        @for(data of datas; track data){
+            <tr>
+                <td>{{$index + 1}}</td>
+                <td>
+                    <img src="/assets/files/{{data.image}}" width="50">
+                </td>
+                <td>{{data.firstname}}</td>
+                <td>{{data.lastname}}</td>
+                <td>{{data.dateOfBirth | date: 'dd.MM.yyyy'}}</td>
+                <td>
+                    <button class="btn btn-sm btn-outline-danger">
+                        <i class="fa fa-trash"></i>
+                    </button>
+                </td>
+            </tr>
+        }        
+    </tbody>
+</table>

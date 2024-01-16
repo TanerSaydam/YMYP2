@@ -1,4 +1,12 @@
 # YMYP 2.Eğitim
+## 44.Ders İşlenen Konular (16.01.2024)
+- Interceptor Nedir?
+- Module Yapısında Interceptor Kullanımı
+- Standalone Yapısında Interceptor Kullanımı
+- Interceptor ile API Hatalarını Yakalama
+- rxJs Kütüphanesi Hakkında Ufak Bilgi
+- Örnek ile İnceleyelim: eSchool Uygulaması
+
 ## 43.Ders İşlenen Konular (14.01.2024)
 - Eager Loading
 - Lazy Loading
