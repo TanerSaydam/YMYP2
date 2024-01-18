@@ -3,6 +3,8 @@ import { StudentModel } from '../../models/student.model';
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { FormsModule } from '@angular/forms';
+import { HttpClient } from '@angular/common/http';
+import { api } from '../../constants';
 
 @Component({
   selector: 'app-home',
@@ -14,29 +16,17 @@ import { FormsModule } from '@angular/forms';
 })
 export class HomeComponent {
   search: string = ""
-  datas: StudentModel[] = [
-    {
-      id: "1",
-      firstname: "Taner",
-      lastname: "Saydam",
-      dateOfBirth: new Date("03.09.1989"),
-      image: "student.jpg"
-    },
-    {
-      id: "1",
-      firstname: "Taner",
-      lastname: "Saydam",
-      dateOfBirth: new Date("03.09.1989"),
-      image: "student.jpg"
-    },
-    {
-      id: "1",
-      firstname: "Taner",
-      lastname: "Saydam",
-      dateOfBirth: new Date("03.09.1989"),
-      image: "student.jpg"
-    }
-  ];
+  datas: StudentModel[] = [];
 
-  created: StudentModel = new StudentModel();
+  constructor(
+    private http: HttpClient
+  ){
+    this.getAll();
+  }
+
+  getAll(){
+    this.http.get<StudentModel[]>(`${api}/Students/GetAll`).subscribe(res=> {
+      this.datas = res;
+    })
+  }
 }

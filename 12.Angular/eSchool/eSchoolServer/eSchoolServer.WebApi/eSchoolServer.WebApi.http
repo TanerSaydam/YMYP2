@@ -1,0 +1,7 @@
+@eSchoolServer.WebApi_HostAddress = http://localhost:5205
+
+GET http://localhost:5205/api/Students/Add?name=Ahmet
+Accept: application/json
+SecretKey: 56a3c02f-36a6-47b0-b981-784c01e7c3e0
+
+###

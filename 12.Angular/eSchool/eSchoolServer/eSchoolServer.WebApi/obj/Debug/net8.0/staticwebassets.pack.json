@@ -1,0 +1,33 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\YMYP2\\12.Angular\\eSchool\\eSchoolServer\\eSchoolServer.WebApi\\wwwroot\\files\\130af211-c055-4c7b-989a-9e3f0e65a37a.png",
+      "PackagePath": "staticwebassets\\files\\130af211-c055-4c7b-989a-9e3f0e65a37a.png"
+    },
+    {
+      "Id": "C:\\YMYP2\\12.Angular\\eSchool\\eSchoolServer\\eSchoolServer.WebApi\\wwwroot\\files\\6b02a568-3f29-46af-9c54-0bbae9a13861.png",
+      "PackagePath": "staticwebassets\\files\\6b02a568-3f29-46af-9c54-0bbae9a13861.png"
+    },
+    {
+      "Id": "C:\\YMYP2\\12.Angular\\eSchool\\eSchoolServer\\eSchoolServer.WebApi\\wwwroot\\files\\914338bb-8147-46ad-b73d-43c49144f867.png",
+      "PackagePath": "staticwebassets\\files\\914338bb-8147-46ad-b73d-43c49144f867.png"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.eSchoolServer.WebApi.props",
+      "PackagePath": "build\\eSchoolServer.WebApi.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.eSchoolServer.WebApi.props",
+      "PackagePath": "buildMultiTargeting\\eSchoolServer.WebApi.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.eSchoolServer.WebApi.props",
+      "PackagePath": "buildTransitive\\eSchoolServer.WebApi.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.eSchoolServer.WebApi.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

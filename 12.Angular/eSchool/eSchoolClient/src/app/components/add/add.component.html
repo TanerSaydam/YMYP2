@@ -1,1 +1,57 @@
-<p>add works!</p>
+<h1 class="text-center alert alert-dark">Add Student</h1>
+<!-- <h1 class="text-center alert alert-dark">21:18 görüşelim</h1> -->
+<hr>
+<form #form="ngForm" (ngSubmit)="add()">
+    <div class="row">
+        <div class="col-6">
+            <!-- First Name -->
+            <div class="form-group">
+                <span class="bold">First Name</span>
+                <input type="text" [(ngModel)]="create.firstname" name="firstname" class="form-control">
+            </div>
+
+            <!-- Last Name -->
+            <div class="form-group mt-2">
+                <span class="bold">Last Name</span>
+                <input type="text" [(ngModel)]="create.lastname" name="lastName" class="form-control">
+            </div>
+
+            <!-- Date of Birth -->
+            <div class="form-group mt-2">
+                <span class="bold">Date of Birth</span>
+                <input type="date" [(ngModel)]="create.dateOfBirth" name="dateOfBirth" class="form-control">
+            </div>
+        </div>
+        <div class="col-6">
+            <!-- Image -->
+            <div class="row">
+                <div class="col-7">
+                    <div class="form-group">
+                        <span class="bold">Image</span>
+                        <input #image type="file" (change)="selectImage($event)" class="form-control">
+                    </div>
+                    @if(create.file != null){
+                        <div class="form-group mt-2">
+                            <button (click)="clearSelectedImage()" class="btn btn-outline-danger w-100">
+                                <i class="fa fa-x me-1"></i>
+                                Clear
+                            </button>
+                        </div>
+                    }                    
+                </div>
+                <div class="col-5">
+                    <div class="form-group mt-2">
+                        <img [src]="create.image" width="200">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group mt-2">
+            <button class="btn btn-dark w-100">
+                <i class="fa fa-save me-1"></i>
+                <span>Save</span>
+            </button>
+        </div>
+    </div>
+</form>

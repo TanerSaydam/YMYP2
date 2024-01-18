@@ -1,4 +1,14 @@
 # YMYP 2.Eğitim
+## 45.Ders İşlenen Konular (18.01.2024)
+- eSchool Projesinde Backend Tasarımı
+- Static Yapılar
+- Attribute Oluşturma
+- Authenticated Kontrolü
+- Interceptor Örneklendirmesi
+- Backend Dosya İşlemleri
+- Backend FromFrom ile API Endpointi Oluşturma
+- Frontend FormData Kullanımı
+
 ## 44.Ders İşlenen Konular (16.01.2024)
 - Interceptor Nedir?
 - Module Yapısında Interceptor Kullanımı

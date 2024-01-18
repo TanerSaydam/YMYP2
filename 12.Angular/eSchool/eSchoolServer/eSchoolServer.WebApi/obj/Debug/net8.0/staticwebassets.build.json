@@ -1,0 +1,77 @@
+{
+  "Version": 1,
+  "Hash": "hGcgE6moi1UdKOLQ4hqjuFN97VidX4Ex8dmNLbL4pGw=",
+  "Source": "eSchoolServer.WebApi",
+  "BasePath": "_content/eSchoolServer.WebApi",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "eSchoolServer.WebApi\\wwwroot",
+      "Source": "eSchoolServer.WebApi",
+      "ContentRoot": "C:\\YMYP2\\12.Angular\\eSchool\\eSchoolServer\\eSchoolServer.WebApi\\wwwroot\\",
+      "BasePath": "_content/eSchoolServer.WebApi",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "C:\\YMYP2\\12.Angular\\eSchool\\eSchoolServer\\eSchoolServer.WebApi\\wwwroot\\files\\130af211-c055-4c7b-989a-9e3f0e65a37a.png",
+      "SourceId": "eSchoolServer.WebApi",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\YMYP2\\12.Angular\\eSchool\\eSchoolServer\\eSchoolServer.WebApi\\wwwroot\\",
+      "BasePath": "_content/eSchoolServer.WebApi",
+      "RelativePath": "files/130af211-c055-4c7b-989a-9e3f0e65a37a.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\files\\130af211-c055-4c7b-989a-9e3f0e65a37a.png"
+    },
+    {
+      "Identity": "C:\\YMYP2\\12.Angular\\eSchool\\eSchoolServer\\eSchoolServer.WebApi\\wwwroot\\files\\6b02a568-3f29-46af-9c54-0bbae9a13861.png",
+      "SourceId": "eSchoolServer.WebApi",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\YMYP2\\12.Angular\\eSchool\\eSchoolServer\\eSchoolServer.WebApi\\wwwroot\\",
+      "BasePath": "_content/eSchoolServer.WebApi",
+      "RelativePath": "files/6b02a568-3f29-46af-9c54-0bbae9a13861.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\files\\6b02a568-3f29-46af-9c54-0bbae9a13861.png"
+    },
+    {
+      "Identity": "C:\\YMYP2\\12.Angular\\eSchool\\eSchoolServer\\eSchoolServer.WebApi\\wwwroot\\files\\914338bb-8147-46ad-b73d-43c49144f867.png",
+      "SourceId": "eSchoolServer.WebApi",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\YMYP2\\12.Angular\\eSchool\\eSchoolServer\\eSchoolServer.WebApi\\wwwroot\\",
+      "BasePath": "_content/eSchoolServer.WebApi",
+      "RelativePath": "files/914338bb-8147-46ad-b73d-43c49144f867.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\files\\914338bb-8147-46ad-b73d-43c49144f867.png"
+    }
+  ]
+}
